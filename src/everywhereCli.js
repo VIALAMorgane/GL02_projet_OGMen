@@ -90,7 +90,7 @@ function registerQuestionCommands(cli) {
     cli.command("questions delete", "Supprime une question de la banque par titre exact")
     .option("--title <title>", "Titre de la question à supprimer", { required: true })
     .action(({ logger, options }) => {
-        const { title } = options; // Extraire `title` des options
+        const { title } = options; // Extrait les titres seulement des questions
 
         try {
             // lecture unique des questions pour ne pas réimporter a chaque fois toutes les questions
@@ -338,7 +338,7 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
                 .join("\n\n");
 
             // Nommer automatiquement le fichier avec l'ID de l'examen
-            const outputPath = path.join(__dirname, `./data/${examId}.gift`);
+            const outputPath = path.join(__dirname, `./examen/${examId}.gift`);
 
             // Écrire dans le fichier de sortie
             fs.writeFileSync(outputPath, giftContent);
