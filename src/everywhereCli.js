@@ -87,19 +87,35 @@ function registerQuestionCommands(cli) {
             }
         });
 
-        cli.command("questions delete <title>", "Supprime une question par titre exact")
-        .action(({ logger, args }) => {
-            const title = args.title;
-            logger.info(`Suppression demandée pour : "${title}"`); // Log pour vérifier l'entrée utilisateur
-    
-            const result = deleteQuestion(title);
-    
-            if (result) {
+    cli.command("questions delete", "Supprime une question de la banque par titre exact")
+    .option("--title <title>", "Titre de la question à supprimer", { required: true })
+    .action(({ logger, options }) => {
+        const { title } = options; // Extraire `title` des options
+
+        try {
+            // lecture unique des questions pour ne pas réimporter a chaque fois toutes les questions
+            const questions = readQuestions();
+
+            
+            const questionIndex = questions.findIndex(q => q.title === title);
+
+            if (questionIndex !== -1) {
+                // Supprime la question
+                questions.splice(questionIndex, 1);
+
+                // Sauvegarde uniquement après suppression
+                saveQuestions(questions);
+
                 logger.info(`La question "${title}" a été supprimée avec succès.`);
             } else {
                 logger.warn(`Aucune question avec le titre exact "${title}" n'a été trouvée.`);
             }
-        });
+        } catch (error) {
+            logger.error(`Erreur lors de la suppression de la question : ${error.message}`);
+        }
+    });
+
+
     
         const fs = require("fs");
 const path = require("path");
