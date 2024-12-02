@@ -2563,5 +2563,25 @@
     "title": "Question 513",
     "text": "Comment t'appelles tu?",
     "type": "Short Answer"
+  },
+  {
+    "title": "EM U42 Ultimate q1",
+    "text": "What's the answer to this multiple-choice question? {\n  ~wrong answer#feedback comment on the wrong answer\n  ~another wrong answer#feedback comment on this wrong answer\n  =right answer#Very good!\n}",
+    "type": "Multiple Choice"
+  },
+  {
+    "title": "Question 35",
+    "text": "//From The Hitchhiker's Guide to the Galaxy\n::EM U42 Ultimate q2::Deep Thought said \" {\n  =forty two#Correct according to The Hitchhiker's Guide to the Galaxy!\n  =42#Correct, as told to Loonquawl and Phouchg\n  =forty-two#Correct!\n}",
+    "type": "Short Answer"
+  },
+  {
+    "title": "Question 36",
+    "text": "is the Ultimate Answer to the Ultimate Question of Life, The Universe, and Everything.\"\n\n::EM U42 Ultimate q3::\n42 is the Absolute Answer to everything.{\nFALSE#42is the Ultimate Answer.#You gave the right answer.}",
+    "type": "Essay"
+  },
+  {
+    "title": "Question 37",
+    "text": "::EM U42 Ultimate q4::When was Ulysses S. Grant born? {#\n   =1822:0\n   =%50%1822:2\n}",
+    "type": "Matching"
   }
 ]
