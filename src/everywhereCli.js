@@ -54,7 +54,7 @@ function messageDebut() {
     1. questions list              - Affiche toutes les questions de la banque
     2. questions import            - Importe les questions depuis le répertoire ./data
     3. questions delete <title>    - Supprime une question par titre exact
-    4. questions add --text <text> - Ajoute une nouvelle question
+    4. questions add --text <text> --type <type> - Ajoute une nouvelle question
     5. questions chart             - Génère un fichier HTML avec un graphique des types de questions
     6. exam generate               - Génère un examen contenant entre 15 et 20 questions
     7. exam export --id <id>       - Exporte un examen au format GIFT
