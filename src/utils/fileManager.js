@@ -155,20 +155,36 @@ function removeDuplicateQuestions() {
  * @returns {string}
  */
 function detectQuestionType(questionText) {
-  if (/{1:MC:|~/.test(questionText)) {
-    return "Multiple Choice"; // Retourne le type Multiple Choice si les patterns spécifiques sont détectés.
+  
+    if (/{T|F}/.test(questionText)) {
+      return "TF"; // Retourne "TF" pour les questions Vrai/Faux
+    }
+  
+    if (/{1:MC:|~/.test(questionText)) {
+      return "Multiple Choice"; // Retourne "Multiple Choice" pour les questions à choix multiples
+    }
+
+    if (/{#/.test(questionText)) {
+      return "Numeric"; // Retourne "Numeric" pour les questions numériques
+    }
+ 
+    if (/{=/.test(questionText)) {
+      return "Fill"; // Retourne "Fill" pour les questions à compléter
+    }
+  
+
+    if (/{.*->.*}/.test(questionText)) {
+      return "Matching"; // Retourne "Matching" pour les questions d'association
+    }
+  
+    if (questionText.length > 150) {
+      return "Essay"; // Retourne "Essay" pour les questions longues
+    }
+  
+    return "Unknown"; // Si aucun type ne correspond, retourne "Unknown"
   }
-  if (/{1:SA:|=/.test(questionText) && !/{#/.test(questionText)) {
-    return "Short Answer"; // Retourne Short Answer pour les questions à réponse courte.
-  }
-  if (/{#/.test(questionText)) {
-    return "Matching"; // Retourne Matching pour les questions de type association.
-  }
-  if (questionText.length > 150) {
-    return "Essay"; // Retourne Essay pour les questions longues.
-  }
-  return "Unknown"; // Retourne "Unknown" si aucun type ne correspond.
-}
+  
+
 
 function createNewContact(contactInfo) {
   const { firstName, lastName, phone, email } = contactInfo;

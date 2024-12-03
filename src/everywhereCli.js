@@ -166,6 +166,31 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         const labels = Object.keys(typeCounts); // Les types de questions
         const counts = Object.values(typeCounts); // Le nombre de chaque type
 
+        // Définir les couleurs pour chaque type
+        const backgroundColors = [
+          'rgba(255, 99, 132, 0.5)',  // Rouge
+          'rgba(54, 162, 235, 0.5)',  // Bleu
+          'rgba(255, 206, 86, 0.5)',  // Jaune
+          'rgba(75, 192, 192, 0.5)',  // Vert
+          'rgba(153, 102, 255, 0.5)', // Violet
+          'rgba(255, 159, 64, 0.5)',  // Orange
+          'rgba(255, 99, 132, 0.3)',  // Rouge clair
+          'rgba(0, 255, 0, 0.5)',     // Vert vif
+          'rgba(0, 0, 255, 0.5)',     // Bleu vif
+        ];
+
+        const borderColors = [
+          'rgba(255, 99, 132, 1)',  // Rouge
+          'rgba(54, 162, 235, 1)',  // Bleu
+          'rgba(255, 206, 86, 1)',  // Jaune
+          'rgba(75, 192, 192, 1)',  // Vert
+          'rgba(153, 102, 255, 1)', // Violet
+          'rgba(255, 159, 64, 1)',  // Orange
+          'rgba(255, 99, 132, 1)',  // Rouge clair
+          'rgba(0, 255, 0, 1)',     // Vert vif
+          'rgba(0, 0, 255, 1)',     // Bleu vif
+        ];
+
         // Contenu HTML dynamique
         const htmlContent = `
 <!DOCTYPE html>
@@ -185,20 +210,8 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
             datasets: [{
                 label: "Distribution des Types",
                 data: ${JSON.stringify(counts)},
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(54, 162, 235, 0.5)',
-                    'rgba(255, 206, 86, 0.5)',
-                    'rgba(75, 192, 192, 0.5)',
-                    'rgba(153, 102, 255, 0.5)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
+                backgroundColor: ${JSON.stringify(backgroundColors.slice(0, labels.length))},
+                borderColor: ${JSON.stringify(borderColors.slice(0, labels.length))},
                 borderWidth: 1
             }]
         };
@@ -243,6 +256,7 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         );
       }
     });
+
 
   cli
     .command("questions add", "Ajoute une nouvelle question à la banque")
