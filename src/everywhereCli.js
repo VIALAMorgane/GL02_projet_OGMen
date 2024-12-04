@@ -424,6 +424,7 @@ function registerQuestionCommands(cli) {
     );
   });
 
+  //Ajout de la commande de création de contacts
   cli
     .command("contact create", "Créer votre carte contact")
     .action(async ({ logger }) => {
@@ -431,7 +432,7 @@ function registerQuestionCommands(cli) {
         input: process.stdin,
         output: process.stdout,
       });
-
+      //Récolte des informations pour créer la vCard
       logger.info("Veuillez saisir vos informations");
 
       const questions = ["Prénom : ", "Nom : ", "Téléphone : ", "Email : "];
@@ -448,6 +449,7 @@ function registerQuestionCommands(cli) {
 
       rl.close();
 
+      //mise en forme des informations pour la création de la vCard
       const contactInfo = {
         firstName: answers.prénom,
         lastName: answers.nom,
@@ -455,8 +457,10 @@ function registerQuestionCommands(cli) {
         email: answers.email,
       };
 
+      //creation de la vCard
       const success = createNewContact(contactInfo);
 
+      //gestion des potentielles erreurs
       if (success) {
         logger.info("Contact créé avec succès !");
       } else {
@@ -464,6 +468,7 @@ function registerQuestionCommands(cli) {
       }
     });
 
+  //Ajout de la commande de modification dee contact
   cli
     .command("contact update", "Modifier votre carte contact")
     .action(async ({ logger }) => {
@@ -471,6 +476,8 @@ function registerQuestionCommands(cli) {
         input: process.stdin,
         output: process.stdout,
       });
+
+      //Identification pour modifier la vCard
       logger.info(
         "Veuillez saisir votre prénom et votre nom pour modifier votre carte :",
       );
@@ -494,18 +501,21 @@ function registerQuestionCommands(cli) {
         lastName: answers.nom,
       };
 
+      //Recherche du contact existant dans les fichiers
       const found = findContact(contactName);
 
       if (found) {
         logger.info(
           "Contact trouvé avec succès !\nSaisissez les nouvelles informations",
         );
+        //Si le contact est trouvé, suppression du contact existant
         deleteContact(contactName);
         const rl = readline.createInterface({
           input: process.stdin,
           output: process.stdout,
         });
 
+        //Création d'un nouveau contact pour rentrer les noucelles informations
         const questions = ["Prénom : ", "Nom : ", "Téléphone : ", "Email : "];
 
         const answers = {};
@@ -533,11 +543,13 @@ function registerQuestionCommands(cli) {
         } else {
           logger.error("Échec de la modification du contact.");
         }
+        //Si aucun contact n'est trouvé, renvoi d'un message d'erreur
       } else {
         logger.error("Contact non trouvé, veuillez créer votre carte");
       }
     });
 
+  //Ajout de la commande pour obtenir les informations sur un contact
   cli
     .command("contact read", "Afficher les informations à propos d'un contact")
     .action(async ({ logger }) => {
@@ -545,6 +557,8 @@ function registerQuestionCommands(cli) {
         input: process.stdin,
         output: process.stdout,
       });
+
+      //Demande d'informations pour trouver la carte
       logger.info(
         "Veuillez saisir le prénom et le nom du contact à afficher :",
       );
@@ -567,9 +581,11 @@ function registerQuestionCommands(cli) {
         firstName: answers.prénom,
         lastName: answers.nom,
       };
+      //Afficahge des informations du contact depuis le fichier vcf
       displayContactInfos(contactName);
     });
 
+  //Ajout de la commande de suppression d'un contact
   cli
     .command("contact delete", "Supprimer votre contact")
     .action(async ({ logger }) => {
@@ -577,6 +593,8 @@ function registerQuestionCommands(cli) {
         input: process.stdin,
         output: process.stdout,
       });
+
+      //Identification avant suppression
       logger.info(
         "Veuillez saisir votre prénom et votre nom pour supprimer votre carte :",
       );
@@ -599,7 +617,10 @@ function registerQuestionCommands(cli) {
         firstName: answers.prénom,
         lastName: answers.nom,
       };
+      //Suppression du fichier vcf
       const success = deleteContact(contactName);
+
+      //gestion des potentielles erreurs
       if (success) {
         logger.info("Votre carte contact a bien été supprimée");
       } else {

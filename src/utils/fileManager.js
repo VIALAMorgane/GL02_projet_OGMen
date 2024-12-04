@@ -170,14 +170,17 @@ function detectQuestionType(questionText) {
   return "Unknown"; // Retourne "Unknown" si aucun type ne correspond.
 }
 
+//fonction de création de fichier vcf à partir d'un objet contact
 function createNewContact(contactInfo) {
   const { firstName, lastName, phone, email } = contactInfo;
 
+  //vérification de la présence des informations nécessaires
   if (!firstName || !lastName) {
     console.error("Le prénom et le nom sont requis pour créer un contact.");
     return false;
   }
 
+  //mise en forme d l'objet contact en format vCard
   const vCardContent = `BEGIN:VCARD
 VERSION:3.0
 FN:${firstName} ${lastName}
@@ -186,9 +189,11 @@ TEL;TYPE=HOME,VOICE:${phone || ""}
 EMAIL;TYPE=HOME,INTERNET:${email || ""}
 END:VCARD`;
 
+  //définition du nom et du chemin du fichier
   const fileName = `${firstName}_${lastName}.vcf`;
   const filePath = path.join(__dirname, "../data/contacts", fileName);
 
+  //sauvegarde du fichier vcf dans @src/data/contacts en prenant en compte les erreurs
   try {
     fs.writeFileSync(filePath, vCardContent, "utf-8");
     console.log(`Contact sauvegardé avec succès dans ${fileName}`);
@@ -199,22 +204,30 @@ END:VCARD`;
   }
 }
 
+//Fonction de recherche de contacts dans les fichiers vcf
 function findContact(contactName) {
+  //Mise en forme des informations du contact pour la recherche
   const { firstName, lastName } = contactName;
+
+  //définition dunom et du chemin du fichier en prenant en compte le nom et le prénom du contact
   const contactsDirPath = path.join(__dirname, "../data/contacts");
   const fileName = `${firstName}_${lastName}.vcf`;
   const filePath = path.join(contactsDirPath, fileName);
 
-  // Vérifier si le fichier existe
+  // Vérifier si le fichier existe et retourner un booléen
   return fs.existsSync(filePath);
 }
 
+//Fonction de suppression de contact
 const deleteContact = (contactName) => {
+  //Recherche du contact dans les fichiers vcf
   const { firstName, lastName } = contactName;
   const contactsDirPath = path.join(__dirname, "../data/contacts");
   const fileName = `${firstName}_${lastName}.vcf`;
   const filePath = path.join(contactsDirPath, fileName);
+
   if (findContact(contactName)) {
+    // Si le contact est trouvé, suppression du fichier, renvoi d'un booléen en fonction du succès
     try {
       fs.unlinkSync(filePath);
       return true;
@@ -222,18 +235,21 @@ const deleteContact = (contactName) => {
       return false;
     }
   } else {
-    console.warn(`Le fichier ${fileName} n'existe pas.`);
+    //Renvoi d'un message d'erreur si le fichier n'existe pas
+    console.warn(`Le fichiers ${fileName} n'existe pas.`);
     return false;
   }
 };
 
+//Foction d'affichage des informations de contact
 function displayContactInfos(contactName) {
+  //Recherche du contact dans les fichiers
   const { firstName, lastName } = contactName;
   const contactsDirPath = path.join(__dirname, "../data/contacts");
   const fileName = `${firstName}_${lastName}.vcf`;
   const filePath = path.join(contactsDirPath, fileName);
-
   if (findContact(contactName)) {
+    //Affichage des informations du contact si le fichier est trouvé
     const vCardContent = fs.readFileSync(filePath, "utf-8");
     const contactInfos = parseVCard(vCardContent);
     console.log(`Informations du contact ${firstName} ${lastName} :`);
@@ -242,6 +258,7 @@ function displayContactInfos(contactName) {
     console.log(`Téléphone : ${contactInfos.phone}`);
     console.log(`Email : ${contactInfos.email}`);
   } else {
+    //Affichage d'un message d'erreur si le fichier n'est pas trouvé
     console.log(`Aucun contact trouvé avec le nom ${firstName} ${lastName}.`);
   }
 }
