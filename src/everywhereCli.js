@@ -75,10 +75,10 @@ function messageDebut() {
     6. exam generate               - Génère un examen contenant entre 15 et 20 questions
     7. exam export --id <id>       - Exporte un examen au format GIFT
     8. questions deduplicate       - Supprime les doublons dans les titres des questions
-    9. contact create              - Créer un nouveau contact
-    10. contact update             - Modifier un contact
+    9. contact create              - Créer votre carte contact
+    10. contact update             - Modifier votre carte contact
     11. contact read               - Lire les informations à propos d'un contact
-    12. contact delete             - Supprimer un contact
+    12. contact delete             - Supprimer votre contact
     `);
 }
 // Enregistrer les commandes CLI
@@ -444,15 +444,16 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
     );
   });
 
+  //Ajout de la commande de création de contacts
   cli
-    .command("contact create", "Créer un nouveau contact")
+    .command("contact create", "Créer votre carte contact")
     .action(async ({ logger }) => {
       const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
       });
-
-      logger.info("Veuillez saisir les informations du nouveau contact");
+      //Récolte des informations pour créer la vCard
+      logger.info("Veuillez saisir vos informations");
 
       const questions = ["Prénom : ", "Nom : ", "Téléphone : ", "Email : "];
 
@@ -468,6 +469,7 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
 
       rl.close();
 
+      //mise en forme des informations pour la création de la vCard
       const contactInfo = {
         firstName: answers.prénom,
         lastName: answers.nom,
@@ -475,8 +477,10 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         email: answers.email,
       };
 
+      //creation de la vCard
       const success = createNewContact(contactInfo);
 
+      //gestion des potentielles erreurs
       if (success) {
         logger.info("Contact créé avec succès !");
       } else {
@@ -484,15 +488,18 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
       }
     });
 
+  //Ajout de la commande de modification dee contact
   cli
-    .command("contact update", "Modifier un contact")
+    .command("contact update", "Modifier votre carte contact")
     .action(async ({ logger }) => {
       const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
       });
+
+      //Identification pour modifier la vCard
       logger.info(
-        "Veuillez saisir le prénom et le nom du contact à modifier :",
+        "Veuillez saisir votre prénom et votre nom pour modifier votre carte :",
       );
 
       const questions = ["Prénom : ", "Nom : "];
@@ -514,18 +521,21 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         lastName: answers.nom,
       };
 
+      //Recherche du contact existant dans les fichiers
       const found = findContact(contactName);
 
       if (found) {
         logger.info(
           "Contact trouvé avec succès !\nSaisissez les nouvelles informations",
         );
+        //Si le contact est trouvé, suppression du contact existant
         deleteContact(contactName);
         const rl = readline.createInterface({
           input: process.stdin,
           output: process.stdout,
         });
 
+        //Création d'un nouveau contact pour rentrer les noucelles informations
         const questions = ["Prénom : ", "Nom : ", "Téléphone : ", "Email : "];
 
         const answers = {};
@@ -553,11 +563,13 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         } else {
           logger.error("Échec de la modification du contact.");
         }
+        //Si aucun contact n'est trouvé, renvoi d'un message d'erreur
       } else {
-        logger.error("Contact non trouvé");
+        logger.error("Contact non trouvé, veuillez créer votre carte");
       }
     });
 
+  //Ajout de la commande pour obtenir les informations sur un contact
   cli
     .command("contact read", "Afficher les informations à propos d'un contact")
     .action(async ({ logger }) => {
@@ -565,6 +577,8 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         input: process.stdin,
         output: process.stdout,
       });
+
+      //Demande d'informations pour trouver la carte
       logger.info(
         "Veuillez saisir le prénom et le nom du contact à afficher :",
       );
@@ -587,18 +601,22 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         firstName: answers.prénom,
         lastName: answers.nom,
       };
+      //Afficahge des informations du contact depuis le fichier vcf
       displayContactInfos(contactName);
     });
 
+  //Ajout de la commande de suppression d'un contact
   cli
-    .command("contact delete", "Supprimer un contact")
+    .command("contact delete", "Supprimer votre contact")
     .action(async ({ logger }) => {
       const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
       });
+
+      //Identification avant suppression
       logger.info(
-        "Veuillez saisir le prénom et le nom du contact à supprimer :",
+        "Veuillez saisir votre prénom et votre nom pour supprimer votre carte :",
       );
 
       const questions = ["Prénom : ", "Nom : "];
@@ -619,11 +637,14 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         firstName: answers.prénom,
         lastName: answers.nom,
       };
+      //Suppression du fichier vcf
       const success = deleteContact(contactName);
+
+      //gestion des potentielles erreurs
       if (success) {
-        logger.info("Contact supprimé avec succès");
+        logger.info("Votre carte contact a bien été supprimée");
       } else {
-        logger.error("Erreur dans la suppression du contact");
+        logger.error("Vous n'avez pas encore de carte contact");
       }
     });
 }
