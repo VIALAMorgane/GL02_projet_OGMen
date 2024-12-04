@@ -1,6 +1,6 @@
 const cli = require("@caporal/core").default;
 const { parseGiftDirectory } = require("./utils/parser");
-const { readQuestions, saveQuestions, deleteQuestion, saveExam, removeDuplicateQuestions,detectQuestionType } = require("./utils/fileManager");
+const { readQuestions, readExam, saveQuestions, deleteQuestion, saveExam, removeDuplicateQuestions,detectQuestionType } = require("./utils/fileManager");
 
 
 
@@ -73,6 +73,38 @@ function registerQuestionCommands(cli) {
                 questions.forEach((question, index) => {
                     logger.info(`${question.title}`);
                     logger.info(`   Texte : ${question.text}`);
+                });
+            }
+        });
+
+    //Commande qui permet d'afficher un examen en fonction de l'id entré en paramètre
+    cli.command("read exam", "Affiche toutes les questions dun exam")
+        //Option qui gère l'id séléctionné par l'utilisateur
+        .option("--id <id>", "Id de l'examen choisi", { required: true }) 
+        //Comportement de la commande
+        .action(({ logger, options }) => {
+            const { id } = options;
+            //On lit notre fichier qui contient tous les exams
+            const exams = readExam();
+            //Si il n'existe pas d'examen, alors rien ne se passe. On renvoit juste un string
+            if (exams.length === 0) {
+                logger.info("Aucun examen n'a encore été créé.");
+            } else {
+                //En revanche si un ou des examens ont été trouvé, alors on parcours la liste de tous les examens dans le fichier
+                exams.every((exams) => {
+                    //Et si un examen possède le même id que celui entré en paramètre par l'utilisateur
+                    if(exams.id === id){
+                        //Alors on affiche toutes ses données
+                        logger.info(`Id de l'examen : ${exams.id}`);
+                        logger.info(`Date de création : ${exams.date}`);
+                        logger.info(`Questions de l'examen :`);
+                        exams.questions.forEach((exams) => {
+                            logger.info(exams.title);
+                            logger.info(exams.text);
+                        })
+                        //Return false permet ici de casser la boucle de parcours des examens. Every est comme un forEach sauf que c'est arrêtable à souhait
+                        return false;
+                    }
                 });
             }
         });
