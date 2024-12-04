@@ -75,10 +75,10 @@ function messageDebut() {
     6. exam generate               - Génère un examen contenant entre 15 et 20 questions
     7. exam export --id <id>       - Exporte un examen au format GIFT
     8. questions deduplicate       - Supprime les doublons dans les titres des questions
-    9. contact create              - Créer un nouveau contact
-    10. contact update             - Modifier un contact
+    9. contact create              - Créer votre carte contact
+    10. contact update             - Modifier votre carte contact
     11. contact read               - Lire les informations à propos d'un contact
-    12. contact delete             - Supprimer un contact
+    12. contact delete             - Supprimer votre contact
     `);
 }
 // Enregistrer les commandes CLI
@@ -425,14 +425,14 @@ function registerQuestionCommands(cli) {
   });
 
   cli
-    .command("contact create", "Créer un nouveau contact")
+    .command("contact create", "Créer votre carte contact")
     .action(async ({ logger }) => {
       const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
       });
 
-      logger.info("Veuillez saisir les informations du nouveau contact");
+      logger.info("Veuillez saisir vos informations");
 
       const questions = ["Prénom : ", "Nom : ", "Téléphone : ", "Email : "];
 
@@ -465,14 +465,14 @@ function registerQuestionCommands(cli) {
     });
 
   cli
-    .command("contact update", "Modifier un contact")
+    .command("contact update", "Modifier votre carte contact")
     .action(async ({ logger }) => {
       const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
       });
       logger.info(
-        "Veuillez saisir le prénom et le nom du contact à modifier :",
+        "Veuillez saisir votre prénom et votre nom pour modifier votre carte :",
       );
 
       const questions = ["Prénom : ", "Nom : "];
@@ -534,7 +534,7 @@ function registerQuestionCommands(cli) {
           logger.error("Échec de la modification du contact.");
         }
       } else {
-        logger.error("Contact non trouvé");
+        logger.error("Contact non trouvé, veuillez créer votre carte");
       }
     });
 
@@ -571,14 +571,14 @@ function registerQuestionCommands(cli) {
     });
 
   cli
-    .command("contact delete", "Supprimer un contact")
+    .command("contact delete", "Supprimer votre contact")
     .action(async ({ logger }) => {
       const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
       });
       logger.info(
-        "Veuillez saisir le prénom et le nom du contact à supprimer :",
+        "Veuillez saisir votre prénom et votre nom pour supprimer votre carte :",
       );
 
       const questions = ["Prénom : ", "Nom : "];
@@ -601,9 +601,9 @@ function registerQuestionCommands(cli) {
       };
       const success = deleteContact(contactName);
       if (success) {
-        logger.info("Contact supprimé avec succès");
+        logger.info("Votre carte contact a bien été supprimée");
       } else {
-        logger.error("Erreur dans la suppression du contact");
+        logger.error("Vous n'avez pas encore de carte contact");
       }
     });
 }
