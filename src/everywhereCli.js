@@ -86,6 +86,7 @@ function registerQuestionCommands(cli) {
             const { id } = options;
             //On lit notre fichier qui contient tous les exams
             const exams = readExam();
+            const regex = /{.*?}/;
             //Si il n'existe pas d'examen, alors rien ne se passe. On renvoit juste un string
             if (exams.length === 0) {
                 logger.info("Aucun examen n'a encore été créé.");
@@ -99,8 +100,11 @@ function registerQuestionCommands(cli) {
                         logger.info(`Date de création : ${exams.date}`);
                         logger.info(`Questions de l'examen :`);
                         exams.questions.forEach((exams) => {
+                            //Supprime les bonnes et mauvaises réponses dans l'affichage 
+                            text = exams.text.replaceAll('~', '');
+                            text = text.replaceAll('=', '');
                             logger.info(exams.title);
-                            logger.info(exams.text);
+                            logger.info(text);
                         })
                         //Return false permet ici de casser la boucle de parcours des examens. Every est comme un forEach sauf que c'est arrêtable à souhait
                         return false;
