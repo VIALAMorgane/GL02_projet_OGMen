@@ -86,13 +86,17 @@ function registerQuestionCommands(cli) {
 
     //Commande qui permet d'afficher un examen en fonction de l'id entré en paramètre
     cli.command("read exam", "Affiche toutes les questions dun exam")
+
         //Option qui gère l'id séléctionné par l'utilisateur
         .option("--id <id>", "Id de l'examen choisi", { required: true }) 
+
         //Comportement de la commande
         .action(({ logger, options }) => {
             const { id } = options;
+
             //On lit notre fichier qui contient tous les exams
             const exams = readExam();
+
             //REGEX pour trouver les reponses correctes des questions
             const regex = /(?<==).*?[.]|(?<==).*?(?=[.~])/;
 
@@ -107,17 +111,20 @@ function registerQuestionCommands(cli) {
             if (exams.length === 0) {
                 logger.info("Aucun examen n'a encore été créé.");
             } else {
+
                 //En revanche si un ou des examens ont été trouvé, alors on parcours la liste de tous les examens dans le fichier
                 exams.every((exams) => {
+
                     //Et si un examen possède le même id que celui entré en paramètre par l'utilisateur
                     if(exams.id === id){
+
                         //Alors on affiche toutes ses données
                         logger.info(`Id de l'examen : ${exams.id}`);
                         logger.info(`Date de création : ${exams.date}`);
                         logger.info(`Questions de l'examen :`);
 
 
-                        
+                        //On parcours toutes les questions présentent dans l'examen choisi
                         exams.questions.forEach((exams) => {
 
                             //Stock la ou les bonnes réponses de la question en cours
@@ -126,14 +133,19 @@ function registerQuestionCommands(cli) {
                             text = exams.text.replaceAll('~', ' ');
                             text = text.replaceAll('=', ' ');
 
-                            
-                            reader.question(goodAnswer + '\n' + 'Entrez votre réponse ici : ', userAnswer => {
+                            //Gère les interactions entre le User et le terminal
+                            reader.question(text + '\n' + 'Entrez votre réponse ici : ', userAnswer => {
                                 
+                                //Si la réponse donnée par le User est contenu dans le string des bonnes réponses
                                 if(goodAnswer.includes(userAnswer)){
+
+                                    //Alors on incrémente son score et on le félicite
                                     ++score;
                                     logger.info("Vous avez trouvé la bonne réponse !");
                                 }
                                 else{
+
+                                    //Sinon on le prévient que sa réponse est incorrecte (examen non négatif)
                                     logger.info("Votre réponse n'est pas correcte.");
                                 }
 
@@ -141,11 +153,16 @@ function registerQuestionCommands(cli) {
                             })
 
                         })
+
                         //Return false permet ici de casser la boucle de parcours des examens. Every est comme un forEach sauf que c'est arrêtable à souhait
                         return false;
                     }
                 });
+
+                //logger.info("Votre score à l'examen " + id + " est de : " + score);
+
             }
+
         });
 
     cli.command("questions import", "Importe les questions depuis le répertoire ./data")
