@@ -6,6 +6,13 @@ const { readQuestions, readExam, saveQuestions, deleteQuestion, saveExam, remove
 
 const fs = require("fs");
 const path = require("path");
+const readline = require('readline');
+
+//Pour la simulation d'examen, permet de lire des entrées dans le terminal
+const reader = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
 
 // Importation automatique des questions avec détection des types
 function importAllQuestions() {
@@ -86,8 +93,16 @@ function registerQuestionCommands(cli) {
             const { id } = options;
             //On lit notre fichier qui contient tous les exams
             const exams = readExam();
-            //REGEX pour trouver les reponses des questions
-            const regex = /=.*? |=.*?}/;
+            //REGEX pour trouver les reponses correctes des questions
+            const regex = /(?<==).*?[.]|(?<==).*?(?=[.~])/;
+
+            /* CODEX DES REGEX
+            =.*?~|=.*?}
+            =.*?[.]|=.*?(?=[.~])
+            */
+
+            let score = 0;
+
             //Si il n'existe pas d'examen, alors rien ne se passe. On renvoit juste un string
             if (exams.length === 0) {
                 logger.info("Aucun examen n'a encore été créé.");
@@ -100,18 +115,31 @@ function registerQuestionCommands(cli) {
                         logger.info(`Id de l'examen : ${exams.id}`);
                         logger.info(`Date de création : ${exams.date}`);
                         logger.info(`Questions de l'examen :`);
+
+
+                        
                         exams.questions.forEach((exams) => {
 
-
-
-
                             //Stock la ou les bonnes réponses de la question en cours
-                            goodAnswer = exams.text.match(regex);
+                            let goodAnswer = exams.text.match(regex);
                             //Supprime l'indication d'une bonne ou mauvaise réponse, pour ne garder que les réponses simples'
                             text = exams.text.replaceAll('~', ' ');
                             text = text.replaceAll('=', ' ');
-                            logger.info(exams.title);
-                            logger.info(goodAnswer);
+
+                            
+                            reader.question(goodAnswer + '\n' + 'Entrez votre réponse ici : ', userAnswer => {
+                                
+                                if(goodAnswer.includes(userAnswer)){
+                                    ++score;
+                                    logger.info("Vous avez trouvé la bonne réponse !");
+                                }
+                                else{
+                                    logger.info("Votre réponse n'est pas correcte.");
+                                }
+
+                                reader.close();
+                            })
+
                         })
                         //Return false permet ici de casser la boucle de parcours des examens. Every est comme un forEach sauf que c'est arrêtable à souhait
                         return false;
