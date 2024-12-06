@@ -182,8 +182,6 @@ function askQuestion(questions, index = 0, score = 0) {
       }
     }
 
-    console.log(answer + '\n\n');
-
     // Pose la question à l'utilisateur
     reader.question(text + '\n' + 'Entrez votre réponse ici : ', (userAnswer) => {
         // Vérifie la réponse
