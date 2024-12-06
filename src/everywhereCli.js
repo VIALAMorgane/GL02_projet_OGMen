@@ -28,6 +28,7 @@ const reader = readline.createInterface({
     output: process.stdout
 })
 
+
 // Importation automatique des questions avec détection des types
 function importAllQuestions() {
   try {
@@ -62,6 +63,7 @@ function importAllQuestions() {
       ),
     ];
 
+
     // Sauvegarder les questions dans questions.json
     saveQuestions(uniqueQuestions);
 
@@ -75,6 +77,8 @@ function importAllQuestions() {
     );
   }
 }
+
+
 // Message de bienvenue avec la liste des commandes disponibles
 function messageDebut() {
   console.log("Bienvenue dans Everywhere CLI !");
@@ -99,6 +103,8 @@ function messageDebut() {
     17. simulate exam --id <id_exam>              - Simule un examen avec résultat 
     `);
 }
+
+
 // FONCTION POUR AFFICHER LES QUESTIONS D'UN EXAMEN
 function askQuestion(questions, index = 0, score = 0) {
     // Si on a parcouru toutes les questions, on termine
@@ -130,6 +136,9 @@ function askQuestion(questions, index = 0, score = 0) {
     
     let goodAnswer = [];
     let answer = '';
+    if (question.type === 'Unkown') {
+      goodAnswer.push('Unknow');
+    } else {
     for (let i = 0; i < goodAnswerMatch[0].length; ++i) {
         let char = goodAnswerMatch[0][i];
 
@@ -146,11 +155,12 @@ function askQuestion(questions, index = 0, score = 0) {
             answer += char;
         }
     }
-    
+  
     // Ajoute le dernier mot si la chaîne ne se termine pas par un caractère spécial
     if (answer.length > 0) {
         goodAnswer.push(answer);
     }
+}
 
     // Pose la question à l'utilisateur
     reader.question(text + '\n' + 'Entrez votre réponse ici : ', (userAnswer) => {
@@ -166,6 +176,7 @@ function askQuestion(questions, index = 0, score = 0) {
         askQuestion(questions, index + 1, score);
     });
 }
+
 
 // Enregistrer les commandes CLI
 function registerQuestionCommands(cli) {
@@ -241,46 +252,6 @@ function registerQuestionCommands(cli) {
 
         });
 
-    cli.command("questions import", "Importe les questions depuis le répertoire ./data")
-        .action(({ logger }) => {
-            try {
-                importAllQuestions();
-                logger.info("Importation des questions terminée.");
-            } catch (err) {
-                logger.error(`Erreur lors de l'importation des questions : ${err.message}`);
-            }
-        });
-
-        cli.command("questions delete <title>", "Supprime une question par titre exact")
-        .action(({ logger, args }) => {
-            const title = args.title;
-            logger.info(`Suppression demandée pour : "${title}"`); // Log pour vérifier l'entrée utilisateur
-    
-            const result = deleteQuestion(title);
-    
-            if (result) {
-                logger.info(`La question "${title}" a été supprimée avec succès.`);
-            } else {
-                logger.warn(`Aucune question avec le titre exact "${title}" n'a été trouvée.`);
-            }
-        });
-    
-        const fs = require("fs");
-const path = require("path");
-cli.command("questions chart", "Génère un fichier HTML avec un graphique des types de questions")
-    .action(({ logger }) => {
-      const questions = readQuestions();
-      if (questions.length === 0) {
-        logger.info("Aucune question trouvée.");
-      } else {
-        // Affiche les questions
-        logger.info(`Nombre total de questions : ${questions.length}`);
-        questions.forEach((question, index) => {
-          logger.info(`${question.title}`);
-          logger.info(`   Texte : ${question.text}`);
-        });
-      }
-    });
   // COMMANDE QUESTION IMPORT POUR IMPORTER LES QUESTIONS
   cli
     .command(
@@ -297,6 +268,7 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         );
       }
     });
+
   // COMMANDE QUESTION DELETE POUR SUPPRIMER UNE QUESTION
   cli
     .command(
@@ -335,6 +307,7 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         );
       }
     });
+
   // COMMANDE QUESTION CHART POUR GENERER UN GRAPHIQUE DES TYPES DE QUESTIONS
   cli
     .command(
@@ -472,6 +445,7 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         );
       }
     });
+
 // COMMANDE SEARCH QUESTION POUR RECHERCHER UNE QUESTION PAR ID
     cli
     .command("search question", "Rechercher une question par numéro")
@@ -523,6 +497,7 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         });
       }
     });
+
   // COMMANDE EXAM GENERATE POUR GENERER UN EXAMEN
   cli
     .command(
@@ -594,6 +569,7 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         );
       }
     });
+
 // COMMANDE EXAM SEARCH POUR RECHERCHER DES INFOS SUR DES EXAMENS
     cli
     .command(
@@ -703,6 +679,7 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         logger.error(`Erreur lors de l'exportation : ${error.message}`);
       }
     });
+
   // COMMANDE QUESTION DEDUPLICATE POUR SUPPRIMER LES DOUBLONS
   cli
     .command(
@@ -1044,7 +1021,7 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
       }
     });
 
-  
+// COMMANDE VISUALIZE EXAM THEME POUR VISUALISER LES THEMES D'UN EXAMEN
 cli
 .command("visualizeExamTheme", "Visualiser un profil d'examen par theme")
 .action(async ({ logger }) => {
@@ -1068,7 +1045,7 @@ cli
       logger.error('Fichier exams.json introuvable.');
       return;
     }
-
+// On recupere les données de l'examen
     const exams = JSON.parse(fs.readFileSync(examsPath, 'utf-8'));
     const selectedExam = exams.find((exam) => exam.id === examId);
 
@@ -1076,7 +1053,7 @@ cli
       logger.error("Examen introuvable !");
       return;
     }
-
+// on initialise les variables pour chaque theme 
     let Review = 0;
     let GraExpressionOfQuantity= 0;
     let Voc= 0;
@@ -1118,7 +1095,7 @@ cli
     
     selectedExam.questions.forEach((question) => {
       const { theme } = question;
-  
+  // On incrémente le compteur pour chaque theme trouvé
       if (theme === "Review" || theme ==="Review-3") Review += 1;
       else if (theme === "Gra-Expression_of_quantity") GraExpressionOfQuantity += 1;
       else if (theme === "Voc") Voc += 1;

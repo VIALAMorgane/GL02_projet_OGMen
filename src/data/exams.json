@@ -1,591 +1,289 @@
 [
   {
-    "id": "exam_1732981209845",
-    "date": "2024-11-30T15:40:09.845Z",
+    "id": "exam_1",
+    "date": "2024-12-06T19:50:26.521Z",
     "questions": [
       {
-        "title": "Question 186",
-        "text": "::U3 p32 CD.28 Present perfect vs past simple::I _____ the piano, but never in public before now. {~='ve always played~always played}"
-      },
-      {
-        "title": "Question 271",
-        "text": "blooming.\n\n::U5 p49 GR2.3::Only a bit of the orange juice I bought for the children {=is}"
-      },
-      {
-        "title": "Question 436",
-        "text": "(<i>show</i>) his still lifes at the exhibition.\n\n::U6 p67 Rev3.4::[html]We might {=use|be using}"
-      },
-      {
-        "title": "Question 369",
-        "text": "that it's actually quite simple if you follow my instructions. (<i>find</i>)\n\n::U6 p61 GR 1.8 Future forms::[html]They {=are holding='re holding}"
-      },
-      {
-        "title": "Question 279",
-        "text": "good for you.\n\n::U5 p49 11.5::There {~=is~are}"
-      },
-      {
-        "title": "Question 272",
-        "text": "left.\n\n::U5 p49 GR2.4::There {=are}"
-      },
-      {
-        "title": "Question 294",
-        "text": "::U5 p50 5.4 lots of::[html]<u>Lots</u> of our favourite dishes {=many=a large number}"
-      },
-      {
-        "title": "Question 266",
-        "text": "eggs each week.\n\n::U5 p49 GR1.6 Expressions of quantity::I'd like to have {=some ~a few}"
-      },
-      {
-        "title": "Question 321",
-        "text": "it first to see if it’s needed.\n\n::U5 p57 Rev1.5::Some cultures are known {~by =for ~about ~with}"
-      },
-      {
-        "title": "Question 299",
-        "text": "::U5 p52 3.5 Reading compr::What point is made in the fifth paragraph? {\n  ~=Most of our food has been altered in some way.\n  ~Food production needs to get more efficient.\n  ~People are reluctant to eat food products they consider unnatural.\n  ~Plants which are easy to grow will soon replace more popular vegetables.\n}"
-      },
-      {
-        "title": "Question 473",
-        "text": "everyone again.\n\n::U7 p77 [Key word transformation] 6.5::[html]He said I didn't need to make an appointment.<br>\n<b>NEED</b><br>\nHe said {=there was no need}"
-      },
-      {
-        "title": "Question 328",
-        "text": "of cake left. Who’s eaten it all?\n\n::U5 p57 Rev2.4::She eats {=hardly}"
-      },
-      {
-        "title": "Question 327",
-        "text": "eggs these days; just two a week.\n\n::U5 p57 Rev2.3::There’s only a tiny {=bit=piece=slice}"
-      },
-      {
-        "title": "Question 411",
-        "text": "(<i>use</i>) surround sound systems with their TVs.\n\n::U6 p64 6.3 Future perfect & continuous::[html]By 2050, we may {=be choosing}"
-      },
-      {
-        "title": "Question 300",
-        "text": "::U5 p52 3.6 Reading compr::In the final paragraph, the writer expresses {\n  ~doubt that Soylent is only suitable for one group of people.\n  ~=hope that Soylent may be a solution to a serious problem.\n  ~surprise about the predicted demand for Soylent products.\n  ~disagreement that products like Soylent are a risk to family life.\n}"
-      }
-    ]
-  },
-  {
-    "id": "exam_1732981297496",
-    "date": "2024-11-30T15:41:37.496Z",
-    "questions": [
-      {
-        "title": "Question 492",
-        "text": "::U7 p79 Review 3.6::You can' t just turn ___________ like this, unexpectedly, and expect me to be free.{\n\t~on\n\t=up\n\t~in\n\t~off\n}"
-      },
-      {
-        "title": "Question 467",
-        "text": "to eat yet?\n\n::U7 p77 [So,such,too,enough,very] 1.7::He did {~enough~=so~such~too~very}"
-      },
-      {
-        "title": "Question 488",
-        "text": "::U7 p79 Review 3.2::I need to get a _________ ticket because I am coming back this evening.{\n\t~round\n\t=return\n\t~package\n\t~direct\n}"
-      },
-      {
-        "title": "Question 475",
-        "text": "$CATEGORY: $course$/top/Gold B2, Unit 7\n\n::U7 p77 [It/There is] 4.0::[html]Complete these sentences with <i>it</i> or <i>there</i> and a form of <i>be</i> if necessary.\n\n::U7 p77 [It/There is] 4.1::{=It is =it is =It's =it's}"
-      },
-      {
-        "title": "Question 489",
-        "text": "::U7 p79 Review 3.3::There's no ________ buying a car if you're never going to drive it.{\n\t~reason\n\t~need\n\t=point\n\t~objective\n}"
-      },
-      {
-        "title": "Question 466",
-        "text": "a good time that we decided to stay for longer.\n\n::U7 p77 [So,such,too,enough,very] 1.6::Is that fruit ripe {=enough~so~such~too~very}"
-      },
-      {
-        "title": "Question 74",
-        "text": ".\n\n::EM U5 p37 Reading 3.3::Vegetarianism is always a {=controversial}"
-      },
-      {
-        "title": "Question 128",
-        "text": "we understand it today.\n\n::U10 p106-7 Reading Prepositions RS.6::Research carried {=out}"
-      },
-      {
-        "title": "Question 72",
-        "text": "// 3\n\n::EM U5 p37 Reading 3.0 Voc::Complete the following sentences with the correct form of the underlined words in the text.\n\n::EM U5 p37 Reading 3.1::They {=replaced}"
-      },
-      {
-        "title": "Question 122",
-        "text": "::U10 p106-7 Reading 2.6::The writer says that online dating agencies are popular because they {\n  ~=mean people are less reliant on chance.\n  ~give people hope of finding the perfect soulmate.\n  ~are more reliable than traditional ways of meeting the right person.\n  ~give people a much wider choice of potential partners.}"
-      },
-      {
-        "title": "Question 483",
-        "text": "is almost lunchtime.\n\n::U7 p77 [It/There is] GR+.5::{~=It ~There}"
-      },
-      {
-        "title": "Question 479",
-        "text": "no need to tip waiters in restaurants.\n\n\n\n::U7 p77 [It/There is] GR+.1::{~=It ~There}"
-      },
-      {
-        "title": "Question 119",
-        "text": "::U10 p106-7 Reading 2.3::What does the writer say about the use of the word 'soulmate' in paragraph three? {\n  ~It was used earlier than was previously thought.\n  ~It took a long time for it to be widely understood.\n  ~The meaning has changed very recently.\n  ~=It was first used to describe an unusual and unfamiliar concept.}"
-      },
-      {
-        "title": "Question 490",
-        "text": "::U7 p79 Review 3.4::It was ______ a beautiful place that they decided to stay there longer.{\n\t~so\n\t~enough\n\t~really\n\t=such\n}"
-      },
-      {
-        "title": "Question 99",
-        "text": "his homework.\n\n::EM U6 p46-47 4.4::[html]I never seem to find the time to read newspapers these days. (<b>ROUND</b>)<br>\nI never seem to {=get round to reading}"
-      },
-      {
-        "title": "Question 100",
-        "text": "newspapers these days.\n\n::EM U6 p46-47 4.5::[html]Nothing irritates me as much as getting piles of junk mail through the post. (<b>MORE</b>)<br>\nThere is nothing {=more irritating than}"
-      },
-      {
-        "title": "Question 465",
-        "text": "many people who could do that.\n\n::U7 p77 [So,such,too,enough,very] 1.5::We had {~enough~so~=such~too~very}"
-      }
-    ]
-  },
-  {
-    "id": "exam_1733125927627",
-    "date": "2024-12-02T07:52:07.627Z",
-    "questions": [
-      {
-        "title": "Question 30",
-        "text": "the tennis game that they cheered loudly at the end.\r\n\r\n::EM U4 p33 Review 4.2 interesting for/to::[html]I'm very interesled in learning about the culture of other countries<br>\r\n<b>IS</b><br>\r\nLearning about the culture of other countries {=is very interesting for =is very interesting to#change of adjective form: interested – interesting}",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 43",
-        "text": ", I can't sleep\n\n::EM U5 p34 Gra1.5::I buy very {~=few~little}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 229",
-        "text": "::U4 p43 3.3::What does Leo say was easier for the 21st-century expedition than for Shackleton’s expedition?{\n~=planning their daily route.\n~doing the cooking.\n~carrying their equipment.\n}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 178",
-        "text": "::U3 p32 CD.20 Present perfect vs past simple::My Mum _____ to us every night when we were growing up.{~=read~'s read}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 128",
-        "text": "we understand it today.\n\n::U10 p106-7 Reading Prepositions RS.6::Research carried {=out}",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 347",
-        "text": "::U6 p59 Voc10.1 the arts::[html]<small><p><i>Complete the sentence with one of the following words: <b>abstract • blockbusters • cast • contemporary • gallery • productions</b>.</i></p></small>\n<p>I'm not convinced I like all classical ballet but I love {=contemporary}",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 485",
-        "text": "is very cold again today.\r\n\r\n::U7 p77 [It/There is] GR+.7::{~It ~=There}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 270",
-        "text": "the most difficult.\r\n\r\n::U5 p49 GR2.2::Hardly any of the roses in the garden {=are}",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 373",
-        "text": "::U6 p62 Reading 4::For the gaps in the text (1-6), choose the sentence that fits each gap. There is one extra sentence which you do not need to use. {\n  =1 -> Then came reality TV, which turned the attention back to ourselves.\n  =2 -> Interestingly, what they all seem to have in common is digital attention seeking.\n  =3 -> Such increases pre-date social media but they have clearly worsened since its arrival.\n  =4 -> The explanation for this is that narcissistic individuals are much more likely to use social media to portray an enviable, if unrealistic, self-image, broadcasting their life to an audience and gaining many virtual friends.\n  =5 -> Furthermore, the need to be appreciated is a crucial part of psychological wellbeing, unless it is taken too far and becomes a nonstop search to be valued by others.\n  =6 -> New ‘self-help’ mathematical formulas could be built into Facebook, Twitter and Instagram.\n  =-> However, the danger is when these efforts to compensate are supported and rewarded by others.\n  }",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 316",
-        "text": ".\r\n\r\n::U5 p54 GR4.5 Passive reporting forms::[html]People believe that the criminal had a false passport.<br>\r\nIt {=is believed that the criminal had a false passport='s believed that the criminal had a false passport=is believed that the criminal had a false passport.='s believed that the criminal had a false passport.}",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 303",
-        "text": "::U5 p52 7.2 Collocations::The business ______ rapidly.{\r\n  ~%50%expanded\r\n  ~%50%grew\r\n}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 372",
-        "text": "// U6 p62-63 Reading\r\n\r\n::U6 p62 Reading - Text: Sharing the self love::[html]<h4>Sharing the (self) love: the rise of the selfie and digital narcissism</h4>\r\n<p>Welcome to the age of digital narcissism. We can all name celebrities who are keen users of social media and who we suspect have the following things in common: a desire to be noticed, a self-important view of themselves, superficial personalities and shameless self-publicity. In that sense, they are just like millions of their Facebook and Twitter fans around the world, except successful.</p>\r\n<p>Until the 90s, the media provided an escape from <u>reality</u> by transporting viewers to the fictional universe of situational comedy and soap operas. <b>[1]</b> It did this by broadcasting the allegedly genuine and ordinary lives of everyday people and making them into <u>cultural</u> blockbusters. However, in the past decade, social media appears to have enabled everybody to make their life public and be the star of their own 24/7 show.</p>\r\n<p>There are now many mega-successful apps and websites. <b>[2]</b> It all began with MySpace, a list of <u>hopeful</u> future pop stars and DJs. Then came Facebook, the <u>choice</u> of the average person. YouTube gave everybody their own TV channel, Blogger and Tumblr made us all creative writers. Twitter brought in loads of followers and LinkedIn encouraged us to give each other <u>approval</u> of our professional skills. Instagram made ‘selfie’ the word of the year, while Tinder and Snapchat made Facebook look <u>intellectual</u>.</p>\r\n<p>Unsurprisingly, narcissism levels have been rising for decades. <b>[3]</b> At the same time, the advent of Facebook and Twitter has brought with it a steep decline in <u>generosity</u> and levels of sympathy. We are now more connected than ever, but also less interested in other people, except when it comes to finding out what they think about us. It is as if being closer to others made us more antisocial.</p>\r\n<p>Needless to say, most social media users are not narcissistic. Yet the more narcissistic you are, the heavier your social media use. Indeed, <u>scientific</u> studies have shown that the number of status updates, attractive selfies, followers and friends are all positively linked to narcissism. <b>[4]</b></p>\r\n<p>The big problem with the rise of digital narcissism is that it puts enormous pressure on people to reach <u>unachievable</u> goals, without necessarily putting in much effort. Wanting to be Beyoncé or Jay Z is hard enough already, but when you are not prepared to work hard to achieve it, you are better off just being less <u>ambitious</u>. Few things are more <u>destructive</u> than the <u>belief</u> that you have the right to something, combined with a lazy work ethic. Ultimately, online <u>evidence</u> of narcissism may be little more than a way of making up for a low and fragile self-esteem.<b> [5] </b>In this case, reality is misinterpreted and narcissistic fantasies are strengthened.</p>\r\n<p>Perhaps it is time to turn social media into a <u>therapeutic</u> tool, at the service of the public and society. Examining the rise of narcissism could be done both at an individual and population level. <b>[6]</b> The aim of this would be to make users aware of their <u>excessive</u> self-<u>promotion</u>, uncontrollable self-love and even signal when an entire population might be at risk of becoming too self-obsessed for its own sake. Or is it too late?</p>\r\n\r\n\r\n::U6 p62 Reading 2::[html]<b>Complete this sentence to summarise the writer’s main point.</b>\r\n<p>Socal media encourages people to...</p>{\r\n  ~get a false impression of the celebrities they follow.\r\n  ~have unrealistic hopes for their own futures.\r\n  ~=become too focused on the opinion others have of them.}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 450",
-        "text": "shops in this town.\n\n::U6 p68-69 ProgressTest2 4.4::[html]Many people believe that too much sugar is bad for your health. <b>TO</b><br>\n Too much sugar {=is believed to be}",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 364",
-        "text": "to drama college, whatever her parents say. (<i>apply</i>)\n\n::U6 p61 GR 1.4 Future forms::[html]They're rehearsing so hard – I'm sure the performance {=will be}",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 309",
-        "text": "a huge tourist attraction by most people.\n\n::U5 p54 6.3 Passive::[html]Newspapers claim that twenty top chefs have been invited to prepare the meal. <b>BY</b> <br />\nIt {=is claimed by}",
-        "type": "Short Answer"
-      }
-    ]
-  },
-  {
-    "id": "exam_1733153614187",
-    "date": "2024-12-02T15:33:34.187Z",
-    "questions": [
-      {
-        "title": "Question 433",
-        "text": "it.\n\n\n// Part 3: Short Answers\n\n::U6 p67 Rev3.0::Complete the sentences with the future continuous or future perfect form of the verbs in brackets.\n\n::U6 p67 Rev3.1::[html]I think I'll still {=be learning}",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 4",
-        "text": "to people’s experiences at the time they occur, not afterwards.\nOther scientists say that we are actually {1:MC:~=made~built~created~developed}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 82",
-        "text": "(steal)!\nOne day last week Jack went out to be yhe beach for a swim and as usual he {1:SA:=hid}",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 500",
-        "text": "the high salary I was offered, I decided to turn down the job.\n\n::U8 p84 Voc Linking words 5.8::I enjoyed my time at the law firm. I made a lot of friends there {=too.}",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 17",
-        "text": "safe place - and there is proof that dolphins do cooperate with {1:SA:=each~=each other}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 432",
-        "text": "with simply repeating the same jokes at every performance.\n\n::U6 p67 Rev2.6::Everyone says it's a really good series, but I just can't get {~away~down~=into~over~round~through}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 443",
-        "text": "in front of hundreds of people.\n\n::U6 p67 Rev4.5::Don't worry, I haven't forgotten. I {~speak~will have spoken~=am going to speak}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 141",
-        "text": "but he couldn't remember the number, so he gave up.\n\n::U2 p22 6.3a – Verb patterns -ing or inf::The kids remembered {~buying~=to buy}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "EM U42 Ultimate q1",
-        "text": "What's the answer to this multiple-choice question? {\r\n  ~wrong answer#feedback comment on the wrong answer\r\n  ~another wrong answer#feedback comment on this wrong answer\r\n  =right answer#Very good!\r\n}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 431",
-        "text": ".\n\n::U6 p67 Rev2.5::Comedians can't get {~=away~down~into~over~round~through}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 179",
-        "text": "::U3 p32 CD.21 Present perfect vs past simple::He _____ his keys here after the party.{~=left~'s left}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 452",
-        "text": "when I went to pick him up.\n\n::U6 p68-69 ProgressTest2 4.6::[html]My brother often arrives unexpectedly. <b>TURNING</b><br>\n My brother is {=always turning up}",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 47",
-        "text": "fantastic desserts at that new restaurant!\n\n// Grammar Ex. 2\n\n::EM U5 p34 Gra2.0 Expressions of quantity few/a few/little/a little::[markdown]Complete sentences with _few_, _a few_, _little_ or _a little_.\n\n::EM U5 p34 Gra2.1::I knew very {~=few~a few~little~a little}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 441",
-        "text": ", will you text me?\n\n::U6 p67 Rev4.3::I {~will be completing~=will have completed~am completing}",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 423",
-        "text": "(<i>excess</i>) amount of practice can lead to more injuries for dancers.\n\n::U6 p67 Rev1.3::[html]There is no {=evidence}",
-        "type": "Short Answer"
-      }
-    ]
-  },
-  {
-    "id": "exam_1733500007856",
-    "date": "2024-12-06T15:46:47.856Z",
-    "questions": [
-      {
-        "title": "Question 71",
-        "text": "::EM U5 p37 Reading 2.6::At the end of the experiment, what did the author decide about Huel {\r\n  ~It was impossible to use it regulary\r\n  =She now knew  how to use it properly\r\n  ~It was a poor subsite for normal food\r\n  ~Eating more of it would enable her to lose weight }",
-        "theme": "Reading",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 351",
-        "text": "performing.</p>\r\n\r\n::U6 p59 Voc10.5 the arts::[html]<small><p><i>Complete the sentence with one of the following words: <b>abstract • blockbusters • cast • contemporary • gallery • productions</b>.</i></p></small>\r\n<p>I tend to go for original theatre {=productions}",
-        "theme": "Vocabulary",
-        "type": "Fill"
-      },
-      {
-        "title": "Question 344",
-        "text": "<i>(fry)</i> until they are soft.\r\n\r\n::U5 p57 Rev4.4 Passive forms::[html]That chef {=is said}",
-        "theme": "Review",
-        "type": "Fill"
-      },
-      {
-        "title": "Question 97",
-        "text": "my friend again after her long trip abroad.\r\n\r\n::EM U6 p46-47 4.2::[html]The last time Joe saw Carlos was the day they both graduated from university. (<b>SEEN</b>)<br>\r\nCarlos {=has not seen Joe since}",
-        "theme": "4",
-        "type": "Fill"
-      },
-      {
-        "title": "Question 118",
-        "text": "::U10 p106-7 Reading 2.2::[html]What does ‘this’ refer to in “...popular works of contemporary fiction such as <i>One Day</i> and <i>Twilight</i>. <u>This</u> isn’t a preoccupation found only in Western cultures either”? {\r\n  ~<i>Romeo and Juliet</i>\r\n  ~a Chinese love story\r\n  ~=the idea of romantic love\r\n  ~contemporary fiction}",
-        "theme": "Reading",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 114",
-        "text": "::U1 p7 Adverbs GR 1.5::[html]They've been told that. (<i>often</i>) {\r\n =They've often been told that.\r\n =They have often been told that.\r\n =They've often been told that\r\n =They have often been told that\r\n =They’ve often been told that\r\n =They’ve often been told that.}",
-        "theme": "Adverbs",
-        "type": "Essay"
-      },
-      {
-        "title": "Question 476",
-        "text": "not unusual to have dinner at 10.30p.m.\r\n\r\n::U7 p77 [It/There is] 4.2::{=It is =it is =It's =it's}",
-        "theme": "It is,there is",
-        "type": "Fill"
-      },
-      {
-        "title": "Question 337",
-        "text": "meat.\r\n\r\n::U5 p57 Rev3.5::The government {=has~have}",
-        "theme": "Review",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 82",
-        "text": "(steal)!\r\nOne day last week Jack went out to be yhe beach for a swim and as usual he {1:SA:=hid}",
-        "theme": "Passive",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 46",
-        "text": "news about food scares these days\r\n\r\n::EM U5 p34 Gra1.8::There are {~=lots of~much}",
-        "theme": "Gra-Expressions_of_quantity",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 455",
-        "text": "the children had stayed at home.\r\n\r\n::U7 p76 GR2.3 Relative clauses:: The lawyer from {~when~where~=whom~whose~why}",
-        "theme": "Relative_clauses",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 332",
-        "text": "of salt in this dish.\r\n\r\n::U5 p57 Rev2.8::We cooked an enormous {=amount=quantity}",
-        "theme": "Review",
-        "type": "Fill"
-      },
-      {
-        "title": "Question 262",
-        "text": "fresh fruit.\r\n\r\n::U5 p49 GR1.2 Expressions of quantity::There aren't {=a lot of ~hardly any}",
-        "theme": "Expressions_of_quantity",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 12",
-        "text": "these stories are true, why do dolphins do it and {1:SA:=what}",
-        "theme": "Review",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 297",
-        "text": "::U5 p52 3.3 Reading compr::The writer was surprised by the public reaction to Soylent because {\r\n  ~liquid food has always been associated with ill health.\r\n  ~=people were already familiar with the idea of liquid meal replacements.\r\n  ~there are lots of similar products available.\r\n  ~astronauts stopped using liquid food a long time ago.\r\n}",
-        "theme": "Reading-The_death_of_cooking",
-        "type": "Multiple Choice"
-      }
-    ]
-  },
-  {
-    "id": "exam_1733500044869",
-    "date": "2024-12-06T15:47:24.869Z",
-    "questions": [
-      {
-        "title": "Question 356",
-        "text": "::U6 p60 Listening 3.4::You hear a woman giving some information on the radio about a comedy festival. Why is it going to be different this year? {\r\n  ~The tickets will be more expensive.\r\n  ~It will be held in a smaller venue.\r\n  ~=It will be on different dates.\r\n}",
-        "theme": "Listening",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 45",
-        "text": "meat — I prefer vegetables!\r\n\r\n::EM U5 p34 Gra1.7::There is always {~many~=a lot of}",
-        "theme": "Gra-Expressions_of_quantity",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 79",
-        "text": "in the TV programme Master Chef that I didn't hear the phone.\r\n\r\n\r\n// 4\r\n\r\n::EM U5 p37 Reading 4 collocations::Match an element from each side to make collocations from the text.{\r\n  =maintain  -> a healthy weight\r\n  =tuck into -> good food\r\n  =feel      -> satisfied after a meal\r\n  =find      -> a meal filling\r\n  =sip       -> a drink\r\n  =count     -> calories\r\n  }",
-        "theme": "Reading",
-        "type": "Essay"
-      },
-      {
-        "title": "Question 87",
-        "text": "(know) to be operating in the area. They think Jack {1:SA:=was being watched}",
-        "theme": "Passive",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 263",
-        "text": "green vegetables for sale.\r\n\r\n::U5 p49 GR1.3 Expressions of quantity::I drink {~very few =very little}",
-        "theme": "Expressions_of_quantity",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 74",
-        "text": ".\r\n\r\n::EM U5 p37 Reading 3.3::Vegetarianism is always a {=controversial}",
-        "theme": "Reading",
-        "type": "Fill"
-      },
-      {
-        "title": "Question 37",
-        "text": "::EM U42 Ultimate q4::When was Ulysses S. Grant born? {#\r\n   =1822:0\r\n   =%50%1822:2\r\n}",
-        "theme": "Ultimate",
-        "type": "Numeric"
-      },
-      {
-        "title": "Question 376",
-        "text": "::U6 p63 Reading Voc6.A3::culture (n) {=cultural=noncultural=non-cultural}",
-        "theme": "Reading",
-        "type": "Fill"
-      },
-      {
-        "title": "Question 391",
-        "text": "(<i>hope</i>) about the impact of technology on our lives.\r\n\r\n::U6 p63 Reading Voc8.2::[html]I think I am probably more of a {=creative}",
-        "theme": "Reading",
-        "type": "Fill"
-      },
-      {
-        "title": "Question 149",
-        "text": "::U3 p30 4.3::The writer thinks having a passion is a good thing because {\r\n  ~=it helps people learn how to express their emotions.\r\n  ~it encourages more considerate behaviour.\r\n  ~it gives people an opportunity to act like a different person.\r\n  ~it makes everything else in life seem unimportant.\r\n}",
-        "theme": "Reading",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 507",
-        "text": "::U9 p94 Listening 4.7::Max says that a ten-year investigation has shown that lucky people {\r\n  ~ believe they will succeed.\r\n  = look for good opportunities.\r\n  ~ depend very little on talent.\r\n}",
-        "theme": "Listening",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 363",
-        "text": "there on time. (<i>get</i>)\r\n\r\n::U6 p61 GR 1.3 Future forms::[html]She {=is going to apply='s going to apply}",
-        "theme": "GR-Future_forms",
-        "type": "Fill"
-      },
-      {
-        "title": "Question 67",
-        "text": "::EM U5 p37 Reading 2.2::Why did the author start to eat Huel on the first evening? {\r\n  ~She realised she hadn´t been eating properly\r\n  ~She recognised that she disliked cooking\r\n  =She didn't have time to prepare a meal\r\n  ~She wasn't finding other foods satisfying }",
-        "theme": "Reading",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 504",
-        "text": "::U9 p94 Listening 4.4::According to Max, in his book <i>Bounce</i>, Matthew Syed says he had a greater chance of success  because of {\r\n  ~ his parents’ love of table tennis.\r\n  = his competitive brother.\r\n  ~ his own ambition.\r\n}",
-        "theme": "Listening",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 321",
-        "text": "it first to see if it’s needed.\r\n\r\n::U5 p57 Rev1.5::Some cultures are known {~by =for ~about ~with}",
-        "theme": "Review",
-        "type": "Multiple Choice"
-      }
-    ]
-  },
-  {
-    "id": "exam_7",
-    "date": "2024-12-06T17:34:45.575Z",
-    "questions": [
-      {
-        "title": "Question 321",
-        "text": "it first to see if it’s needed.\n\n::U5 p57 Rev1.5::Some cultures are known {~by =for ~about ~with}",
-        "theme": "Review",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 266",
-        "text": "eggs each week.\r\n\r\n::U5 p49 GR1.6 Expressions of quantity::I'd like to have {=some ~a few}",
-        "theme": "Expressions_of_quantity",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 81",
-        "text": "(happen)! Our lovey new car {1:SA:=has been stolen}",
-        "theme": "Passive",
-        "type": "Short Answer"
-      },
-      {
-        "title": "Question 223",
-        "text": "::U4 p42 1.2 Pre-listening Antartica::Has Antarctica always been cold? {\r\n~=No, it used to be tropical.\r\n~Yes, it’s always been covered in thick ice.\r\n~Yes, but the ice used to be a lot thinner.\r\n}",
-        "theme": "Listening",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 68",
-        "text": "::EM U5 p37 Reading 2.3::[markdown] What does '_these_' in line 38 refer to?  {\r\n  =Unknown possible chemicals\r\n  ~Lists on the label\r\n  ~Other healthy meals\r\n  ~The main ingredients }",
-        "theme": "Reading",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 77",
-        "text": ".\r\n\r\n::EM U5 p37 Reading 3.6::Orange juice {=heightens =heightened}",
-        "theme": "Reading",
-        "type": "Fill"
-      },
-      {
-        "title": "Question 163",
-        "text": "::U3 p32 CD.05 Present perfect vs past simple::Ella _____ learning to play the guitar this week.{~='s started~started}",
-        "theme": "GR-Present_perfect_vs_past_simple",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 134",
-        "text": "(<i>not/be</i>) lost now.\r\n\r\n::U11 p114 Mixed conditionals 4.4::[html]I'd be much happier if I {=had spoken=could have spoken}",
-        "theme": "Mixed_conditionals",
-        "type": "Fill"
-      },
-      {
-        "title": "Question 167",
-        "text": "::U3 p32 CD.09 Present perfect vs past simple::Those trousers _____ of fashion in the 1970s.{~=went out~have gone out}",
-        "theme": "GR-Present_perfect_vs_past_simple",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 78",
-        "text": "the flavour of strawberries.\r\n\r\n::EM U5 p37 Reading 3.7::I was so {=engrossed}",
-        "theme": "Reading",
-        "type": "Fill"
-      },
-      {
-        "title": "Question 62",
-        "text": "fast food regularly.\r\n\r\n::EM U5 p35 Gra3.3::Not many people {=enjoy~enjoys}",
-        "theme": "Gra-Subject_verb_agreement",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 109",
-        "text": "used to walking to school – he's always done it. (<i>be</i>)\r\n\r\n::U1 p10 GR2.8 Present tenses & habits::It seemed very cold at first but now we {=are getting ='re getting}",
+        "title": "Question 80",
+        "text": "The children {=are growing up} very quickly. (<i>grow up</i>)",
         "theme": "Gra-Present_tenses_habits",
         "type": "Fill"
       },
       {
-        "title": "Question 110",
-        "text": "// Unit 1, page 7: Adverbs of frequency - Position\r\n// Grammar Reference, p. 140\r\n\r\n::U1 p7 Adverbs GR 1.0::Add the adverb in brackets to the correct place in each sentence.\r\n\r\n::U1 p7 Adverbs GR 1.1::[html]Does she come by car? (<i>generally</i>) {\r\n =Does she generally come by car?}",
-        "theme": "Adverbs",
-        "type": "Essay"
-      },
-      {
-        "title": "Question 228",
-        "text": "::U4 p43 3.2::What does Leo say wasthe hardest thing for the team before the expedition?{\r\n~organising the finance.\r\n~=preparing mentally.\r\n~getting physically fit.\r\n}",
-        "theme": "Listening",
-        "type": "Multiple Choice"
-      },
-      {
-        "title": "Question 19",
-        "text": "may be that their smiling appearance simply gives people the wrong idea.\r\n\r\n// Part 3: Word formation\r\n::EM U4 p33 Review 3 Word formation::Read the text below. Use the word given in capitals to form a word that fits in the gap in the same line.\r\n// There is an example at the beginning (0).\r\n<b>Why do they do it?</b>\r\nPeople are attracted to attempting extreme activities for a {1:SA:=variety}",
+        "title": "Question 289",
+        "text": "A high percentage of people {~is=are} allergic to nuts.",
         "theme": "Review",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 34",
+        "text": "I never eat meat — I follow a strict {~high-fat~low-salt~=vegetarian~vitamins~well-balanced} diet.",
+        "theme": "Voc",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 7",
+        "text": "[html]I'm very interesled in learning about the culture of other countries<br>\r\n<b>IS</b><br>\r\nLearning about the culture of other countries {=is very interesting for =is very interesting to#change of adjective form: interested – interesting} me.",
+        "theme": "Review",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 142",
+        "text": "My parents _____ a bit of bad luck this year.{~=have had~had}",
+        "theme": "GR-Present_perfect_vs_past_simple",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 223",
+        "text": "The first few weeks {=are} the most difficult.",
+        "theme": "Subject_verb_agreement",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 164",
+        "text": "Stephen _____ in insurance until last summer.{~=worked~'s worked}",
+        "theme": "GR-Present_perfect_vs_past_simple",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 149",
+        "text": "My brothers _____ playing rugby together, even though they're middle-aged now.{~=have always loved~always loved}",
+        "theme": "GR-Present_perfect_vs_past_simple",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 183",
+        "text": "Which person's superpower may be shared by other people who don't realise they have it {\r\n  ~A. Liam Hoekstra\r\n  ~B. Wim Hof\r\n  ~=C. Dean Karnazes\r\n  ~D. Isao Machii\r\n}",
+        "theme": "Reading-xmen",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 135",
+        "text": "[markdown]Match the phrases in bold in the following sentences to the respective tense and use. {\r\n  =You can see she**'s been swimming** – her hair's still wet.                            -> Present perfect continuous - for a recent completed activity when the effects are still relevant\r\n  =I **knew** almost everyone at the party.                                               -> Past simple - for a state in the past\r\n  =Carol**'s been working** here for the last few weeks while Chloe's away having a baby. -> Present perfect continuous - to suggest that an activity is temporary\r\n  =I**'ve only worn** that shirt three times since I bought it.                           -> Present perfect - for an action repeated up to the present time\r\n  =I**'ve been having** driving lessons for months but I'm not getting any better.        -> Present perfect continuous - to emphasise that an action has been going on for a long time\r\n  =All my friends at school **played** football, not rugby.                               -> Past simple - for a habit in the past\r\n  =Harry's birthday party **didn't end** until three in the morning.                      -> Past simple - for a finished event that happened at a specific time in the past\r\n  =They**'ve been building** that house for ages and it's still only half-finished.       -> Present perfect continuous - to suggest that an activity is not complete\r\n}",
+        "theme": "GR-Present_perfect_vs_past_simple",
         "type": "Essay"
+      },
+      {
+        "title": "Question 195",
+        "text": "How much do you know about Antarctica?",
+        "theme": "Listening",
+        "type": "Unknown"
+      },
+      {
+        "title": "Question 224",
+        "text": "Hardly any of the roses in the garden {=are} blooming.",
+        "theme": "Subject_verb_agreement",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 50",
+        "text": "[markdown] What does '_these_' in line 38 refer to?  {\r\n  =Unknown possible chemicals\r\n  ~Lists on the label\r\n  ~Other healthy meals\r\n  ~The main ingredients }",
+        "theme": "Reading",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 123",
+        "text": "The kids remembered {~=buying~to buy} grandma a present but couldn't find it again later.",
+        "theme": "Gra-Ing_or_inf",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 162",
+        "text": "They _____ really badly until last season.{~=always played~'ve always played}",
+        "theme": "GR-Present_perfect_vs_past_simple",
+        "type": "Fill"
+      }
+    ]
+  },
+  {
+    "id": "exam_2",
+    "date": "2024-12-06T19:50:31.864Z",
+    "questions": [
+      {
+        "title": "Question 122",
+        "text": "The kids remembered {~buying~=to buy} grandma a present for her birthday.",
+        "theme": "Gra-Ing_or_inf",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 308",
+        "text": "[html]<small><p><i>Complete the sentence with one of the following words: <b>abstract • blockbusters • cast • contemporary • gallery • productions</b>.</i></p></small>\r\n<p>I tend to go for original theatre {=productions} by controversial directors.</p>",
+        "theme": "Vocabulary",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 478",
+        "text": "[html]\r\n<b>A:</b> I was doing something else so I didn't hear what she said. (<i>pay attention</i>) <br>\r\n<b>B:</b> If ____ what she said.{}",
+        "theme": "Third_cond-4",
+        "type": "Unknown"
+      },
+      {
+        "title": "Question 368",
+        "text": "[html]Get has a variety of different meanings. Replace <i>get</i> in the following questions with one of the verbs from the list.",
+        "theme": "Voc-Expressions_with_get",
+        "type": "Unknown"
+      },
+      {
+        "title": "Question 405",
+        "text": "[html]Complete the second sentence so that it has a similar meaning to the first sentence, using the word given. Do not change the word given. You must use between two and five words, including the word given.<br>\r\n<b>Example:</b><br>\r\n <i>I don't think John has got his father's musical talent.</i> <i><b>AFTER</b></i><br>\r\n <i>John doesn't appear <b><u>to take after</u></b> his father as far as musical talent is concerned.</i>",
+        "theme": "ProgressTest2",
+        "type": "Essay"
+      },
+      {
+        "title": "Question 418",
+        "text": "Can you name the person from {~when~where~=whom~whose~why} you received this information?",
+        "theme": "Relative_clauses",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 385",
+        "text": "It took him ages to get {~away~down~into~=over~round~through} the disappointment of not being in the play.",
+        "theme": "Review",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 401",
+        "text": "Don't worry, I haven't forgotten. I {~speak~will have spoken~=am going to speak} to him later.",
+        "theme": "Review",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 390",
+        "text": "[html]I think I'll still {=be learning} (<i>learn</i>) my lines until just before the play starts.",
+        "theme": "Review",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 394",
+        "text": "[html]People will probably still {=watch =be watching} (<i>watch</i>) live theatre in fifty years' time.",
+        "theme": "Review",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 416",
+        "text": "Please give Luke this message at any point {~=when~where~whom~whose~why} it is convenient.",
+        "theme": "Relative_clauses",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 361",
+        "text": "Complete the sentences with the future continuous or future perfect form of the verbs in brackets.",
+        "theme": "Future-perfect-&-continuous",
+        "type": "Unknown"
+      },
+      {
+        "title": "Question 372",
+        "text": "[html]In which situations do you <i>get</i> angry?<br>\r\n   = In which situations do you {~=become~have~move/travel~persuade~receive~understand} angry?",
+        "theme": "Voc-Expressions_with_get",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 374",
+        "text": "[html]How many texts do you <i>get</i> in an average day?<br>\r\n   = How many texts do you {~become~have~move/travel~persuade~=receive~understand} in an average day?",
+        "theme": "Voc-Expressions_with_get",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 412",
+        "text": "Complete the sentences with the words in the box. You can use the words more than once.",
+        "theme": "Relative_clauses",
+        "type": "Unknown"
+      }
+    ]
+  },
+  {
+    "id": "exam_3",
+    "date": "2024-12-06T19:50:35.842Z",
+    "questions": [
+      {
+        "title": "Question 247",
+        "text": "Following the interest in his blog, Rhinehart {\r\n  ~couldn't keep up with the demand for Soylent.\r\n  ~had to choose which of his businesses to close.\r\n  ~improved the recipe for Soylent.\r\n  ~=started producing big quantities of Soylent.\r\n}",
+        "theme": "Reading-The_death_of_cooking",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 370",
+        "text": "[html]What techniques do you use to <i>get</i> people to do what you want?<br>\r\n   = What techniques do you use to {~become~have~move/travel~=persuade~receive~understand} people to do what you want?",
+        "theme": "Voc-Expressions_with_get",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 323",
+        "text": "[html]She assures me that she {=will get='ll get} there on time. (<i>get</i>)",
+        "theme": "GR-Future_forms",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 331",
+        "text": "Match the uses of future forms to the examples. {\r\n  =<i>will</i> (a promise)                                 -> I won't tell anyone\r\n  =<i>will</i> (an expert opinion)                         -> The road will be closed.\r\n  =<i>will</i> (a decision made at the moment of speaking) -> I'll call Graham now, shall I?\r\n  =<i>going to</i> (an opinion based on present evidence)  -> She's gone very pale – she's going to faint.\r\n  =<i>going to</i> (a personal intention)                  -> I'm going to apply to university next year.\r\n  =Present continuous (a planned event)                    -> They're getting married sometime next year.\r\n  =Present simple (a timetabled event)                     -> The conference is in the first week of April.\r\n  =Present simple (a time clause with a future meaning)    -> When you arrive at the airport, phone me.\r\n  }",
+        "theme": "GR-Future_forms",
+        "type": "Essay"
+      },
+      {
+        "title": "Question 422",
+        "text": "He was {~enough~=so~such~too~very} surprised that he went to check.",
+        "theme": "So,such,too,enough",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 308",
+        "text": "[html]<small><p><i>Complete the sentence with one of the following words: <b>abstract • blockbusters • cast • contemporary • gallery • productions</b>.</i></p></small>\r\n<p>I tend to go for original theatre {=productions} by controversial directors.</p>",
+        "theme": "Vocabulary",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 445",
+        "text": "{~=It ~There} is almost lunchtime.",
+        "theme": "It is,there is",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 459",
+        "text": "{=Although} I am more than qualified for the job, I didn't even get an interview.",
+        "theme": "Voc-Linking_words",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 269",
+        "text": "[html]People believe that the criminal had a false passport.<br>\r\nIt {=is believed that the criminal had a false passport='s believed that the criminal had a false passport=is believed that the criminal had a false passport.='s believed that the criminal had a false passport.}.",
+        "theme": "Passive-reporting",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 261",
+        "text": "[html]Newspapers claim that twenty top chefs have been invited to prepare the meal. <b>BY</b> <br />\r\nIt {=is claimed by} newspapers that twenty top chefs have been invited<br />\r\nto prepare the meal.",
+        "theme": "Passive",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 450",
+        "text": "Choose the correct option to complete the sentences.",
+        "theme": "Review-3",
+        "type": "Unknown"
+      },
+      {
+        "title": "Question 320",
+        "text": "Look at the examples and answer the questions.\r\n- As soon as the film ends, we'll call a taxi.\r\n- We'll have dinner when she arrives.\r\n\r\n<b>1</b> What form of the verb follows a future time expression?\r\n<b>2</b> Is the clause with the time expression referring to the present or the future?\r\n<b>3</b> Is the time clause at the beginning or the end of the sentence?\r\n<b>4</b> What is the difference in meaning between as soon as and when?",
+        "theme": "Future-forms",
+        "type": "Essay"
+      },
+      {
+        "title": "Question 423",
+        "text": "My brother isn't practical {=enough~so~such~too~very} to put up a shelf.",
+        "theme": "So,such,too,enough",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 449",
+        "text": "{~It ~=There} isn't any time to have a quick coffee first.",
+        "theme": "It is,there is",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 251",
+        "text": "In the final paragraph, the writer expresses {\r\n  ~doubt that Soylent is only suitable for one group of people.\r\n  ~=hope that Soylent may be a solution to a serious problem.\r\n  ~surprise about the predicted demand for Soylent products.\r\n  ~disagreement that products like Soylent are a risk to family life.\r\n}\r\n\r\n// ex 6: Vocabulary / Expressions",
+        "theme": "Reading-The_death_of_cooking",
+        "type": "Fill"
       }
     ]
   }

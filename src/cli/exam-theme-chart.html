@@ -1,18 +1,17 @@
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title>Profil des Questions</title>
-      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-      <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-      <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    </head>
-    <body>
-      <div id="chart"></div>
-      <script type="text/javascript">
-        const spec = {"$schema":"https://vega.github.io/schema/vega-lite/v5.json","description":"Profil des types de questions d'un examen","data":{"values":[{"type":"Review","count":4},{"type":"Gra-Expression_of_quantity","count":0},{"type":"Voc","count":0},{"type":"Gra-Subject_verb_agreement","count":0},{"type":"Reading","count":2},{"type":"Passive","count":1},{"type":"a4","count":0},{"type":"Ultimate","count":0},{"type":"Adverbs","count":1},{"type":"ReadingCoachella","count":0},{"type":"Gra-Present-tenses_habits","count":0},{"type":"Gra-Ing_ot_inf","count":0},{"type":"gra-ed_adjectives_prepositions","count":0},{"type":"GR-Present_perfect_vs_past_simple","count":0},{"type":"Gra-Present_perfect_simple_vs_continuous","count":0},{"type":"Gra-As_like","count":0},{"type":"UoE-Hygge","count":0},{"type":"Reading-xmen","count":0},{"type":"Listening","count":0},{"type":"GR1-Expression_of_quantity","count":0},{"type":"Subject_verb_agreement","count":0},{"type":"Use_of_English","count":0},{"type":"Reading-The_death_of_cooking","count":1},{"type":"GR4-Passive-reporting","count":0},{"type":"Future-forms","count":0},{"type":"GR-Future_forms"},{"type":"Future-perfect-&-continuous","count":0},{"type":"Voc-Expressions_with_get","count":0},{"type":"ProgressTest2","count":0},{"type":"So,such,too,enough","count":0},{"type":"Relative_clauses","count":1},{"type":"6","count":0},{"type":"It is,there is","count":1},{"type":"Voc-Linking_words","count":0},{"type":"Third_cond-4","count":0},{"type":"Mixed_conditionals","count":0}]},"mark":"bar","encoding":{"x":{"field":"type","type":"nominal","axis":{"title":"Type de Question"}},"y":{"field":"count","type":"quantitative","axis":{"title":"Nombre"}},"color":{"field":"type","type":"nominal"}}};
-        vegaEmbed('#chart', spec);
-      </script>
-    </body>
-    </html>
-    
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profil des Questions</title>
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+<div id="chart"></div>
+<script type="text/javascript">
+  const spec = {"$schema":"https://vega.github.io/schema/vega-lite/v5.json","description":"Profil des types de questions d'un examen","data":{"values":[{"type":"Review","count":4},{"type":"Gra-Expression_of_quantity","count":0},{"type":"Voc","count":0},{"type":"Gra-Subject_verb_agreement","count":0},{"type":"Reading","count":0},{"type":"Passive","count":0},{"type":"a4","count":0},{"type":"Ultimate","count":0},{"type":"Adverbs","count":0},{"type":"ReadingCoachella","count":0},{"type":"Gra-Present-tenses_habits","count":0},{"type":"Gra-Ing_ot_inf","count":0},{"type":"gra-ed_adjectives_prepositions","count":0},{"type":"GR-Present_perfect_vs_past_simple","count":0},{"type":"Gra-Present_perfect_simple_vs_continuous","count":0},{"type":"Gra-As_like","count":0},{"type":"UoE-Hygge","count":0},{"type":"Reading-xmen","count":0},{"type":"Listening","count":0},{"type":"GR1-Expression_of_quantity","count":0},{"type":"Subject_verb_agreement","count":0},{"type":"Use_of_English","count":0},{"type":"Reading-The_death_of_cooking","count":0},{"type":"GR4-Passive-reporting","count":0},{"type":"Future-forms","count":0},{"type":"GR-Future_forms"},{"type":"Future-perfect-&-continuous","count":1},{"type":"Voc-Expressions_with_get","count":3},{"type":"ProgressTest2","count":1},{"type":"So,such,too,enough","count":0},{"type":"Relative_clauses","count":3},{"type":"6","count":0},{"type":"It is,there is","count":0},{"type":"Voc-Linking_words","count":0},{"type":"Third_cond-4","count":1},{"type":"Mixed_conditionals","count":0}]},"mark":"bar","encoding":{"x":{"field":"type","type":"nominal","axis":{"title":"Graphique de la proportion des themes de Question"}},"y":{"field":"count","type":"quantitative","axis":{"title":"Nombre"}},"color":{"field":"type","type":"nominal"}}};
+  vegaEmbed('#chart', spec);
+</script>
+</body>
+</html>

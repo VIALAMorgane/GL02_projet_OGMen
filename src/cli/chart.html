@@ -13,7 +13,7 @@
     <h1>Distribution des Types de Questions</h1>
     <div id="chart"></div>
     <script type="text/javascript">
-        const spec = {"$schema":"https://vega.github.io/schema/vega-lite/v5.json","description":"Distribution des types de questions dans la banque","data":{"values":[{"type":"Multiple Choice","count":267},{"type":"Essay","count":41},{"type":"Short Answer","count":36},{"type":"Fill","count":166},{"type":"Numeric","count":1},{"type":"Unknown","count":1}]},"mark":"bar","encoding":{"x":{"field":"type","type":"nominal","axis":{"title":"Type de Question"}},"y":{"field":"count","type":"quantitative","axis":{"title":"Nombre de Questions"}},"color":{"field":"type","type":"nominal"}}};
+        const spec = {"$schema":"https://vega.github.io/schema/vega-lite/v5.json","description":"Distribution des types de questions dans la banque","data":{"values":[{"type":"Multiple Choice","count":4},{"type":"Short Answer","count":9},{"type":"Essay","count":32},{"type":"Fill","count":386},{"type":"Unknown","count":47},{"type":"Numeric","count":1}]},"mark":"bar","encoding":{"x":{"field":"type","type":"nominal","axis":{"title":"Type de Question"}},"y":{"field":"count","type":"quantitative","axis":{"title":"Nombre de Questions"}},"color":{"field":"type","type":"nominal"}}};
         vegaEmbed('#chart', spec);
     </script>
 </body>

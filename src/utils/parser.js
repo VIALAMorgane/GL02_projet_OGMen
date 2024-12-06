@@ -31,7 +31,7 @@ function parseGiftFile(filePath, startIndex = 1) {
     const matches = Array.from(content.matchAll(questionPattern));
 
     const questions = matches.map((match, index) => {
-        const title = `Question ${startIndex + index}`; // Utilise toujours un titre généré automatiquement
+        const title = `Question ${startIndex + index}`; // genere le titre dans l'ordre q1 q2 q3
 const text = match[2].trim();
         
         // Extrait le thème à partir du nom du fichier

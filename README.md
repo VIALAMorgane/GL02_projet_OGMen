@@ -2,7 +2,7 @@
 
 ## Description du projet
 
-Ce projet a été réalisé dans le cadre du cours GL02. L'objectif était de répondre au cahier des charges fourni, en développant une application CLI (Command Line Interface) permettant de gérer une banque de questions et d'examens. L'application permet d'importer des questions depuis des fichiers GIFT, de les manipuler (ajout, suppression, recherche, etc.), et de générer des examens.
+Ce projet a été réalisé dans le cadre de l'UE GL02. L'objectif était de répondre au cahier des charges fourni, en développant une application CLI (Command Line Interface) permettant de gérer une banque de questions et d'examens. L'application permet d'importer des questions depuis des fichiers GIFT, de les manipuler (ajout, suppression, recherche, etc.), et de générer des examens.
 
 ## Fonctionnalités
 
@@ -56,6 +56,7 @@ Voici un résumé des commandes disponibles dans l'application CLI :
 14. `search contact` - Rechercher un contact par Nom.
 15. `search question` - Rechercher une question par ID.
 16. `search exam` - Rechercher un examen par ID ou date.
+17. `simulate exam` - Simuler un examen avec résultats.
 
 ## Roadmap
 
