@@ -23,7 +23,7 @@ Ce projet a été réalisé dans le cadre du cours GL02. L'objectif était de r�
 
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/votre-utilisateur/GL02_projet_OGMen.git
+   git clone https://github.com/aminssutt/GL02_projet_OGMen.git
    cd GL02_projet_OGMen
 2. Installez les dépendances :
    ```bash
