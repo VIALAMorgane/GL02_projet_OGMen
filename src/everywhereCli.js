@@ -96,9 +96,10 @@ function messageDebut() {
     14. search contact             - Rechercher un contact par Nom
     15. search question            - Rechercher une question par ID
     16. search exam                - Rechercher un examen par ID ou date,
+    17. simulate exam --id <id_exam>              - Simule un examen avec résultat 
     `);
 }
-
+// FONCTION POUR AFFICHER LES QUESTIONS D'UN EXAMEN
 function askQuestion(questions, index = 0, score = 0) {
     // Si on a parcouru toutes les questions, on termine
     if (index >= questions.length) {

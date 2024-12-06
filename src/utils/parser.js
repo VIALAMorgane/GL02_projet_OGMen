@@ -27,14 +27,12 @@ function parseGiftFile(filePath, startIndex = 1) {
     const content = fs.readFileSync(filePath, 'utf-8');
     
     // Regex pour capturer les questions en format GIFT
-    const questionPattern = /(::.*?::)?(.*?{.*?})/gs;
+    const questionPattern = /(::[^:]+::)([\s\S]*?)(?=(::[^:]+::|$))/gs;
     const matches = Array.from(content.matchAll(questionPattern));
 
     const questions = matches.map((match, index) => {
-        const title = match[1] 
-            ? match[1].replace(/::/g, '').trim()  // Utilise le titre GIFT s'il existe
-            : `Question ${startIndex + index}`;
-        const text = match[2].trim();
+        const title = `Question ${startIndex + index}`; // Utilise toujours un titre généré automatiquement
+const text = match[2].trim();
         
         // Extrait le thème à partir du nom du fichier
         const theme = extractThemeFromFilename(path.basename(filePath));
