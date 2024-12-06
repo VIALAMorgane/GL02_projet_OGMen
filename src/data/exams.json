@@ -492,5 +492,101 @@
         "type": "Multiple Choice"
       }
     ]
+  },
+  {
+    "id": "exam_7",
+    "date": "2024-12-06T17:34:45.575Z",
+    "questions": [
+      {
+        "title": "Question 321",
+        "text": "it first to see if it’s needed.\n\n::U5 p57 Rev1.5::Some cultures are known {~by =for ~about ~with}",
+        "theme": "Review",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 266",
+        "text": "eggs each week.\r\n\r\n::U5 p49 GR1.6 Expressions of quantity::I'd like to have {=some ~a few}",
+        "theme": "Expressions_of_quantity",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 81",
+        "text": "(happen)! Our lovey new car {1:SA:=has been stolen}",
+        "theme": "Passive",
+        "type": "Short Answer"
+      },
+      {
+        "title": "Question 223",
+        "text": "::U4 p42 1.2 Pre-listening Antartica::Has Antarctica always been cold? {\r\n~=No, it used to be tropical.\r\n~Yes, it’s always been covered in thick ice.\r\n~Yes, but the ice used to be a lot thinner.\r\n}",
+        "theme": "Listening",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 68",
+        "text": "::EM U5 p37 Reading 2.3::[markdown] What does '_these_' in line 38 refer to?  {\r\n  =Unknown possible chemicals\r\n  ~Lists on the label\r\n  ~Other healthy meals\r\n  ~The main ingredients }",
+        "theme": "Reading",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 77",
+        "text": ".\r\n\r\n::EM U5 p37 Reading 3.6::Orange juice {=heightens =heightened}",
+        "theme": "Reading",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 163",
+        "text": "::U3 p32 CD.05 Present perfect vs past simple::Ella _____ learning to play the guitar this week.{~='s started~started}",
+        "theme": "GR-Present_perfect_vs_past_simple",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 134",
+        "text": "(<i>not/be</i>) lost now.\r\n\r\n::U11 p114 Mixed conditionals 4.4::[html]I'd be much happier if I {=had spoken=could have spoken}",
+        "theme": "Mixed_conditionals",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 167",
+        "text": "::U3 p32 CD.09 Present perfect vs past simple::Those trousers _____ of fashion in the 1970s.{~=went out~have gone out}",
+        "theme": "GR-Present_perfect_vs_past_simple",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 78",
+        "text": "the flavour of strawberries.\r\n\r\n::EM U5 p37 Reading 3.7::I was so {=engrossed}",
+        "theme": "Reading",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 62",
+        "text": "fast food regularly.\r\n\r\n::EM U5 p35 Gra3.3::Not many people {=enjoy~enjoys}",
+        "theme": "Gra-Subject_verb_agreement",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 109",
+        "text": "used to walking to school – he's always done it. (<i>be</i>)\r\n\r\n::U1 p10 GR2.8 Present tenses & habits::It seemed very cold at first but now we {=are getting ='re getting}",
+        "theme": "Gra-Present_tenses_habits",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 110",
+        "text": "// Unit 1, page 7: Adverbs of frequency - Position\r\n// Grammar Reference, p. 140\r\n\r\n::U1 p7 Adverbs GR 1.0::Add the adverb in brackets to the correct place in each sentence.\r\n\r\n::U1 p7 Adverbs GR 1.1::[html]Does she come by car? (<i>generally</i>) {\r\n =Does she generally come by car?}",
+        "theme": "Adverbs",
+        "type": "Essay"
+      },
+      {
+        "title": "Question 228",
+        "text": "::U4 p43 3.2::What does Leo say wasthe hardest thing for the team before the expedition?{\r\n~organising the finance.\r\n~=preparing mentally.\r\n~getting physically fit.\r\n}",
+        "theme": "Listening",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 19",
+        "text": "may be that their smiling appearance simply gives people the wrong idea.\r\n\r\n// Part 3: Word formation\r\n::EM U4 p33 Review 3 Word formation::Read the text below. Use the word given in capitals to form a word that fits in the gap in the same line.\r\n// There is an example at the beginning (0).\r\n<b>Why do they do it?</b>\r\nPeople are attracted to attempting extreme activities for a {1:SA:=variety}",
+        "theme": "Review",
+        "type": "Essay"
+      }
+    ]
   }
 ]

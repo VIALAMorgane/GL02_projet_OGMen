@@ -26,7 +26,8 @@ function readQuestions() {
 // Sauvegarde les questions dans le fichier JSON
 function saveQuestions(questions) {
   const questionsWithTitles = titreQst(questions);
-  try { // Écrit le contenu mis à jour dans le fichier JSON
+  try {
+    // Écrit le contenu mis à jour dans le fichier JSON
     fs.writeFileSync(
       dataFilePath,
       JSON.stringify(questionsWithTitles, null, 2),
@@ -82,8 +83,8 @@ function deleteQuestion(title) {
 // Sauvegarde un examen dans le fichier JSON
 function saveExam(exam) {
   const exams = fs.existsSync(examsFilePath)
-  // Vérifie si le fichier existe, puis lit et parse son contenu
-    ? JSON.parse(fs.readFileSync(examsFilePath, "utf-8"))
+    ? // Vérifie si le fichier existe, puis lit et parse son contenu
+      JSON.parse(fs.readFileSync(examsFilePath, "utf-8"))
     : [];
   exams.push(exam);
   // Écrit le contenu mis à jour dans le fichier JSON
@@ -94,7 +95,7 @@ function saveExam(exam) {
 // Supprime les questions en double de la banque de questions
 function removeDuplicateQuestions() {
   const questions = readQuestions();
-// Vérifie si des questions sont disponibles pour la vérification
+  // Vérifie si des questions sont disponibles pour la vérification
   if (questions.length === 0) {
     console.warn("Aucune question disponible pour vérifier les doublons.");
     return false;
@@ -107,7 +108,7 @@ function removeDuplicateQuestions() {
   const seenTitles = new Set();
   const uniqueQuestions = [];
   const duplicateQuestions = [];
-// Parcours toutes les questions pour identifier les doublons
+  // Parcours toutes les questions pour identifier les doublons
   questions.forEach((question) => {
     if (seenTitles.has(question.title)) {
       duplicateQuestions.push(question);
@@ -116,7 +117,7 @@ function removeDuplicateQuestions() {
       uniqueQuestions.push(question);
     }
   });
-// Vérifie si des doublons ont été trouvés
+  // Vérifie si des doublons ont été trouvés
   if (duplicateQuestions.length === 0) {
     console.log("Aucun doublon trouvé.");
     return false;
@@ -133,40 +134,36 @@ function removeDuplicateQuestions() {
 
 // Fonction pour détecter le type de question à partir de son texte
 function detectQuestionType(questionText) {
-  
-    if (/{T|F}/.test(questionText)) {
-      return "TF"; // Retourne "TF" pour les questions Vrai/Faux
-    }
-  
-    if (/{1:MC:|~/.test(questionText)) {
-      return "Multiple Choice"; // Retourne "Multiple Choice" pour les questions à choix multiples
-    }
-
-    if (/{#/.test(questionText)) {
-      return "Numeric"; // Retourne "Numeric" pour les questions numériques
-    }
- 
-    if (/{=/.test(questionText)) {
-      return "Fill"; // Retourne "Fill" pour les questions à compléter
-    }
-  
-
-    if (/{.*->.*}/.test(questionText)) {
-      return "Matching"; // Retourne "Matching" pour les questions d'association
-    }
-  
-    if (questionText.length > 150) {
-      return "Essay"; // Retourne "Essay" pour les questions longues
-    }
-
-    if (/{1:SA:/.test(questionText)) {
-      return "Short Answer"; // Retourne "Short Answer" pour les questions à réponse courte
-    }
-  
-    return "Unknown"; // Si aucun type ne correspond, retourne "Unknown"
+  if (/{T|F}/.test(questionText)) {
+    return "TF"; // Retourne "TF" pour les questions Vrai/Faux
   }
-  
 
+  if (/{1:MC:|~/.test(questionText)) {
+    return "Multiple Choice"; // Retourne "Multiple Choice" pour les questions à choix multiples
+  }
+
+  if (/{#/.test(questionText)) {
+    return "Numeric"; // Retourne "Numeric" pour les questions numériques
+  }
+
+  if (/{=/.test(questionText)) {
+    return "Fill"; // Retourne "Fill" pour les questions à compléter
+  }
+
+  if (/{.*->.*}/.test(questionText)) {
+    return "Matching"; // Retourne "Matching" pour les questions d'association
+  }
+
+  if (questionText.length > 150) {
+    return "Essay"; // Retourne "Essay" pour les questions longues
+  }
+
+  if (/{1:SA:/.test(questionText)) {
+    return "Short Answer"; // Retourne "Short Answer" pour les questions à réponse courte
+  }
+
+  return "Unknown"; // Si aucun type ne correspond, retourne "Unknown"
+}
 
 //fonction de création de fichier vcf à partir d'un objet contact
 function createNewContact(contactInfo) {
@@ -260,16 +257,74 @@ function displayContactInfos(contactName) {
     console.log(`Aucun contact trouvé avec le nom ${firstName} ${lastName}.`);
   }
 }
+
+function searchQuestionById(Id) {
+  const questionsPath = path.join(__dirname, "../data/questions.json");
+  try {
+    // Lire le contenu du fichier JSON
+    const data = fs.readFileSync(questionsPath, "utf-8");
+
+    // Parser le contenu JSON en un tableau d'objets
+    const questions = JSON.parse(data);
+
+    // Vérifier si l'ID est valide
+    if (Id >= 0 && Id < questions.length) {
+      // Retourner l'objet question correspondant à l'ID
+      return questions[Id];
+    } else {
+      console.warn(`ID invalide : ${Id}`);
+      return null;
+    }
+  } catch (error) {
+    console.error(
+      `Erreur lors de la lecture du fichier questions.json : ${error.message}`,
+    );
+    return null;
+  }
+}
+// Fonction de lecture des examens
+function readExams() {
+  const examsPath = path.join(__dirname, "../data/exams.json");
+  try {
+    const data = fs.readFileSync(examsPath, "utf-8");
+    return JSON.parse(data);
+  } catch (error) {
+    console.error(
+      `Erreur lors de la lecture du fichier exams.json : ${error.message}`,
+    );
+    return [];
+  }
+}
+// Fonction de recherche d'un examen par son ID
+function searchExamById(examId) {
+  const exams = readExams();
+  const examTitle = "exam_" + examId;
+  return exams.find((exam) => exam.id === examTitle) || null;
+}
+// Fonction de recherche des examens par date
+function searchExamsByDate(date) {
+  const exams = readExams();
+  const targetDate = new Date(date);
+  return exams.filter((exam) => {
+    const examDate = new Date(exam.date.split("T")[0]);
+    return examDate > targetDate;
+  });
+}
+
 // Exporte les fonctions pour les rendre accessibles aux autres modules
 module.exports = {
   readQuestions,
   saveQuestions,
   deleteQuestion,
   saveExam,
+  readExams,
   removeDuplicateQuestions,
   detectQuestionType,
   createNewContact,
   findContact,
   deleteContact,
   displayContactInfos,
+  searchQuestionById,
+  searchExamById,
+  searchExamsByDate,
 };
