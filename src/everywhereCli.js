@@ -79,6 +79,7 @@ function askQuestion(questions, index = 0, score) {
     //REGEX pour trouver les reponses correctes des questions
     const regex = /(?<==)[^ ]+(?= ~)|(?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])|(?<==).*?(?=[.])/;
     
+    //Question courante
     const question = questions[index];
     // Stocke les bonnes réponses de la question en cours
     let goodAnswer = question.text.match(regex);
