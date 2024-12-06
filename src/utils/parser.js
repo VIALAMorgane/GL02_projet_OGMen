@@ -5,9 +5,10 @@ const path = require('path');
  * Classe représentant une question au format GIFT.
  */
 class Question {
-    constructor(title, text) {
+    constructor(title, text, theme) {
         this.title = title;
         this.text = text;
+        this.theme = theme; // Ajoute le thème à chaque question
     }
 
     /**
@@ -15,8 +16,19 @@ class Question {
      * @returns {string}
      */
     toString() {
-        return `Title: ${this.title}\nQuestion: ${this.text}\n`;
+        return `Title: ${this.title}\nQuestion: ${this.text}\nTheme: ${this.theme}\n`;
     }
+}
+
+/**
+ * Extrait le thème du nom du fichier GIFT.
+ * @param {string} filename - Nom du fichier.
+ * @returns {string} - Thème extrait du fichier.
+ */
+function extractThemeFromFilename(filename) {
+    // Extrait la partie entre le dernier '-' et '.gift'
+    const match = filename.match(/-(.*?)\.gift$/);
+    return match ? match[1] : ''; // Retourne le thème ou une chaîne vide si non trouvé
 }
 
 /**
@@ -37,7 +49,11 @@ function parseGiftFile(filePath, startIndex = 1) {
             ? match[1].replace(/::/g, '').trim() 
             : `Question ${startIndex + index}`;
         const text = match[2].trim();
-        return new Question(title, text);
+        
+        // Extrait le thème à partir du nom du fichier
+        const theme = extractThemeFromFilename(path.basename(filePath));
+        
+        return new Question(title, text, theme);
     });
 
     return questions;
