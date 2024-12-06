@@ -27,7 +27,7 @@ function parseGiftFile(filePath, startIndex = 1) {
     const content = fs.readFileSync(filePath, 'utf-8');
     
     // Regex pour capturer les questions en format GIFT
-    const questionPattern = /(::.*?::)?(.*?{.*?})/gs;
+    const questionPattern = /(::[^:]+::)([\s\S]*?)(?=(::[^:]+::|$))/gs;
     const matches = Array.from(content.matchAll(questionPattern));
 
     const questions = matches.map((match, index) => {
