@@ -76,3 +76,7 @@ Voici un résumé des commandes disponibles dans l'application CLI :
 - **Maxime Monterin** - [GitHub](https://github.com/maximeMonterin)
 - **Mathieu Halliez** - [GitHub](https://github.com/mathieuHalliez)
 - **Robinson Rocher** - [GitHub](https://github.com/robinsonrcr)
+
+## Améliorations 
+
+- Le traitement des bonnes et mauvaises réponses pour les questions de types Essay et Matching
