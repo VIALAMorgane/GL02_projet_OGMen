@@ -1,0 +1,18 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Profil des Questions</title>
+      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    </head>
+    <body>
+      <div id="chart"></div>
+      <script type="text/javascript">
+        const spec = {"$schema":"https://vega.github.io/schema/vega-lite/v5.json","description":"Profil des types de questions d'un examen","data":{"values":[{"type":"Multiple Choice","count":6},{"type":"Short Answer","count":9},{"type":"Essay","count":0},{"type":"Fill","count":0},{"type":"Unknown","count":0}]},"mark":"bar","encoding":{"x":{"field":"type","type":"nominal","axis":{"title":"Type de Question"}},"y":{"field":"count","type":"quantitative","axis":{"title":"Nombre"}},"color":{"field":"type","type":"nominal"}}};
+        vegaEmbed('#chart', spec);
+      </script>
+    </body>
+    </html>
+    

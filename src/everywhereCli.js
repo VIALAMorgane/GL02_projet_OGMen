@@ -79,6 +79,7 @@ function messageDebut() {
     10. contact update             - Modifier votre carte contact
     11. contact read               - Lire les informations à propos d'un contact
     12. contact delete             - Supprimer votre contact
+    13. visualize exam             - Permet de visualiser un examen avec un diagrame en barre
     `);
 }
 // Enregistrer les commandes CLI
@@ -647,6 +648,111 @@ cli.command("questions chart", "Génère un fichier HTML avec un graphique des t
         logger.error("Vous n'avez pas encore de carte contact");
       }
     });
+
+
+  
+    
+    cli
+      .command("visualize exam", "Visualiser un profil d'examen GIFT")
+      .action(async ({ logger }) => {
+        const rl = readline.createInterface({
+          input: process.stdin,
+          output: process.stdout
+        });
+    
+        logger.info("Veuillez saisir l'ID de l'examen pour visualiser le profil :");
+    
+        const examId = await new Promise((resolve) =>
+          rl.question("ID de l'examen : ", resolve)
+        );
+    
+        rl.close();
+    
+        try {
+          const examsPath = './data/exams.json';
+    
+          if (!fs.existsSync(examsPath)) {
+            logger.error('Fichier exams.json introuvable.');
+            return;
+          }
+    
+          const exams = JSON.parse(fs.readFileSync(examsPath, 'utf-8'));
+          const selectedExam = exams.find((exam) => exam.id === examId);
+    
+          if (!selectedExam) {
+            logger.error("Examen introuvable !");
+            return;
+          }
+    
+          let multipleChoice = 0;
+          let shortAnswer = 0;
+          let essay = 0;
+          let fill = 0;
+          let unknown = 0;
+    
+          selectedExam.questions.forEach((question) => {
+            const { type } = question;
+    
+            if (type === "Multiple Choice") multipleChoice += 1;
+            else if (type === "Short Answer") shortAnswer += 1;
+            else if (type === "Essay") essay += 1;
+            else if (type === "Fill") fill += 1;
+            else unknown += 1;
+          });
+    
+          // Spécification Vega-Lite
+          const vegaLiteSpec = {
+            $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+            description: "Profil des types de questions d'un examen",
+            data: {
+              values: [
+                { type: "Multiple Choice", count: multipleChoice },
+                { type: "Short Answer", count: shortAnswer },
+                { type: "Essay", count: essay },
+                { type: "Fill", count: fill },
+                { type: "Unknown", count: unknown }
+              ]
+            },
+            mark: "bar",
+            encoding: {
+              x: { field: "type", type: "nominal", axis: { title: "Type de Question" } },
+              y: { field: "count", type: "quantitative", axis: { title: "Nombre" } },
+              color: { field: "type", type: "nominal" }
+            }
+          };
+    
+          // Générer une page HTML
+          const htmlContent = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Profil des Questions</title>
+      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    </head>
+    <body>
+      <div id="chart"></div>
+      <script type="text/javascript">
+        const spec = ${JSON.stringify(vegaLiteSpec)};
+        vegaEmbed('#chart', spec);
+      </script>
+    </body>
+    </html>
+    `;
+    
+          // Sauvegarder la page HTML
+          const outputFilePath = path.join(__dirname, "./cli/exam-chart.html");
+          fs.writeFileSync(outputFilePath, htmlContent);
+    
+          logger.info(`Graphique généré avec succès : ${outputFilePath}`);
+        } catch (error) {
+          logger.error("Une erreur est survenue.");
+          logger.error(error.message);
+        }
+      });
+    
+  
 }
 
 // Importation automatique des questions au démarrage
