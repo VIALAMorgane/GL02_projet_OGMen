@@ -82,6 +82,7 @@ function askQuestion(questions, index = 0, score = 0) {
     let text = '';
     //Question courante
     const question = questions[index];
+    //Si la question attend une réponse simple alors on la supprime de l'affichage
     if(question.type === 'Short Answer'){
         for (let i = 0; i < question.text.length; ++i) {
             if(question.text[i] === '{') {
