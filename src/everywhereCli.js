@@ -11,7 +11,7 @@ const {
   findContact,
   deleteContact,
   displayContactInfos,
-} = require("./utils/fileManager");
+} = require("./utils/fileManager"); // importe les fonctions des autres fichiers utiles pour le CLI
 
 const fs = require("fs");
 const path = require("path");
@@ -22,7 +22,7 @@ function importAllQuestions() {
   try {
     const dataPath = path.resolve(__dirname, "./data");
     if (!fs.existsSync(dataPath)) {
-      console.error(
+      console.error( // debug au cas ou le repertoire n'est pas trouvé
         "Le répertoire './data' est introuvable. Assurez-vous qu'il existe.",
       );
       return;
@@ -30,19 +30,19 @@ function importAllQuestions() {
 
     console.log("Importation des questions en cours...");
 
-    // Lire les fichiers GIFT dans le répertoire
+    // Lis les fichiers GIFT dans le répertoire
     const importedQuestions = parseGiftDirectory(dataPath);
 
-    // Lire les questions existantes dans questions.json
+    // Lis les questions existantes dans questions.json
     const existingQuestions = readQuestions();
 
-    // Ajouter le type détecté pour chaque question
+    // Ajoute le type détecté pour chaque question
     const enrichedQuestions = importedQuestions.map((q) => ({
       ...q,
-      type: detectQuestionType(q.text), // Détection du type de question
+      type: detectQuestionType(q.text), // Détecte le type de question
     }));
 
-    // Fusionner les questions en évitant les doublons
+    // Fusionne les questions en évitant les doublons
     const uniqueQuestions = [
       ...existingQuestions,
       ...enrichedQuestions.filter(
@@ -57,12 +57,12 @@ function importAllQuestions() {
       `${uniqueQuestions.length - existingQuestions.length} nouvelles questions importées.`,
     );
   } catch (err) {
-    console.error(
+    console.error( // debug 
       `Erreur lors de l'importation automatique des questions : ${err.message}`,
     );
   }
 }
-
+ // Message de bienvenue avec la liste des commandes disponibles
 function messageDebut() {
   console.log("Bienvenue dans Everywhere CLI !");
   console.log("Voici les commandes disponibles :");
@@ -82,23 +82,24 @@ function messageDebut() {
     13. visualize exam             - Permet de visualiser un examen avec un diagrame en barre
     `);
 }
-// Enregistrer les commandes CLI
+// Enregistre les commandes CLI
 function registerQuestionCommands(cli) {
+  // COMMANDE QUESTION LIST POUR AFFICHER TOUTES LES QUESTIONS
   cli
     .command("questions list", "Affiche toutes les questions de la banque")
     .action(({ logger }) => {
       const questions = readQuestions();
       if (questions.length === 0) {
         logger.info("Aucune question trouvée.");
-      } else {
+      } else { // Affiche les questions
         logger.info(`Nombre total de questions : ${questions.length}`);
         questions.forEach((question, index) => {
-          logger.info(`${question.title}`);
+          logger.info(`${question.title}`); 
           logger.info(`   Texte : ${question.text}`);
         });
       }
     });
-
+    // COMMANDE QUESTION IMPORT POUR IMPORTER LES QUESTIONS
   cli
     .command(
       "questions import",
@@ -106,7 +107,7 @@ function registerQuestionCommands(cli) {
     )
     .action(({ logger }) => {
       try {
-        importAllQuestions();
+        importAllQuestions(); // utilise la fonction d'importation automatique
         logger.info("Importation des questions terminée.");
       } catch (err) {
         logger.error(
@@ -114,7 +115,7 @@ function registerQuestionCommands(cli) {
         );
       }
     });
-
+// COMMANDE QUESTION DELETE POUR SUPPRIMER UNE QUESTION
     cli.command("questions delete", "Supprime une question de la banque par titre exact")
     .option("--title <title>", "Titre de la question à supprimer", { required: true })
     .action(({ logger, options }) => {
@@ -138,25 +139,23 @@ function registerQuestionCommands(cli) {
             } else {
                 logger.warn(`Aucune question avec le titre exact "${title}" n'a été trouvée.`);
             }
-        } catch (error) {
+        } catch (error) { // debug
             logger.error(`Erreur lors de la suppression de la question : ${error.message}`);
         }
     });
-
-
-    
+// COMMANDE QUESTION CHART POUR GENERER UN GRAPHIQUE DES TYPES DE QUESTIONS
         const fs = require("fs");
 const path = require("path");
 cli
   .command("questions chart", "Génère un fichier HTML avec un graphique des types de questions")
   .action(async ({ logger }) => {
-    const rl = readline.createInterface({
+    const rl = readline.createInterface({ // Interface readline pour poser une question à l'utilisateur
       input: process.stdin,
       output: process.stdout
     });
 
     logger.info("Voulez-vous générer un graphique des types de questions pour un fichier spécifique ? (O/N)");
-
+// Demande à l'utilisateur s'il veut générer un graphique
     const userResponse = await new Promise((resolve) =>
       rl.question("Réponse : ", resolve)
     );
@@ -179,7 +178,7 @@ cli
       // Compter les types de questions
       const typeCounts = {};
       questions.forEach((q) => {
-        const type = q.type || "Unknown";
+        const type = q.type || "Unknown"; // Mets le type de la question à "Unknown" si le type est manquant
         typeCounts[type] = (typeCounts[type] || 0) + 1;
       });
 
@@ -230,7 +229,7 @@ cli
       // Sauvegarder la page HTML
       const outputFilePath = path.join(__dirname, "./cli/chart.html");
       fs.writeFileSync(outputFilePath, htmlContent);
-
+// Message de confirmation a travers un logger
       logger.info(`Graphique généré avec succès : ${outputFilePath}`);
     } catch (error) {
       logger.error("Une erreur est survenue.");
@@ -238,7 +237,7 @@ cli
     }
   });
 
-
+// COMMANDE QUESTION ADD POUR AJOUTER UNE NOUVELLE QUESTION
   cli
     .command("questions add", "Ajoute une nouvelle question à la banque")
     .option("--text <text>", "Texte de la question", { required: true })
@@ -270,11 +269,13 @@ cli
       }
     });
 
+    // COMMANDE QUESTION DEDUPLICATE POUR SUPPRIMER LES DOUBLONS
   cli
     .command("questions search <keyword>", "Recherche une question par mot-clé")
     .action(({ logger, args }) => {
       const keyword = args.keyword.toLowerCase();
       const questions = readQuestions();
+      // Filtre les questions par mot-clé
       const filteredQuestions = questions.filter((q) =>
         q.text.toLowerCase().includes(keyword),
       );
@@ -291,17 +292,17 @@ cli
         });
       }
     });
-
+// COMMANDE EXAM GENERATE POUR GENERER UN EXAMEN
   cli
     .command(
       "exam generate",
       "Génère un examen contenant entre 15 et 20 questions",
     )
-    .option("--count <count>", "Nombre de questions (entre 15 et 20)", {
+    .option("--count <count>", "Nombre de questions (entre 15 et 20)", { // ajout de l'option du nombre de questions entre 15 et 20
       required: false,
       validator: cli.NUMBER,
     })
-    .option("--keyword <keyword>", "Mot-clé pour filtrer les questions", {
+    .option("--keyword <keyword>", "Mot-clé pour filtrer les questions", { // ajout de l'option de filtre des questions par mot-clé
       required: false,
     })
     .action(({ logger, options }) => {
@@ -316,16 +317,16 @@ cli
       try {
         const questions = readQuestions();
 
-        if (questions.length < count) {
+        if (questions.length < count) { // Vérifie si le nombre de questions est suffisant
           logger.error(
             `Pas assez de questions disponibles pour générer un examen. Questions disponibles : ${questions.length}`,
           );
           return;
         }
 
-        // Filtrer les questions par mot-clé, si spécifié
+        // Filtre les questions par mot-clé, si c'est spécifié
         const filteredQuestions = keyword
-          ? questions.filter((q) => q.text.toLowerCase().includes(keyword))
+          ? questions.filter((q) => q.text.toLowerCase().includes(keyword)) 
           : questions;
 
         if (filteredQuestions.length < count) {
@@ -335,20 +336,21 @@ cli
           return;
         }
 
-        // Mélanger et sélectionner les questions
+        // Mélange les questions pour les sélectionner aléatoirement
         const shuffledQuestions = filteredQuestions.sort(
           () => 0.5 - Math.random(),
         );
+        // Sélectionne les premières questions pour l'examen
         const selectedQuestions = shuffledQuestions.slice(0, count);
 
-        // Créer l'examen
+        // creation de l'examen avec l'id, la date et les questions
         const exam = {
           id: `exam_${Date.now()}`,
-          date: new Date().toISOString(),
+          date: new Date().toISOString(), 
           questions: selectedQuestions,
         };
 
-        // Sauvegarder l'examen
+        // Sauvegarde de l'examen
         saveExam(exam);
 
         logger.info(`Examen généré avec succès ! ID de l'examen : ${exam.id}`);
@@ -358,7 +360,7 @@ cli
         );
       }
     });
-
+// COMMANDE EXAM EXPORT POUR EXPORTER UN EXAMEN
   cli
     .command("exam export", "Exporte un examen spécifique au format GIFT")
     .option("--id <id>", "ID de l'examen à exporter", { required: true })
@@ -366,7 +368,7 @@ cli
       const examId = options.id;
 
       try {
-        // Lire tous les examens
+        // Lis tous les examens
         const examsFilePath = path.join(__dirname, "./data/exams.json");
         if (!fs.existsSync(examsFilePath)) {
           logger.error(
@@ -374,10 +376,10 @@ cli
           );
           return;
         }
-
+        
         const exams = JSON.parse(fs.readFileSync(examsFilePath, "utf-8"));
 
-        // Rechercher l'examen par ID
+        // Recherche l'examen par ID
         const selectedExam = exams.find((exam) => exam.id === examId);
 
         if (!selectedExam) {
@@ -385,15 +387,15 @@ cli
           return;
         }
 
-        // Convertir les questions de l'examen en format GIFT
+        // Convertis les questions de l'examen en format GIFT
         const giftContent = selectedExam.questions
           .map((q) => `::${q.title}:: ${q.text} {}`)
           .join("\n\n");
 
-            // Nommer automatiquement le fichier avec l'ID de l'examen
+            // Nomme automatiquement le fichier avec l'ID de l'examen
             const outputPath = path.join(__dirname, `./examen/${examId}.gift`);
 
-        // Écrire dans le fichier de sortie
+        // Écris dans le fichier de sortie
         fs.writeFileSync(outputPath, giftContent);
         logger.info(
           `Examen exporté avec succès dans le fichier : ${outputPath}`,
@@ -402,14 +404,14 @@ cli
         logger.error(`Erreur lors de l'exportation : ${error.message}`);
       }
     });
-
+// COMMANDE QUESTION DEDUPLICATE POUR SUPPRIMER LES DOUBLONS
   cli
     .command(
       "questions deduplicate",
       "Supprime les doublons dans les titres des questions",
     )
     .action(({ logger }) => {
-      const result = removeDuplicateQuestions();
+      const result = removeDuplicateQuestions(); // utilise la fonction de suppression des doublons
 
       if (result) {
         logger.info("Les doublons ont été supprimés avec succès.");
@@ -417,7 +419,7 @@ cli
         logger.warn("Aucun doublon n'a été trouvé.");
       }
     });
-
+// COMMANDE CONTACT
   cli.command("", "Commande par défaut").action(({ logger }) => {
     logger.info("Bienvenue dans Everywhere CLI !");
     logger.info(
@@ -629,9 +631,7 @@ cli
       }
     });
 
-
-  
-    
+// COMMANDE VISUALIZE EXAM POUR VISUALISER LES DONNEES D'UN EXAMEN
     cli
       .command("visualize exam", "Visualiser un profil d'examen GIFT")
       .action(async ({ logger }) => {
@@ -641,13 +641,13 @@ cli
         });
     
         logger.info("Veuillez saisir l'ID de l'examen pour visualiser le profil :");
-    
+    // Demande à l'utilisateur de saisir l'ID de l'examen
         const examId = await new Promise((resolve) =>
           rl.question("ID de l'examen : ", resolve)
         );
     
         rl.close();
-    
+    // Génère un graphique des types de questions pour un examen spécifique
         try {
           const examsPath = './data/exams.json';
     
@@ -663,7 +663,7 @@ cli
             logger.error("Examen introuvable !");
             return;
           }
-    
+    // Compte les types de questions pour les ajouter a chaque type trouvé
           let multipleChoice = 0;
           let shortAnswer = 0;
           let essay = 0;
@@ -701,7 +701,7 @@ cli
             }
           };
     
-          // Générer une page HTML
+          // Génére une page HTML
           const htmlContent = `
     <!DOCTYPE html>
     <html>
@@ -721,7 +721,7 @@ cli
     </html>
     `;
     
-          // Sauvegarder la page HTML
+          // Sauvegarde la page HTML
           const outputFilePath = path.join(__dirname, "./cli/exam-chart.html");
           fs.writeFileSync(outputFilePath, htmlContent);
     
@@ -738,10 +738,10 @@ cli
 // Importation automatique des questions au démarrage
 importAllQuestions();
 
-// Enregistrez les commandes
+// Enregistre les commandes pour les questions entrées par l'utilisateur
 registerQuestionCommands(cli);
 
-// Vérifiez les arguments reçus
+// Vérifie les arguments reçus
 console.log("Arguments reçus par le CLI :", process.argv);
 
 // Lancement du CLI

@@ -1,9 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-/**
- * Classe représentant une question au format GIFT.
- */
+// Classe Question pour stocker les questions
 class Question {
     constructor(title, text, theme) {
         this.title = title;
@@ -11,32 +9,20 @@ class Question {
         this.theme = theme; // Ajoute le thème à chaque question
     }
 
-    /**
-     * Représente la question sous forme de chaîne de caractères.
-     * @returns {string}
-     */
+   // Méthode toString pour afficher une question
     toString() {
         return `Title: ${this.title}\nQuestion: ${this.text}\nTheme: ${this.theme}\n`;
     }
 }
 
-/**
- * Extrait le thème du nom du fichier GIFT.
- * @param {string} filename 
- * @returns {string} 
- */
+// Extrait le thème à partir du nom du fichier
 function extractThemeFromFilename(filename) {
     // Extrait la partie entre le dernier '-' et '.gift'
     const match = filename.match(/\d-(?!.*\d-)([^.]*)\.gift$/);
     return match ? match[1] : ''; // Retourne le thème ou une chaîne vide si non trouvé
 }
 
-/**
- * Parse un fichier GIFT et retourne un tableau d'objets Question.
- * @param {string} filePath 
- * @param {number} startIndex 
- * @returns {Array<Question>} 
- */
+// Parse un fichier GIFT et retourne un tableau de questions
 function parseGiftFile(filePath, startIndex = 1) {
     const content = fs.readFileSync(filePath, 'utf-8');
     
@@ -46,7 +32,7 @@ function parseGiftFile(filePath, startIndex = 1) {
 
     const questions = matches.map((match, index) => {
         const title = match[1] 
-            ? match[1].replace(/::/g, '').trim() 
+            ? match[1].replace(/::/g, '').trim()  // Utilise le titre GIFT s'il existe
             : `Question ${startIndex + index}`;
         const text = match[2].trim();
         
@@ -59,31 +45,25 @@ function parseGiftFile(filePath, startIndex = 1) {
     return questions;
 }
 
-/**
- * Parse un répertoire contenant plusieurs fichiers GIFT.
- * @param {string} directoryPath 
- * @returns {Array<Question>} 
- */
+// Parse un répertoire contenant des fichiers GIFT et retourne un tableau de questions
 function parseGiftDirectory(directoryPath) {
     const files = fs.readdirSync(directoryPath).filter(file => file.endsWith('.gift'));
     let allQuestions = [];
     let questionIndex = 1;
-
+// Parcours tous les fichiers du répertoire
     files.forEach(file => {
         const filePath = path.join(directoryPath, file);
         const questions = parseGiftFile(filePath, questionIndex);
-        allQuestions = allQuestions.concat(questions);
+        allQuestions = allQuestions.concat(questions); 
         questionIndex += questions.length; // Met à jour l'index pour les titres automatiques
     });
 
     return allQuestions;
 }
 
-/**
- * Exemple d'utilisation
- */
+// Exemple d'utilisation du module
 if (require.main === module) {
-    const directoryPath = path.join(__dirname, 'data'); // Remplacer 'data' par le chemin de votre répertoire
+    const directoryPath = path.join(__dirname, 'data'); 
     try {
         const questions = parseGiftDirectory(directoryPath);
         console.log(`Nombre total de questions extraites : ${questions.length}`);
@@ -95,5 +75,5 @@ if (require.main === module) {
         console.error('Erreur lors du parsing des fichiers GIFT :', error.message);
     }
 }
-
+// Exporte les fonctions et la classe pour les utiliser ailleurs
 module.exports = { parseGiftFile, parseGiftDirectory, Question };

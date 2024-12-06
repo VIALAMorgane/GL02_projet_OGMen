@@ -6,10 +6,7 @@ const examsFilePath = path.join(__dirname, "../data/exams.json");
 
 const { parseVCard } = require("./vCardParser");
 
-/**
- * Lit la banque de questions depuis le fichier JSON.
- * @returns {Array} - Tableau de questions stockées dans le fichier JSON.
- */
+// Lit les questions à partir du fichier JSON
 function readQuestions() {
   if (!fs.existsSync(dataFilePath)) {
     console.warn(
@@ -26,13 +23,10 @@ function readQuestions() {
   }
 }
 
-/**
- * Sauvegarde la banque de questions dans le fichier JSON, tout en attribuant des titres uniques.
- * @param {Array} questions - Tableau de questions à sauvegarder.
- */
+// Sauvegarde les questions dans le fichier JSON
 function saveQuestions(questions) {
-  const questionsWithTitles = assignTitlesToQuestions(questions);
-  try {
+  const questionsWithTitles = titreQst(questions);
+  try { // Écrit le contenu mis à jour dans le fichier JSON
     fs.writeFileSync(
       dataFilePath,
       JSON.stringify(questionsWithTitles, null, 2),
@@ -46,12 +40,8 @@ function saveQuestions(questions) {
   }
 }
 
-/**
- * Attribue des titres uniques aux questions, si elles n'en possèdent pas déjà.
- * @param {Array} questions - Tableau de questions.
- * @returns {Array} - Tableau de questions avec des titres uniques attribués.
- */
-function assignTitlesToQuestions(questions) {
+// Attribue des titres uniques aux questions
+function titreQst(questions) {
   return questions.map((question, index) => {
     if (!question.title || question.title.trim() === "") {
       question.title = `Question ${index + 1}`; // Génère un titre basé sur l'index si aucun n'existe.
@@ -60,11 +50,7 @@ function assignTitlesToQuestions(questions) {
   });
 }
 
-/**
- * Supprime une question spécifique de la banque en se basant sur son titre exact.
- * @param {string} title - Titre exact de la question à supprimer.
- * @returns {boolean} - Retourne true si au moins une question a été supprimée, sinon false.
- */
+// Supprime une question de la banque de questions
 function deleteQuestion(title) {
   const questions = readQuestions();
 
@@ -93,26 +79,22 @@ function deleteQuestion(title) {
   return true;
 }
 
-/**
- * Sauvegarde un examen nouvellement créé dans le fichier exams.json.
- * @param {Object} exam - Objet représentant un examen à sauvegarder.
- */
+// Sauvegarde un examen dans le fichier JSON
 function saveExam(exam) {
   const exams = fs.existsSync(examsFilePath)
+  // Vérifie si le fichier existe, puis lit et parse son contenu
     ? JSON.parse(fs.readFileSync(examsFilePath, "utf-8"))
     : [];
   exams.push(exam);
+  // Écrit le contenu mis à jour dans le fichier JSON
   fs.writeFileSync(examsFilePath, JSON.stringify(exams, null, 2));
   console.log("Examen sauvegardé avec succès !");
 }
 
-/**
- * Supprime les doublons de questions dans la banque, en se basant sur leurs titres.
- * @returns {boolean} - Retourne true si des doublons ont été supprimés, sinon false.
- */
+// Supprime les questions en double de la banque de questions
 function removeDuplicateQuestions() {
   const questions = readQuestions();
-
+// Vérifie si des questions sont disponibles pour la vérification
   if (questions.length === 0) {
     console.warn("Aucune question disponible pour vérifier les doublons.");
     return false;
@@ -125,7 +107,7 @@ function removeDuplicateQuestions() {
   const seenTitles = new Set();
   const uniqueQuestions = [];
   const duplicateQuestions = [];
-
+// Parcours toutes les questions pour identifier les doublons
   questions.forEach((question) => {
     if (seenTitles.has(question.title)) {
       duplicateQuestions.push(question);
@@ -134,7 +116,7 @@ function removeDuplicateQuestions() {
       uniqueQuestions.push(question);
     }
   });
-
+// Vérifie si des doublons ont été trouvés
   if (duplicateQuestions.length === 0) {
     console.log("Aucun doublon trouvé.");
     return false;
@@ -149,11 +131,7 @@ function removeDuplicateQuestions() {
   return true;
 }
 
-/**
- * Détecte le type d'une question à partir de son texte.
- * @param {string} questionText
- * @returns {string}
- */
+// Fonction pour détecter le type de question à partir de son texte
 function detectQuestionType(questionText) {
   
     if (/{T|F}/.test(questionText)) {
@@ -282,7 +260,7 @@ function displayContactInfos(contactName) {
     console.log(`Aucun contact trouvé avec le nom ${firstName} ${lastName}.`);
   }
 }
-
+// Exporte les fonctions pour les rendre accessibles aux autres modules
 module.exports = {
   readQuestions,
   saveQuestions,
