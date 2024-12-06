@@ -68,6 +68,38 @@ function messageDebut() {
     8. questions deduplicate       - Supprime les doublons dans les titres des questions
     `);
 }
+
+function askQuestion(questions, index = 0, score) {
+    // Si on a parcouru toutes les questions, on termine
+    if (index >= questions.length) {
+        console.log(`Quiz terminé ! Votre score final est : ${score}`);
+        reader.close();
+    }
+
+    //REGEX pour trouver les reponses correctes des questions
+    const regex = /(?<==)[^ ]+(?= ~)|(?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])|(?<==).*?(?=[.])/;
+    
+    const question = questions[index];
+    // Stocke les bonnes réponses de la question en cours
+    let goodAnswer = question.text.match(regex);
+    // Supprime les indications de bonne ou mauvaise réponse
+    let text = question.text.replaceAll('~', ' ').replaceAll('=', ' ');
+
+    // Pose la question à l'utilisateur
+    reader.question(goodAnswer + '\n' + 'Entrez votre réponse ici : ', (userAnswer) => {
+        // Vérifie la réponse
+        if (goodAnswer.includes(userAnswer)) {
+            ++score;
+            console.log("Vous avez trouvé la bonne réponse !");
+        } else {
+            console.log("Votre réponse n'est pas correcte.");
+        }
+
+        // Passe à la question suivante
+        askQuestion(questions, index + 1, score);
+    });
+}
+
 // Enregistrer les commandes CLI
 function registerQuestionCommands(cli) {
     cli.command("questions list", "Affiche toutes les questions de la banque")
@@ -97,15 +129,15 @@ function registerQuestionCommands(cli) {
             //On lit notre fichier qui contient tous les exams
             const exams = readExam();
 
-            //REGEX pour trouver les reponses correctes des questions
-            const regex = /(?<==).*?[.]|(?<==).*?(?=[.~])/;
+
+            const questionList = [];
 
             /* CODEX DES REGEX
             =.*?~|=.*?}
             =.*?[.]|=.*?(?=[.~])
+            (?<==).*?[.]|(?<==).*?(?=[.~])
+            (?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])
             */
-
-            let score = 0;
 
             //Si il n'existe pas d'examen, alors rien ne se passe. On renvoit juste un string
             if (exams.length === 0) {
@@ -127,6 +159,10 @@ function registerQuestionCommands(cli) {
                         //On parcours toutes les questions présentent dans l'examen choisi
                         exams.questions.forEach((exams) => {
 
+                            questionList.push(exams)
+
+
+                            /*
                             //Stock la ou les bonnes réponses de la question en cours
                             let goodAnswer = exams.text.match(regex);
                             //Supprime l'indication d'une bonne ou mauvaise réponse, pour ne garder que les réponses simples'
@@ -148,17 +184,16 @@ function registerQuestionCommands(cli) {
                                     //Sinon on le prévient que sa réponse est incorrecte (examen non négatif)
                                     logger.info("Votre réponse n'est pas correcte.");
                                 }
-
-                                reader.close();
-                            })
+                            })*/
 
                         })
 
                         //Return false permet ici de casser la boucle de parcours des examens. Every est comme un forEach sauf que c'est arrêtable à souhait
                         return false;
                     }
-                });
+            });
 
+                askQuestion(questionList, 0, 0);
                 //logger.info("Votre score à l'examen " + id + " est de : " + score);
 
             }
