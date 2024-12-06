@@ -85,9 +85,10 @@ function messageDebut() {
     10. contact update             - Modifier votre carte contact
     11. contact delete             - Supprimer votre contact
     12. visualize exam             - Permet de visualiser un examen avec un diagramme en barre
-    13. search contact             - Rechercher un contact par Nom
-    14. search question            - Rechercher une question par ID
-    15. search exam                - Rechercher un examen par ID ou date,
+    13. visualizeExamTheme         - Visualiser un profil d'examen par theme en creant un diagramme en barre
+    14. search contact             - Rechercher un contact par Nom
+    15. search question            - Rechercher une question par ID
+    16. search exam                - Rechercher un examen par ID ou date,
     `);
 }
 // Enregistre les commandes CLI
