@@ -6,16 +6,16 @@ function parseVCard(vCardContent) {
     phone: "",
     email: "",
   };
-
+// Parcours de chaque ligne du fichier vcf
   lines.forEach((line) => {
     if (line.startsWith("FN:")) {
       const fullName = line.split("FN:")[1].trim();
       const [firstName, lastName] = fullName.split(" ");
       contactInfo.firstName = firstName;
       contactInfo.lastName = lastName;
-    } else if (line.startsWith("TEL;")) {
+    } else if (line.startsWith("TEL;")) { 
       contactInfo.phone = line.split(":")[1].trim();
-    } else if (line.startsWith("EMAIL;")) {
+    } else if (line.startsWith("EMAIL;")) { 
       contactInfo.email = line.split(":")[1].trim();
     }
   });

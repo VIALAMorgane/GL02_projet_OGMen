@@ -69,7 +69,7 @@ function messageDebut() {
   console.log(`
     1. questions list              - Affiche toutes les questions de la banque
     2. questions import            - Importe les questions depuis le répertoire ./data
-    3. questions delete <title>    - Supprime une question par titre exact
+    3. questions delete --title <title>    - Supprime une question par titre exact
     4. questions add --text <text> --type <type> - Ajoute une nouvelle question
     5. questions chart             - Génère un fichier HTML avec un graphique des types de questions
     6. exam generate               - Génère un examen contenant entre 15 et 20 questions
@@ -79,7 +79,7 @@ function messageDebut() {
     10. contact update             - Modifier votre carte contact
     11. contact read               - Lire les informations à propos d'un contact
     12. contact delete             - Supprimer votre contact
-    13. visualize exam             - Permet de visualiser un examen avec un diagrame en barre
+    13. visualize exam             - Permet de visualiser un examen avec un diagramme en barre
     `);
 }
 // Enregistre les commandes CLI
@@ -732,8 +732,205 @@ cli
         }
       });
     
+      cli
+      .command("visualizeExamTheme", "Visualiser un profil d'examen par theme")
+      .action(async ({ logger }) => {
+        const rl = readline.createInterface({
+          input: process.stdin,
+          output: process.stdout
+        });
+    
+        logger.info("Veuillez saisir l'ID de l'examen pour visualiser le profil :");
+    
+        const examId = await new Promise((resolve) =>
+          rl.question("ID de l'examen : ", resolve)
+        );
+    
+        rl.close();
+    
+        try {
+          const examsPath = './data/exams.json';
+    
+          if (!fs.existsSync(examsPath)) {
+            logger.error('Fichier exams.json introuvable.');
+            return;
+          }
+    
+          const exams = JSON.parse(fs.readFileSync(examsPath, 'utf-8'));
+          const selectedExam = exams.find((exam) => exam.id === examId);
+    
+          if (!selectedExam) {
+            logger.error("Examen introuvable !");
+            return;
+          }
+    
+          let Review = 0;
+          let GraExpressionOfQuantity= 0;
+          let Voc= 0;
+          let GraSubjectVerbAgreement= 0;
+          let Reading= 0;
+          let Passive= 0;
+          let a4= 0;
+          let Ultimate= 0;
+          let Adverbs= 0;
+          let ReadingCoachella= 0;
+          let GraPresentTensesHabits= 0;
+          let GraIngOrInf= 0;
+          let GraEdAdjectivesPrepositions= 0;
+          let GRPresentPerfectVsPastSimple= 0;
+          let GraPresentPerfectSimpleVsContinuous= 0;
+          let GraAsLike= 0;
+          let UoEHygge= 0;
+          let ReadingXmen= 0;
+          let Listening= 0;
+          let GR1ExpressionOfQuantity= 0;
+          let SubjectVerbAgreement= 0;
+          let UseOfEnglish= 0;
+          let ReadingTheDeathOfCooking= 0;
+          let GR4PassiveReporting= 0;
+          let Futureforms= 0;
+          let GRFutureforms
+          let FuturePerfectAndContinuous= 0;
+          let VocExpressionWithGet= 0;
+          let ProgressTest2= 0;
+          let SoSuchTooEnough= 0;
+          let RelativeClauses= 0;
+          let a6= 0;
+          let ItIsThereIs= 0;
+          let VocLinkingWords= 0;
+          let ThirdCond= 0;
+          let MixedConditionals= 0;
+          let unknown = 0;
+
+          
+          selectedExam.questions.forEach((question) => {
+            const { theme } = question;
+        
+            if (theme === "Review" || theme ==="Review-3") Review += 1;
+            else if (theme === "Gra-Expression_of_quantity") GraExpressionOfQuantity += 1;
+            else if (theme === "Voc") Voc += 1;
+            else if (theme === "Gra-Subject_verb_agreement") GraSubjectVerbAgreement += 1;
+            else if (theme === "Reading") Reading += 1;
+            else if (theme === "Passive") Passive += 1;
+            else if (theme === "a4") a4 += 1;
+            else if (theme === "Ultimate") Ultimate += 1;
+            else if (theme === "Adverbs") Adverbs += 1;
+            else if (theme === "ReadingCoachella") ReadingCoachella += 1;
+            else if (theme === "Gra-Present-tenses_habits") GraPresentTensesHabits += 1;
+            else if (theme === "Gra-Ing_ot_inf") GraIngOrInf += 1;
+            else if (theme === "gra-ed_adjectives_prepositions") GraEdAdjectivesPrepositions += 1;
+            else if (theme === "GR-Present_perfect_vs_past_simple") GRPresentPerfectVsPastSimple += 1;
+            else if (theme === "Gra-Present_perfect_simple_vs_continuous") GraPresentPerfectSimpleVsContinuous += 1;
+            else if (theme === "Gra-As_like") GraAsLike += 1;
+            else if (theme === "UoE-Hygge") UoEHygge += 1;
+            else if (theme === "Reading-xmen") ReadingXmen += 1;
+            else if (theme === "Listening") Listening += 1;
+            else if (theme === "GR1-Expression_of_quantity") GR1ExpressionOfQuantity += 1;
+            else if (theme === "Subject_verb_agreement") SubjectVerbAgreement += 1;
+            else if (theme === "Use_of_English") UseOfEnglish += 1;
+            else if (theme === "Reading-The_death_of_cooking") ReadingTheDeathOfCooking += 1;
+            else if (theme === "GR4-Passive-reporting") GR4PassiveReporting += 1;
+            else if (theme === "Future-forms") Futureforms += 1;
+            else if (theme === "GR-Future_forms") GRFutureforms += 1;
+            else if (theme === "Future-perfect-&-continuous") FuturePerfectAndContinuous += 1;
+            else if (theme === "Voc-Expressions_with_get") VocExpressionWithGet += 1;
+            else if (theme === "ProgressTest2") ProgressTest2 += 1;
+            else if (theme === "So,such,too,enough") SoSuchTooEnough += 1;
+            else if (theme === "Relative_clauses") RelativeClauses += 1;
+            else if (theme === "6") a6 += 1;
+            else if (theme === "It is,there is") ItIsThereIs += 1;
+            else if (theme === "Voc-Linking_words") VocLinkingWords += 1;
+            else if (theme === "Third_cond-4") ThirdCond += 1;
+            else if (theme === "Mixed_conditionals") MixedConditionals += 1;
+            else unknown += 1;
+        });
+    
+          // Spécification Vega-Lite
+          const vegaLiteSpec = {
+            $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+            description: "Profil des types de questions d'un examen",
+            data: {
+              values: [
+                { type: "Review", count: Review },
+                { type: "Gra-Expression_of_quantity", count: GraExpressionOfQuantity },
+                { type: "Voc", count: Voc },
+                { type: "Gra-Subject_verb_agreement", count: GraSubjectVerbAgreement },
+                { type: "Reading", count: Reading },
+                { type: "Passive", count: Passive },
+                { type: "a4", count: a4 },
+                { type: "Ultimate", count: Ultimate },
+                { type: "Adverbs", count: Adverbs },
+                { type: "ReadingCoachella", count: ReadingCoachella },
+                { type: "Gra-Present-tenses_habits", count: GraPresentTensesHabits },
+                { type: "Gra-Ing_ot_inf", count: GraIngOrInf },
+                { type: "gra-ed_adjectives_prepositions", count: GraEdAdjectivesPrepositions },
+                { type: "GR-Present_perfect_vs_past_simple", count: GRPresentPerfectVsPastSimple },
+                { type: "Gra-Present_perfect_simple_vs_continuous", count: GraPresentPerfectSimpleVsContinuous },
+                { type: "Gra-As_like", count: GraAsLike },
+                { type: "UoE-Hygge", count: UoEHygge },
+                { type: "Reading-xmen", count: ReadingXmen },
+                { type: "Listening", count: Listening },
+                { type: "GR1-Expression_of_quantity", count: GR1ExpressionOfQuantity },
+                { type: "Subject_verb_agreement", count: SubjectVerbAgreement },
+                { type: "Use_of_English", count: UseOfEnglish },
+                { type: "Reading-The_death_of_cooking", count: ReadingTheDeathOfCooking },
+                { type: "GR4-Passive-reporting", count: GR4PassiveReporting },
+                { type: "Future-forms", count: Futureforms },
+                { type: "GR-Future_forms", count: GRFutureforms },
+                { type: "Future-perfect-&-continuous", count: FuturePerfectAndContinuous },
+                { type: "Voc-Expressions_with_get", count: VocExpressionWithGet },
+                { type: "ProgressTest2", count: ProgressTest2 },
+                { type: "So,such,too,enough", count: SoSuchTooEnough },
+                { type: "Relative_clauses", count: RelativeClauses },
+                { type: "6", count: a6 },
+                { type: "It is,there is", count: ItIsThereIs },
+                { type: "Voc-Linking_words", count: VocLinkingWords },
+                { type: "Third_cond-4", count: ThirdCond },
+                { type: "Mixed_conditionals", count: MixedConditionals }
+              ]
+            },
+            mark: "bar",
+            encoding: {
+              x: { field: "type", type: "nominal", axis: { title: "Graphique de la proportion des themes de Question" } },
+              y: { field: "count", type: "quantitative", axis: { title: "Nombre" } },
+              color: { field: "type", type: "nominal" }
+            }
+          };
+    
+          // Générer une page HTML
+          const htmlContent = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Profil des Questions</title>
+      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    </head>
+    <body>
+      <div id="chart"></div>
+      <script type="text/javascript">
+        const spec = ${JSON.stringify(vegaLiteSpec)};
+        vegaEmbed('#chart', spec);
+      </script>
+    </body>
+    </html>
+    `;
+    
+          // Sauvegarder la page HTML
+          const outputFilePath = path.join(__dirname, "./cli/exam-theme-chart.html");
+          fs.writeFileSync(outputFilePath, htmlContent);
+    
+          logger.info(`Graphique généré avec succès : ${outputFilePath}`);
+        } catch (error) {
+          logger.error("Une erreur est survenue.");
+          logger.error(error.message);
+        }
+      });
+    
   
 }
+
 
 // Importation automatique des questions au démarrage
 importAllQuestions();
