@@ -9,13 +9,13 @@
     "title": "Question 2",
     "text": "Read the text below and think of the word which best fits each gap. Use only one word in each gap.\r\n// There is an example at the beginning.\r\n<b>More than just a pretty face?</b>\r\nThere are many stories of dolphins helping people in trouble, {1:SA:=like} saving swimmers from shark attacks by gathering round them or shepherding them to safety. {1:SA:=If} these stories are true, why do dolphins do it and {1:SA:=what} makes them behave in this way? Scientists {1:SA:=who~=that} have studied them are not entirely sure. For dolphins to act together as a group to save humans implies that {1:SA:=there} is some sort of code of ethics among dolphins, but there is little evidence  for that. The {1:SA:=most} likely explanation is that they instinctively respond to the appearance of predators like sharks by herding weaker members of their own group into {1:SA:=a} safe place - and there is proof that dolphins do cooperate with {1:SA:=each~=each other} other to ward off danger. Maybe they just mistake swimmers for part of their group, which would mean that dolphins don’t have genuine feelings of kindness towards humans. {1:SA:=It} may be that their smiling appearance simply gives people the wrong idea.\r\n\r\n// Part 3: Word formation",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Short Answer"
   },
   {
     "title": "Question 3",
     "text": "Read the text below. Use the word given in capitals to form a word that fits in the gap in the same line.\r\n// There is an example at the beginning (0).\r\n<b>Why do they do it?</b>\r\nPeople are attracted to attempting extreme activities for a {1:SA:=variety} (VARY) of reasons. Some enjoy the challenge, others the feeling of {1:SA:=excitement} (EXCITE) they get from testing themselves. So although their actual {1:SA:=motivation} (MOTIVATE) may differ, people who participate in extreme sports probably share an inability to accept all the {1:SA:=limits} (LIMIT) that most of us think of as normal. They experience a sense of {1:SA:=dissatisfaction} (SATISFY) with the routine of everyday life, and feel a need to push the boundaries of what is possible, to see how far they can go. Is this similar to simply being {1:SA:=competitive} (COMPETE)? Possibly, but it may be more to do with having a dream. Of course {1:SA:=professional} (PROFESSION) athletes who train for extreme events like the triathlon or the marathon may hope for {1:SA:=financial} (FINANCE) rewards, but primarily it seems they like being different. They enjoy the feeling of being set apart from other people by their {1:SA:=achievements} (ACHIEVE), which are things most of us would fear to do.\r\n\r\n// Part 4: Key word transformation",
     "theme": "Review",
-    "type": "Essay"
+    "type": "Short Answer"
   },
   {
     "title": "Question 4",
@@ -63,7 +63,7 @@
     "title": "Question 11",
     "text": "What's the answer to this multiple-choice question? {\r\n  ~wrong answer#feedback comment on the wrong answer\r\n  ~another wrong answer#feedback comment on this wrong answer\r\n  =right answer#Very good!\r\n}\r\n\r\n//From The Hitchhiker's Guide to the Galaxy",
     "theme": "Ultimate",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 12",
@@ -93,49 +93,49 @@
     "title": "Question 16",
     "text": "Would you like {~=some~a few} rice with your chicken?",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 17",
     "text": "I mustn't eat too {~many~=much} chocolate — it's bad for me!",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 18",
     "text": "People who eat too {~=much~many} salt can suffer from high blood pressure",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 19",
     "text": "I drink {~=hardly any~a few} coffee, if I drink too {~many~=much}, I can't sleep",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 20",
     "text": "I buy very {~=few~little} eggs as I keep chickens, so I have new-laid eggs",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 21",
     "text": "I eat {~=hardly any~a few} meat — I prefer vegetables!",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 22",
     "text": "There is always {~many~=a lot of} news about food scares these days",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 23",
     "text": "There are {~=lots of~much} fantastic desserts at that new restaurant!\r\n\r\n// Grammar Ex. 2",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 24",
@@ -147,49 +147,49 @@
     "title": "Question 25",
     "text": "I knew very {~=few~a few~little~a little} people al the party, so I didn’t stay long.",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 26",
     "text": "{~Few~=A few~Little~A little} of us are going to have a barbecue in the garden tonight. Do you fancy coming?",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 27",
     "text": "Please could I have {~few~a few~little~=a little} sugar — this coffee is rather strong.",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 28",
     "text": "I've got {~few~a few~little~=a little} free time this week so I can do the work if you like.",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 29",
     "text": "I've eaten so many already that there are only {~few~=a few~little~a little} chocolates left!",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 30",
     "text": "I knew very {~few~a few~=little~a little} about Thal food so I bought a cookery book to learn more.",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 31",
     "text": "I know {~few~=a few~little~a little} people who enjoy very spicy food, but not many.",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 32",
     "text": "People say that {~few~a few~little~=a little} knowledge goes a long way!",
     "theme": "Gra-Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 33",
@@ -201,31 +201,31 @@
     "title": "Question 34",
     "text": "I never eat meat — I follow a strict {~high-fat~low-salt~=vegetarian~vitamins~well-balanced} diet.",
     "theme": "Voc",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 35",
     "text": "People who are overweight are rarely told to follow a {~=high-fat~low-salt~vegetarian~vitamins~well-balanced} diet.",
     "theme": "Voc",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 36",
     "text": "It’s good to give children a {~high-fat~low-salt~vegetarian~vitamins~=well-balanced} diet, including meat, frurt and sugar.",
     "theme": "Voc",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 37",
     "text": "love frurt, vegetables and so on, I know I’m getting a diet rich in {~high-fat~low-salt~vegetarian~=vitamins~well-balanced}.",
     "theme": "Voc",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 38",
     "text": "Older people may be advised to follow a {~high-fat~=low-salt~vegetarian~vitamins~well-balanced} diet for health reasons.",
     "theme": "Voc",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 39",
@@ -237,31 +237,31 @@
     "title": "Question 40",
     "text": "Eating too much sugar {=is~are} bad for young children.",
     "theme": "Gra-Subject_verb_agreement",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 41",
     "text": "Most of my friends {~eats=eat} fast food regularly.",
     "theme": "Gra-Subject_verb_agreement",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 42",
     "text": "Not many people {=enjoy~enjoys} raw vegetables.",
     "theme": "Gra-Subject_verb_agreement",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 43",
     "text": "There {~was=were} few people in the restaurant.",
     "theme": "Gra-Subject_verb_agreement",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 44",
     "text": "It's good that there {=is~are} lots of advice about healthy lifestyles.",
     "theme": "Gra-Subject_verb_agreement",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 45",
@@ -273,7 +273,7 @@
     "title": "Question 46",
     "text": "Choose the best title for the text.{\r\n  =Is powdered food the future? Huel put to the test\r\n  ~It’s nutritious and delicious\\: I’m going with Huel\r\n  ~Give me a hamburger every time\\: Huel is not for me\r\n}\r\n\r\n// 2",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 47",
@@ -285,37 +285,37 @@
     "title": "Question 48",
     "text": "What does the author think about Julian Hearn´s claims for his product? {\r\n  ~She finds them suprising\r\n  =She accepts them reluctantly\r\n  ~She doesn´t believe all of them\r\n  ~She thinks they are exaggerated }",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 49",
     "text": "Why did the author start to eat Huel on the first evening? {\r\n  ~She realised she hadn´t been eating properly\r\n  ~She recognised that she disliked cooking\r\n  =She didn't have time to prepare a meal\r\n  ~She wasn't finding other foods satisfying }",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 50",
     "text": "[markdown] What does '_these_' in line 38 refer to?  {\r\n  =Unknown possible chemicals\r\n  ~Lists on the label\r\n  ~Other healthy meals\r\n  ~The main ingredients }",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 51",
     "text": "What does the phrase' got the hang of hang of it' in line 40 mean? {\r\n  ~Was preparing to do something\r\n  =Learnt how to do something\r\n  ~Got tired of doing something\r\n  ~Realised she liked doin something  }",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 52",
     "text": "How did things change for the author in week two? {\r\n  ~She started to do more exercise\r\n  ~She gained a feeling of extra energy\r\n  ~She wanted to give up her experiment\r\n  =She found what she ate more enjoyable  }",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 53",
     "text": "At the end of the experiment, what did the author decide about Huel {\r\n  ~It was impossible to use it regulary\r\n  =She now knew  how to use it properly\r\n  ~It was a poor subsite for normal food\r\n  ~Eating more of it would enable her to lose weight }\r\n\r\n\r\n// 3",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 54",
@@ -375,7 +375,7 @@
     "title": "Question 63",
     "text": "// CLOZE\r\nComplete the email with the correct active or passive form of the verbs in brackets.\r\n\r\nDear Julia,\r\nYou'll never gess what {1:SA:=has happened} (happen)! Our lovey new car {1:SA:=has been stolen} (steal)!\r\nOne day last week Jack went out to be yhe beach for a swim and as usual he {1:SA:=hid} (hide) the car keys in the toe of his shoe. When he came out of the water, he {1:SA:=didn't notice~=did not notice} (not notice) anything suspicious. It didn't look as if his clothes {1:SA:=had been touched} (touch). When he started to put them on, however, he realised that the keys {1:SA:=had been taken} (take) and when he got to the car park, of course, the car was gone too.\r\nThe police say there is a gang of car thieves who {1:SA:=are known} (know) to be operating in the area. They think Jack {1:SA:=was being watched} (watch) as he arrived at the beach. The thieves saw where he had parked the car and then where the keys {1:SA:=were hidden~=had been hidden} (hide).\r\nIt was almost two weeks ago now and although we hope it {1:SA:=will be found} (find), we're beginning to think we might never see it again.\r\nWell, that's all from me. Write soon and tell me all your news.\r\nLove,\r\nRaquel",
     "theme": "Passive",
-    "type": "Multiple Choice"
+    "type": "Short Answer"
   },
   {
     "title": "Question 64",
@@ -573,37 +573,37 @@
     "title": "Question 96",
     "text": "What point is the writer making in the first paragraph? {\r\n  ~Attitudes to love are changing.\r\n  ~People's lack of romance leads to divorce.\r\n  ~=Accepted beliefs about love are hard to explain.\r\n  ~People should forget about trying to find a soulmate.}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 97",
     "text": "[html]What does ‘this’ refer to in “...popular works of contemporary fiction such as <i>One Day</i> and <i>Twilight</i>. <u>This</u> isn’t a preoccupation found only in Western cultures either”? {\r\n  ~<i>Romeo and Juliet</i>\r\n  ~a Chinese love story\r\n  ~=the idea of romantic love\r\n  ~contemporary fiction}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 98",
     "text": "What does the writer say about the use of the word 'soulmate' in paragraph three? {\r\n  ~It was used earlier than was previously thought.\r\n  ~It took a long time for it to be widely understood.\r\n  ~The meaning has changed very recently.\r\n  ~=It was first used to describe an unusual and unfamiliar concept.}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 99",
     "text": "According to the study, how do people in long-term relationships react to the way romance is portrayed in popular culture? {\r\n  ~=They are able to separate fact from fiction.\r\n  ~They think it is a worrying problem.\r\n  ~They feel sorry for people who idealise love.\r\n  ~They are disappointed that reality is different.}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 100",
     "text": "What conclusion can be drawn from the university research? {\r\n  ~It is unrealistic to expect love to last.\r\n  ~=It is necessary to put some effort into a relationship.\r\n  ~It is impossible to give a definition of the perfect relationship.\r\n  ~It is better to have low expectations of love.}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 101",
     "text": "The writer says that online dating agencies are popular because they {\r\n  ~=mean people are less reliant on chance.\r\n  ~give people hope of finding the perfect soulmate.\r\n  ~are more reliable than traditional ways of meeting the right person.\r\n  ~give people a much wider choice of potential partners.}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 102",
@@ -705,97 +705,97 @@
     "title": "Question 118",
     "text": "My mother stopped {~=making~to make} lunch because the phone rang.",
     "theme": "Gra-Ing_or_inf",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 119",
     "text": "My mother stopped {~making~=to make} lunch because we were hungry.",
     "theme": "Gra-Ing_or_inf",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 120",
     "text": "Dad tried {~=phoning~to phone} but nobody answered.",
     "theme": "Gra-Ing_or_inf",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 121",
     "text": "Dad tried {~phoning~=to phone} but he couldn't remember the number, so he gave up.",
     "theme": "Gra-Ing_or_inf",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 122",
     "text": "The kids remembered {~buying~=to buy} grandma a present for her birthday.",
     "theme": "Gra-Ing_or_inf",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 123",
     "text": "The kids remembered {~=buying~to buy} grandma a present but couldn't find it again later.",
     "theme": "Gra-Ing_or_inf",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 124",
     "text": "I regret {~telling~=to tell} you that all train services have been cancelled.",
     "theme": "Gra-Ing_or_inf",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 125",
     "text": "I regret {~=telling~to tell} you because now you're upset.",
     "theme": "Gra-Ing_or_inf",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 126",
     "text": "I forgot {~to give~=giving} my sister an old dress, and then I found it in her wardrobe.",
     "theme": "Gra-Ing_or_inf",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 127",
     "text": "I forgot {~=to give~giving} my teacher my essay and she wasn't happy when I handed it in late.",
     "theme": "Gra-Ing_or_inf",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 128",
     "text": "What is the writer's attitude towards football fans attending matches? {\r\n  ~She's impressed by their behaviour.\r\n  ~She's surprised by how much money they spend.\r\n  ~She's embarrassed by how irresponsible they are.\r\n  ~=She's sympathetic to their feelings.\r\n}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 129",
     "text": "The writer mentions people who live ‘in a dream state’ in order to {\r\n  ~give an example of people who have uncontrollable emotions.\r\n  ~criticise people who have unrealistic expectations.\r\n  ~=contrast different types of emotional attachments.\r\n  ~explain why passions can be more important than real relationships.\r\n}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 130",
     "text": "The writer thinks having a passion is a good thing because {\r\n  ~=it helps people learn how to express their emotions.\r\n  ~it encourages more considerate behaviour.\r\n  ~it gives people an opportunity to act like a different person.\r\n  ~it makes everything else in life seem unimportant.\r\n}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 131",
     "text": "What does the writer mean by ‘thin on the ground’ in line 30? {\r\n  ~Something which is easily forgotten.\r\n  ~=Something which occurs infrequently.\r\n  ~Something which takes place only once.\r\n  ~Something which is unexpected.\r\n}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 132",
     "text": "The writer mentions Wimbledon to show that {\r\n  ~some sports are less likely to inspire strong feelings.\r\n  ~some passions last for many years.\r\n  ~=sports fans can behave uncharacteristically.\r\n  ~people often behave strangely to get on TV.\r\n}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 133",
     "text": "What was the writer's purpose in writing this text? {\r\n  ~To encourage people to talk about their passions openly.\r\n  ~To convince the reader that sports fans are normal human beings.\r\n  ~To explain why the excitement of winning is worth the disappointment of losing.\r\n  ~=To argue that a passion for sport provides an opportunity to experience highs and lows.\r\n}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 134",
@@ -813,181 +813,181 @@
     "title": "Question 136",
     "text": "I _____ interested in theatre since I was very young.{~=have been~was}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 137",
     "text": "Toby _____ very good at football when we were at school together.{~=was~has been}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 138",
     "text": "They _____ that café for as long as I can remember.{~='ve owned~owned}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 139",
     "text": "We _____ chickens and ducks when we lived on a farm.{~=owned~'ve owned}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 140",
     "text": "Ella _____ learning to play the guitar this week.{~='s started~started}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 141",
     "text": "You _____ to turn pale – I was really worried about you!{~=started~'ve started}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 142",
     "text": "My parents _____ a bit of bad luck this year.{~=have had~had}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 143",
     "text": "Steve _____ a good time last night, didn't he?{~=had~has had}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 144",
     "text": "Those trousers _____ of fashion in the 1970s.{~=went out~have gone out}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 145",
     "text": "My Auntie's café _____ of business – she's so sad about it.{~=has gone out~went out}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 146",
     "text": "I _____ leave early because I wanted to study the next morning.{~=had to~have had to}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 147",
     "text": "Sarah _____ take another job to pay for her holiday this summer.{~=has had to~had to}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 148",
     "text": "We _____ going to my grandparents house when we were little.{~=always loved~have always loved}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 149",
     "text": "My brothers _____ playing rugby together, even though they're middle-aged now.{~=have always loved~always loved}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 150",
     "text": "My Dad _____ medicine at university.{~=studied~'s studied}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 151",
     "text": "We _____ really hard for this test, I hope it goes well.{~='ve studied~studied}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 152",
     "text": "My cousins _____ to school in Hong Kong.{~=went~'ve been}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 153",
     "text": "I _____ to Disneyland three times.{~='ve been~went}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 154",
     "text": "Anna _____ all of his novels.{~='s read~read}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 155",
     "text": "My Mum _____ to us every night when we were growing up.{~=read~'s read}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 156",
     "text": "He _____ his keys here after the party.{~=left~'s left}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 157",
     "text": "They _____ our tickets at the box office, we can collect them when we get there.{~='ve left~left}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 158",
     "text": "You _____ lots of photos, didn't you?{~=took~'ve taken}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 159",
     "text": "Barney _____ a shower already, he's nearly ready to go.{~='s taken~took}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 160",
     "text": "Serena _____ most of the drinks last night.{~=bought~'s bought}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 161",
     "text": "We _____ loads of food for the party this weekend.{~='ve bought~bought}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 162",
     "text": "They _____ really badly until last season.{~=always played~'ve always played}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 163",
     "text": "I _____ the piano, but never in public before now. {~='ve always played~always played}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 164",
     "text": "Stephen _____ in insurance until last summer.{~=worked~'s worked}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 165",
     "text": "You _____ in lots of different countries, haven't you?{~='ve worked~worked}",
     "theme": "GR-Present_perfect_vs_past_simple",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 166",
@@ -1041,37 +1041,37 @@
     "title": "Question 174",
     "text": "Was that film {~as~=like} all his other ones?",
     "theme": "Gra-As_like",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 175",
     "text": "Shall we still have lunch together, {~=as~=like} we said yesterday?",
     "theme": "Gra-As_like",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 176",
     "text": "I've always regarded you {~=as~like} a friend.",
     "theme": "Gra-As_like",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 177",
     "text": "A job {~as~=like} that one takes a long time to finish.",
     "theme": "Gra-As_like",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 178",
     "text": "He's working {~=as~like} a waiter in the holidays.",
     "theme": "Gra-As_like",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 179",
     "text": "Please do it carefully {~as~=like} I asked you.\r\n\r\n// Grammar reference ex 3",
     "theme": "Gra-As_like",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 180",
@@ -1083,7 +1083,7 @@
     "title": "Question 181",
     "text": "<p><small><i>Complete the text with one word in each gap.</i></small></p>\r\n\r\n<h5>Hygge: the art of simple pleasures</h5>\r\n\r\n<p>The Danes are famous for <b><i>being</i></b> one of the world's happiest nations. One possible reason {1:SA:=for} this could be the untranslatable concept of 'hygge'. Hygge has already gained a lot of publicity outside Denmark. This is thanks to a stream of recently published self-help books, {1:SA:=which~=that} all urge us to embrace hygge in order to improve our sense of well-being and happiness.</p>\r\n\r\n<p>Writer, Helen Russell, who moved to Denmark several years {1:SA:=ago}, is a hygge enthusiast. She has been fascinated by the idea ever {1:SA:=since} she arrived. Her book, <i>The Year of Living Danishly: Uncovering The Secrets of the World's Happiest Country</i>, makes it easy to understand {1:SA:=why} Helen and her family are still living {1:SA:=there~=there.} . Helen says 'hygge' can be defined {1:SA:=as} 'the absence of anything annoying or emotionally overwhelming'. It's all about being kind to yourself and celebrating the simple things in life, {1:SA:=like} spending time with friends and family, or eating ice cream. So find your inner Dane – and do what makes you happy without feeling guilty about it.</p>",
     "theme": "UoE-Hygge",
-    "type": "Multiple Choice"
+    "type": "Short Answer"
   },
   {
     "title": "Question 182",
@@ -1095,61 +1095,61 @@
     "title": "Question 183",
     "text": "Which person's superpower may be shared by other people who don't realise they have it {\r\n  ~A. Liam Hoekstra\r\n  ~B. Wim Hof\r\n  ~=C. Dean Karnazes\r\n  ~D. Isao Machii\r\n}",
     "theme": "Reading-xmen",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 184",
     "text": "Which person's superpower is beneficial for the person's mental and physical health {\r\n  ~A. Liam Hoekstra\r\n  =B. Wim Hof\r\n  ~C. Dean Karnazes\r\n  ~D. Isao Machii\r\n}",
     "theme": "Reading-xmen",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 185",
     "text": "Which person's superpower could potentially affect a person's mental development {\r\n  ~=A. Liam Hoekstra\r\n  ~B. Wim Hof\r\n  ~C. Dean Karnazes\r\n  ~D. Isao Machii\r\n}",
     "theme": "Reading-xmen",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 186",
     "text": "Which person's superpower requires theoretically impossibly quick reactions? {\r\n  ~A. Liam Hoekstra\r\n  ~B. Wim Hof\r\n  ~C. Dean Karnazes\r\n  ~=D. Isao Machii\r\n}",
     "theme": "Reading-xmen",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 187",
     "text": "Which person's superpower may have inspired the story of a legendary character {\r\n  ~=A. Liam Hoekstra\r\n  ~B. Wim Hof\r\n  ~C. Dean Karnazes\r\n  ~D. Isao Machii\r\n}",
     "theme": "Reading-xmen",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 188",
     "text": "Which person's superpower may help give an insight into curing certain illnesses {\r\n  ~=A. Liam Hoekstra\r\n  ~B. Wim Hof\r\n  ~C. Dean Karnazes\r\n  ~D. Isao Machii\r\n}",
     "theme": "Reading-xmen",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 189",
     "text": "Which person's superpower was eventually discovered by chance? {\r\n  ~A. Liam Hoekstra\r\n  ~B. Wim Hof\r\n  ~=C. Dean Karnazes\r\n  ~D. Isao Machii\r\n}",
     "theme": "Reading-xmen",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 190",
     "text": "Which person's superpower is believed by the person to be a question of mind over body {\r\n  ~A. Liam Hoekstra\r\n  =B. Wim Hof\r\n  ~C. Dean Karnazes\r\n  ~D. Isao Machii\r\n}",
     "theme": "Reading-xmen",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 191",
     "text": "Which person's superpower could be acquired by whoever is prepared to believe in it {\r\n  ~A. Liam Hoekstra\r\n  =B. Wim Hof\r\n  ~C. Dean Karnazes\r\n  ~D. Isao Machii\r\n}",
     "theme": "Reading-xmen",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 192",
     "text": "Which person's superpower cannot be explained by scientists? {\r\n  ~A. Liam Hoekstra\r\n  ~B. Wim Hof\r\n  ~C. Dean Karnazes\r\n  ~=D. Isao Machii\r\n}",
     "theme": "Reading-xmen",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 193",
@@ -1173,31 +1173,31 @@
     "title": "Question 196",
     "text": "Antarctica has the world’s largest {\r\n~volcano.\r\n~=desert.\r\n~mountain range.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 197",
     "text": "Has Antarctica always been cold? {\r\n~=No, it used to be tropical.\r\n~Yes, it’s always been covered in thick ice.\r\n~Yes, but the ice used to be a lot thinner.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 198",
     "text": "Which of these animals do you NOT get in Antarctica? {\r\n~penguins.\r\n~seals.\r\n~=polar bears.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 199",
     "text": "Who led the first team to reach the South Pole in 1911? {\r\n~=Ronald Amundsen.\r\n~Robert Falcon Scott.\r\n~Ernest Shackleton.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 200",
     "text": "Why is Ernest Shackleton’s 1908 expedition famous? {\r\n~Everyone except Shackleton survived the trip.\r\n~The men survived but they didn’t get to the South Pole.\r\n~=All the men died on the way back from the South Pole.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 201",
@@ -1209,43 +1209,43 @@
     "title": "Question 202",
     "text": "What was unusual about Leo's team?{\r\n~They were all descendants of Ernest Shackleton.\r\n~=They all had a personal link with the 1908 trip.\r\n~They'd all attempted to reach the South Pole before.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 203",
     "text": "What does Leo say wasthe hardest thing for the team before the expedition?{\r\n~organising the finance.\r\n~=preparing mentally.\r\n~getting physically fit.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 204",
     "text": "What does Leo say was easier for the 21st-century expedition than for Shackleton’s expedition?{\r\n~=planning their daily route.\r\n~doing the cooking.\r\n~carrying their equipment.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 205",
     "text": "What problem did both expeditions experience?{\r\n~running out of food.\r\n~aserious illness.\r\n~=bad weather.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 206",
     "text": "How did Leo feel when he was crossing the Antarctic plateau?{\r\n~=He hadn't expected it to be so difficult.\r\n~He was worried they wouldn't reach the South Pole.\r\n~He doubted his skills as a leader.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 207",
     "text": "The part of the trip Leo enjoyed the most was when they{\r\n~reached the South Pole.\r\n~=reached the same point that Shackleton had got to.\r\n~reached home safely.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 208",
     "text": "What does Leo admire about Shackleton?{\r\n~his determination.\r\n~his ambition.\r\n~=his bravery.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 209",
@@ -1257,7 +1257,7 @@
     "title": "Question 210",
     "text": "Complete the sentences with the correct form of the word in brackets (you might need to use the negative form).\r\nI am {1:SA:=incapable} of skiing. I’m too scared. (capable)\r\nHis approach to the problem is emotional and {1:SA:=illogical}. (logic)\r\nThe project was {1:SA:=successful} despite all the investment in it. (success)\r\nMy mother is {1:SA:=impatient} with my younger brother. She never explains things properly. (patience)\r\nThat is an extremely {1:SA:=irresponsible} way to behave. You should be trying to set a good example. (responsibility)\r\nSome celebrities are {1:SA:=distrustful} when journalists start asking them personal questions. (trust)",
     "theme": "Review",
-    "type": "Essay"
+    "type": "Short Answer"
   },
   {
     "title": "Question 211",
@@ -1269,7 +1269,7 @@
     "title": "Question 212",
     "text": "Complete the second sentence so that it has a similar meaning to the first sentence, using the word given. Use between two and five words, including the word given.\r\nI lived in London until I got married last year. BEEN\r\nI {1:SA:=had been living} in London until I got married last year.\r\nIt took three days for us to walk there. WERE\r\nWe {1:SA:=were walking for} three days.\r\nI couldn't remember the way there, so I got a taxi. FORGOTTEN\r\nI {1:SA:=had forgotten how to} get there, so I got a taxi.\r\nIt was three years since I'd visited Peru. NOT\r\nI {1:SA:=hadn’t been~=had not been~=hadn't been} to Peru for three years.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Short Answer"
   },
   {
     "title": "Question 213",
@@ -1281,49 +1281,49 @@
     "title": "Question 214",
     "text": "I don't eat {~many =much} fresh fruit.",
     "theme": "Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 215",
     "text": "There aren't {=a lot of ~hardly any} green vegetables for sale.",
     "theme": "Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 216",
     "text": "I drink {~very few =very little} water.",
     "theme": "Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 217",
     "text": "We eat {=hardly any ~very few} meat at home.",
     "theme": "Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 218",
     "text": "I only eat {~a little =a few} eggs each week.",
     "theme": "Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 219",
     "text": "I'd like to have {=some ~a few} rice with my curry.",
     "theme": "Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 220",
     "text": "I drink {=a lot of ~many} orange juice.",
     "theme": "Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 221",
     "text": "There isn't {~no =any} chocolate left.",
     "theme": "Expressions_of_quantity",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 222",
@@ -1377,43 +1377,43 @@
     "title": "Question 230",
     "text": "Not many people {~=like~likes} raw fish.",
     "theme": "Subject_verb_agreement",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 231",
     "text": "Two thousand five hundred calories per day {~=is~are} enough for the average man.",
     "theme": "Subject_verb_agreement",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 232",
     "text": "Everyone {~need~=needs} to eat a balanced diet.",
     "theme": "Subject_verb_agreement",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 233",
     "text": "Eating a lot of fresh vegetables and cheese {~=is~are} good for you.",
     "theme": "Subject_verb_agreement",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 234",
     "text": "There {~=is~are} a lot of advice on the internet about eating a healthy diet.",
     "theme": "Subject_verb_agreement",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 235",
     "text": "Most of my family {~=eat~=eats} meat but I'm a vegetarian.\r\n\r\n// U5 p49 ex 12 (probably better done in-class)",
     "theme": "Subject_verb_agreement",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 236",
     "text": "[html]<p><small><i>Read the text and fill in each gap with a single word. It can be an expression of quantity for some of the gaps.</i></small></p>\r\n<h5>Why do people love chilli?</h5>\r\n<p>People don't wash their eyes in lemon juice or pour boiling hot tea over themselves, so why are we prepared to go through so <i>much</i> pain for the sake of chilli?</p>\r\n<p>Chilli is not the only strange thing that people seem to enjoy. For example, very {1:SA:=few} people like the bitter taste of coffee to begin with but soon most of us {1:SA:=get~=become~=grow} used to it. But coffee contains caffeine, which has some addictive qualities, and this explains {1:SA:=why} it is so popular. But capsaicin, the ingredient which makes chillies hot, does not seem to have {1:SA:=any} addictive qualities whatsoever. {1:SA:=If~=if} we consumed a large quantity of it, it would kill us. And yet chillies have {1:SA:=been} used in cooking in almost {1:SA:=every} culture for thousands of years. Today, a third of the world's population eat chilli at least once a day. Lots of our favourite dishes just wouldn't taste right {1:SA:=without} it.</p>\r\n\r\n// Exercise 2: Multiple Choice",
     "theme": "Use_of_English",
-    "type": "Multiple Choice"
+    "type": "Short Answer"
   },
   {
     "title": "Question 237",
@@ -1425,13 +1425,13 @@
     "title": "Question 238",
     "text": "The writer {~likes~=doesn’t} like chilli.",
     "theme": "Use_of_English",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 239",
     "text": "Chilli {~can be~=isn’t} very addictive.\r\n\r\n// Exercise 5: Short Answer",
     "theme": "Use_of_English",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 240",
@@ -1473,37 +1473,37 @@
     "title": "Question 246",
     "text": "Why did Rob Rhinehart initially create Soylent? {\r\n  ~He saw it as a way of earning money to support his new company.\r\n  ~He felt that cooking was taking up too much of his time.\r\n  ~He wanted to live on a diet of nutritious food.\r\n  ~=He thought that he would be able to live more cheaply.\r\n}",
     "theme": "Reading-The_death_of_cooking",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 247",
     "text": "Following the interest in his blog, Rhinehart {\r\n  ~couldn't keep up with the demand for Soylent.\r\n  ~had to choose which of his businesses to close.\r\n  ~improved the recipe for Soylent.\r\n  ~=started producing big quantities of Soylent.\r\n}",
     "theme": "Reading-The_death_of_cooking",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 248",
     "text": "The writer was surprised by the public reaction to Soylent because {\r\n  ~liquid food has always been associated with ill health.\r\n  ~=people were already familiar with the idea of liquid meal replacements.\r\n  ~there are lots of similar products available.\r\n  ~astronauts stopped using liquid food a long time ago.\r\n}",
     "theme": "Reading-The_death_of_cooking",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 249",
     "text": "What does Rhinehart say about people's eating habits in the future? {\r\n  ~They will feel less hungry at meal times.\r\n  ~They will prefer eating liquid food.\r\n  ~=They will only cook when they feel like it.\r\n  ~They will appreciate eating out more than people do now.\r\n}",
     "theme": "Reading-The_death_of_cooking",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 250",
     "text": "What point is made in the fifth paragraph? {\r\n  ~=Most of our food has been altered in some way.\r\n  ~Food production needs to get more efficient.\r\n  ~People are reluctant to eat food products they consider unnatural.\r\n  ~Plants which are easy to grow will soon replace more popular vegetables.\r\n}",
     "theme": "Reading-The_death_of_cooking",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 251",
     "text": "In the final paragraph, the writer expresses {\r\n  ~doubt that Soylent is only suitable for one group of people.\r\n  ~=hope that Soylent may be a solution to a serious problem.\r\n  ~surprise about the predicted demand for Soylent products.\r\n  ~disagreement that products like Soylent are a risk to family life.\r\n}\r\n\r\n// ex 6: Vocabulary / Expressions",
     "theme": "Reading-The_death_of_cooking",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 252",
@@ -1521,31 +1521,31 @@
     "title": "Question 254",
     "text": "Their crop of soya beans has ______ in size.{\r\n  ~%50%doubled\r\n  ~%50%expanded\r\n}",
     "theme": "Reading-The_death_of_cooking",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 255",
     "text": "The business ______ rapidly.{\r\n  ~%50%expanded\r\n  ~%50%grew\r\n}",
     "theme": "Reading-The_death_of_cooking",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 256",
     "text": "They ______ a huge family on very little money.{\r\n  ~%100%raised\r\n  ~%-100%grew\r\n}",
     "theme": "Reading-The_death_of_cooking",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 257",
     "text": "No one ______ any objections to the plan.{\r\n  ~%100%raised\r\n  ~%-100%introduced\r\n}",
     "theme": "Reading-The_death_of_cooking",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 258",
     "text": "The company had to ______ production to meet demand for the product.{\r\n  ~%-100%raise\r\n  ~%100%increase\r\n}",
     "theme": "Reading-The_death_of_cooking",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 259",
@@ -1623,49 +1623,49 @@
     "title": "Question 271",
     "text": "He snacks a lot {~besides ~on =between ~from} meals.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 272",
     "text": "It’s important to eat a diet {~rich =high ~full ~plenty} in vitamins.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 273",
     "text": "People would be healthier if they ate less {=fast ~quick ~hurried ~speedy} food.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 274",
     "text": "Never add salt to any dish without {=tasting ~cooking ~flavouring ~pouring} it first to see if it’s needed.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 275",
     "text": "Some cultures are known {~by =for ~about ~with} their spicy food.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 276",
     "text": "What { ~parts ~items =ingredients ~pieces} are needed to make that dish?",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 277",
     "text": "A lot of children are addicted {~for ~on =to ~by} sugar.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 278",
     "text": "The price of co!ee {~raised =increased ~expanded ~doubled} by more than 20 percent last year.\r\n\r\n// 2",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 279",
@@ -1731,49 +1731,49 @@
     "title": "Question 289",
     "text": "A high percentage of people {~is=are} allergic to nuts.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 290",
     "text": "Both co!ee and tea {=contain~contains} a lot of ca!eine.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 291",
     "text": "Only one of my brothers {=is~are} a good cook.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 292",
     "text": "Neither of my parents {~eat=eats} meat.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 293",
     "text": "The government {=has~have} introduced new rulesabout food labels.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 294",
     "text": "Information on ways to improve your diet {=is~are} available on the website.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 295",
     "text": "The Spanish {=eat~eats} a lot of fish.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 296",
     "text": "Four hundred pounds {=is~are} an awful lot ofmoney to spend on one meal.\r\n\r\n// 4",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 297",
@@ -1863,7 +1863,7 @@
     "title": "Question 311",
     "text": "You hear a woman talking about a play. What did she dislike about it?{\r\n  ~=the lighting\r\n  ~the music\r\n  ~the costumes\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 312",
@@ -1875,43 +1875,43 @@
     "title": "Question 313",
     "text": "You hear a man and a woman talking about a visit to the theatre. How does the woman feel about the arrangements? {\r\n  ~annoyed that the play finishes so late\r\n  ~=worried about when they’re going to eat\r\n  ~confused about what time the play starts\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 314",
     "text": "You hear part of a radio programme. What kind of programme is it? {\r\n  ~a celebrity interview\r\n  ~a film review\r\n  ~=a news show\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 315",
     "text": "You hear a woman giving some information on the radio about a comedy festival. Why is it going to be different this year? {\r\n  ~The tickets will be more expensive.\r\n  ~It will be held in a smaller venue.\r\n  ~=It will be on different dates.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 316",
     "text": "You hear a man interviewing a ballet dancer on the radio. Why has she decided to retire later this year? {\r\n  ~She is worried about getting injured.\r\n  ~She no longer enjoys performing.\r\n  ~=She wants to make her family the priority.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 317",
     "text": "You hear a man and a woman talking on the radio about a new art exhibition. What do they agree is special about it? {\r\n  ~=the variety of genres\r\n  ~the unusual location\r\n  ~the famous artists\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 318",
     "text": "You hear an actress being interviewed on the radio. What is she doing? {\r\n  ~=giving her opinion about the topic of the play\r\n  ~describing her relationship with the director\r\n  ~stating a wish to direct a play herself\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 319",
     "text": "You hear a man and a woman talking. Who is the man? {\r\n  ~her brother\r\n  ~her teacher\r\n  ~=her friend\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 320",
@@ -1989,7 +1989,7 @@
     "title": "Question 332",
     "text": "[html]<b>Complete this sentence to summarise the writer’s main point.</b>\r\n<p>Socal media encourages people to...</p>{\r\n  ~get a false impression of the celebrities they follow.\r\n  ~have unrealistic hopes for their own futures.\r\n  ~=become too focused on the opinion others have of them.}",
     "theme": "Reading",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 333",
@@ -2151,7 +2151,7 @@
     "title": "Question 359",
     "text": "Read the passage and complete the gaps using the future continuous or the future perfect with <i>will</i>.\r\n\r\n<b>A bright future for our town</b>\r\n\r\nIn five years' time our town will be completely different. More people {1:SA:=will be travelling} (travel) by bicycle as the council {1:SA:=will have constructed} (construct) more bike lanes. They {1:SA:=will have pedestrianised~='ll have pedestrianised} (pedestrianise) the city centre and people {1:SA:=will be strolling} (stroll) round the traffic-free streets. The council {1:SA:=will have renovated} (renovated) the old buildings such as the Town Hall and {1:SA:=will have built} (build) new facilities such as a gym and a concert hall. The river authorities {1:SA:=will have cleaned up} (clean up) the river bank and people {1:SA:=will be canoeing} (canoe) on the water. Of course, all these changes will cost money, but we're sure it will be worth it.",
     "theme": "Future-perfect-&-continuous",
-    "type": "Multiple Choice"
+    "type": "Short Answer"
   },
   {
     "title": "Question 360",
@@ -2211,37 +2211,37 @@
     "title": "Question 369",
     "text": "[html]Was there a subject at school that you really didn't <i>get</i>?<br>\r\n   = Was there a subject at school that you really didn't {~become~have~move/travel~persuade~receive~=understand}?",
     "theme": "Voc-Expressions_with_get",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 370",
     "text": "[html]What techniques do you use to <i>get</i> people to do what you want?<br>\r\n   = What techniques do you use to {~become~have~move/travel~=persuade~receive~understand} people to do what you want?",
     "theme": "Voc-Expressions_with_get",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 371",
     "text": "[html]When do you normally <i>get</i> the time to relax?<br>\r\n   = When do you normally {~become~=have~move/travel~persuade~receive~understand} the time to relax?",
     "theme": "Voc-Expressions_with_get",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 372",
     "text": "[html]In which situations do you <i>get</i> angry?<br>\r\n   = In which situations do you {~=become~have~move/travel~persuade~receive~understand} angry?",
     "theme": "Voc-Expressions_with_get",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 373",
     "text": "[html]How do you <i>get</i> from one place to another?<br>\r\n   = How do you {~become~have~=move/travel~persuade~receive~understand} from one place to another?",
     "theme": "Voc-Expressions_with_get",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 374",
     "text": "[html]How many texts do you <i>get</i> in an average day?<br>\r\n   = How many texts do you {~become~have~move/travel~persuade~=receive~understand} in an average day?",
     "theme": "Voc-Expressions_with_get",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 375",
@@ -2295,37 +2295,37 @@
     "title": "Question 383",
     "text": "The only way I can get {~away~down~into~over~round~=through} to my cousin is by talking about dance.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 384",
     "text": "<i>City Lights</i> is on TV tonight. I never got {~away~down~into~over~=round~through} to seeing that at the cinema.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 385",
     "text": "It took him ages to get {~away~down~into~=over~round~through} the disappointment of not being in the play.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 386",
     "text": "If I stay in every night watching TV, it gets me {~away~=down~into~over~round~through}.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 387",
     "text": "Comedians can't get {~=away~down~into~over~round~through} with simply repeating the same jokes at every performance.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 388",
     "text": "Everyone says it's a really good series, but I just can't get {~away~down~=into~over~round~through} it.\r\n\r\n\r\n// Part 3: Short Answers",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 389",
@@ -2379,49 +2379,49 @@
     "title": "Question 397",
     "text": "Sorry, I can't come on Saturday. I {~meet~=am meeting~will meet} an old school friend for lunch.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 398",
     "text": "As soon as she {~=phones~will phone~will be phoning}, will you text me?",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 399",
     "text": "I {~will be completing~=will have completed~am completing} my drama course by the end of next year.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 400",
     "text": "This time tomorrow, I {~will dance~=will be dancing~dance} in front of hundreds of people.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 401",
     "text": "Don't worry, I haven't forgotten. I {~speak~will have spoken~=am going to speak} to him later.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 402",
     "text": "I'll meet you after I {~=finish~am finishing~will finish} work.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 403",
     "text": "Don't be nervous. I'm sure you {~do~are doing~=will do} really well tomorrow.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 404",
     "text": "Let's hurry! They {~=close~are going to close~are closing} the theatre doors at 7.30 and then you have to wait until the interval to go in.",
     "theme": "Review",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 405",
@@ -2475,43 +2475,43 @@
     "title": "Question 413",
     "text": "The letter is in the file {~when~=where~whom~whose~why} I keep my bills.",
     "theme": "Relative_clauses",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 414",
     "text": "It wasn't clear {~when~where~whom~whose~=why} the children had stayed at home.",
     "theme": "Relative_clauses",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 415",
     "text": "The lawyer from {~when~where~=whom~whose~why} we had received the advice was well known.",
     "theme": "Relative_clauses",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 416",
     "text": "Please give Luke this message at any point {~=when~where~whom~whose~why} it is convenient.",
     "theme": "Relative_clauses",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 417",
     "text": "The old men directed us to a small hotel, {~when~=where~whom~whose~why} we spent the night.",
     "theme": "Relative_clauses",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 418",
     "text": "Can you name the person from {~when~where~=whom~whose~why} you received this information?",
     "theme": "Relative_clauses",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 419",
     "text": "The car, {~when~where~whom~=whose~why} owner was not insured, was involved in a crash.",
     "theme": "Relative_clauses",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 420",
@@ -2529,49 +2529,49 @@
     "title": "Question 422",
     "text": "He was {~enough~=so~such~too~very} surprised that he went to check.",
     "theme": "So,such,too,enough",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 423",
     "text": "My brother isn't practical {=enough~so~such~too~very} to put up a shelf.",
     "theme": "So,such,too,enough",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 424",
     "text": "Isn't your car {~enough~so~such~=too~very} old to drive all that way?",
     "theme": "So,such,too,enough",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 425",
     "text": "There aren't {~enough~so~such~too~=very} many people who could do that.",
     "theme": "So,such,too,enough",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 426",
     "text": "We had {~enough~so~=such~too~very} a good time that we decided to stay for longer.",
     "theme": "So,such,too,enough",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 427",
     "text": "Is that fruit ripe {=enough~so~such~too~very} to eat yet?",
     "theme": "So,such,too,enough",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 428",
     "text": "He did {~enough~=so~such~too~very} well in his exams that nobody believed him at first.",
     "theme": "So,such,too,enough",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 429",
     "text": "It's a {~enough~so~such~too~=very} interesting book.",
     "theme": "So,such,too,enough",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 430",
@@ -2649,49 +2649,49 @@
     "title": "Question 442",
     "text": "{~=It ~There} is good that you can come to the party.",
     "theme": "It is,there is",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 443",
     "text": "{~It ~=There} is some food on the table.",
     "theme": "It is,there is",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 444",
     "text": "{~It ~=There} might be a traffic jam unless we leave early.",
     "theme": "It is,there is",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 445",
     "text": "{~=It ~There} is almost lunchtime.",
     "theme": "It is,there is",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 446",
     "text": "{~=It ~There} was a very nice meal. Thank you.",
     "theme": "It is,there is",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 447",
     "text": "{~=It ~There} is very cold again today.",
     "theme": "It is,there is",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 448",
     "text": "{~It ~=There} is someone at the door. Can you answer it, please?",
     "theme": "It is,there is",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 449",
     "text": "{~It ~=There} isn't any time to have a quick coffee first.",
     "theme": "It is,there is",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 450",
@@ -2703,37 +2703,37 @@
     "title": "Question 451",
     "text": "The fishing village was _________ far away to visit one day.  {\r\n\t~so\r\n\t~very\r\n\t=too\r\n\t~enough\r\n}",
     "theme": "Review-3",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 452",
     "text": "I need to get a _________ ticket because I am coming back this evening.{\r\n\t~round\r\n\t=return\r\n\t~package\r\n\t~direct\r\n}",
     "theme": "Review-3",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 453",
     "text": "There's no ________ buying a car if you're never going to drive it.{\r\n\t~reason\r\n\t~need\r\n\t=point\r\n\t~objective\r\n}",
     "theme": "Review-3",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 454",
     "text": "It was ______ a beautiful place that they decided to stay there longer.{\r\n\t~so\r\n\t~enough\r\n\t~really\r\n\t=such\r\n}",
     "theme": "Review-3",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 455",
     "text": "It's a very ___________ location, cut off from the outside world.<div id\\=\"gtx-trans\" style\\=\"position\\: absolute; left\\: 76px; top\\: 23px;\"> </div>{\r\n\t~alone\r\n\t~far\r\n\t=remote\r\n\t~unconnected\r\n}",
     "theme": "Review-3",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 456",
     "text": "You can' t just turn ___________ like this, unexpectedly, and expect me to be free.{\r\n\t~on\r\n\t=up\r\n\t~in\r\n\t~off\r\n}",
     "theme": "Review-3",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 457",
@@ -2793,43 +2793,43 @@
     "title": "Question 466",
     "text": "Max says that top sportspeople usually believe their success is due to {\r\n  ~ good fortune.\r\n  = hard work.\r\n  ~ raw talent.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 467",
     "text": "According to Max, sportspeople are achieving more these days because {\r\n  ~ people in general have become stronger and fitter.\r\n  = standards are getting higher.\r\n  ~ technology is responsible for improved performance.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 468",
     "text": "What does Max say about very talented young children? {\r\n  ~ It's easy to tell which will be the top performers.\r\n  ~ They will succeed without special training.\r\n  = As they get older their development may be slower.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 469",
     "text": "According to Max, in his book <i>Bounce</i>, Matthew Syed says he had a greater chance of success  because of {\r\n  ~ his parents’ love of table tennis.\r\n  = his competitive brother.\r\n  ~ his own ambition.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 470",
     "text": "For Matthew, the advantage of joining the Omega Club was that {\r\n  = it was open all the time.\r\n  ~ it had a lot of good players.\r\n  ~ it had great facilities.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 471",
     "text": "Matthew thinks the reason Omega Club members have been so successful is {\r\n  ~ hard to explain.\r\n  ~ because they met famous players.\r\n  = a happy accident.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 472",
     "text": "Max says that a ten-year investigation has shown that lucky people {\r\n  ~ believe they will succeed.\r\n  = look for good opportunities.\r\n  ~ depend very little on talent.\r\n}",
     "theme": "Listening",
-    "type": "Multiple Choice"
+    "type": "Fill"
   },
   {
     "title": "Question 473",

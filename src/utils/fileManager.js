@@ -156,15 +156,19 @@ function detectQuestionType(questionText) {
     return "TF"; // Retourne "TF" pour les questions Vrai/Faux
   }
 
-  if (/{1:MC:|~/.test(questionText)) {
+  if (/{1:MC:/.test(questionText)) {
     return "Multiple Choice"; // Retourne "Multiple Choice" pour les questions à choix multiples
+  }
+
+  if (/{1:SA:/.test(questionText)) {
+    return "Short Answer"; // Retourne "Short Answer" pour les questions à réponse courte
   }
 
   if (/{#/.test(questionText)) {
     return "Numeric"; // Retourne "Numeric" pour les questions numériques
   }
 
-  if (/{=/.test(questionText)) {
+  if (/{=|~/.test(questionText)) {
     return "Fill"; // Retourne "Fill" pour les questions à compléter
   }
 
@@ -174,10 +178,6 @@ function detectQuestionType(questionText) {
 
   if (questionText.length > 150) {
     return "Essay"; // Retourne "Essay" pour les questions longues
-  }
-
-  if (/{1:SA:/.test(questionText)) {
-    return "Short Answer"; // Retourne "Short Answer" pour les questions à réponse courte
   }
 
   return "Unknown"; // Si aucun type ne correspond, retourne "Unknown"
