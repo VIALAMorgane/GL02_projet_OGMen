@@ -5,9 +5,10 @@ const path = require('path');
  * Classe représentant une question au format GIFT.
  */
 class Question {
-    constructor(title, text) {
+    constructor(title, text, theme) {
         this.title = title;
         this.text = text;
+        this.theme = theme; // Ajoute le thème à chaque question
     }
 
     /**
@@ -15,15 +16,26 @@ class Question {
      * @returns {string}
      */
     toString() {
-        return `Title: ${this.title}\nQuestion: ${this.text}\n`;
+        return `Title: ${this.title}\nQuestion: ${this.text}\nTheme: ${this.theme}\n`;
     }
 }
 
 /**
+ * Extrait le thème du nom du fichier GIFT.
+ * @param {string} filename 
+ * @returns {string} 
+ */
+function extractThemeFromFilename(filename) {
+    // Extrait la partie entre le dernier '-' et '.gift'
+    const match = filename.match(/-(.*?)\.gift$/);
+    return match ? match[1] : ''; // Retourne le thème ou une chaîne vide si non trouvé
+}
+
+/**
  * Parse un fichier GIFT et retourne un tableau d'objets Question.
- * @param {string} filePath - Chemin du fichier GIFT.
- * @param {number} startIndex - Index de départ pour attribuer des titres automatiques.
- * @returns {Array<Question>} - Liste des questions extraites.
+ * @param {string} filePath 
+ * @param {number} startIndex 
+ * @returns {Array<Question>} 
  */
 function parseGiftFile(filePath, startIndex = 1) {
     const content = fs.readFileSync(filePath, 'utf-8');
@@ -37,7 +49,11 @@ function parseGiftFile(filePath, startIndex = 1) {
             ? match[1].replace(/::/g, '').trim() 
             : `Question ${startIndex + index}`;
         const text = match[2].trim();
-        return new Question(title, text);
+        
+        // Extrait le thème à partir du nom du fichier
+        const theme = extractThemeFromFilename(path.basename(filePath));
+        
+        return new Question(title, text, theme);
     });
 
     return questions;
@@ -45,8 +61,8 @@ function parseGiftFile(filePath, startIndex = 1) {
 
 /**
  * Parse un répertoire contenant plusieurs fichiers GIFT.
- * @param {string} directoryPath - Chemin du répertoire contenant les fichiers GIFT.
- * @returns {Array<Question>} - Liste combinée des questions de tous les fichiers.
+ * @param {string} directoryPath 
+ * @returns {Array<Question>} 
  */
 function parseGiftDirectory(directoryPath) {
     const files = fs.readdirSync(directoryPath).filter(file => file.endsWith('.gift'));
