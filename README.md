@@ -56,7 +56,7 @@ Voici un résumé des commandes disponibles dans l'application CLI :
 14. `search contact` - Rechercher un contact par Nom.
 15. `search question` - Rechercher une question par ID.
 16. `search exam` - Rechercher un examen par ID ou date.
-17. `simulate exam` - Simuler un examen avec résultats.
+17. `simulate exam ` - Simule un exament avec les résultats.
 
 ## Roadmap
 
