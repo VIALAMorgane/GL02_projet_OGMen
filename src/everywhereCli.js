@@ -113,6 +113,7 @@ function askQuestion(questions, index = 0, score = 0) {
     let text = '';
     //Question courante
     const question = questions[index];
+
     //Si la question attend une réponse simple alors on la supprime de l'affichage
     if(question.type === 'Short Answer'){
         for (let i = 0; i < question.text.length; ++i) {
@@ -124,13 +125,18 @@ function askQuestion(questions, index = 0, score = 0) {
     } else {
         text = question.text.replaceAll('~', ' ').replaceAll('=', ' ');
     }
-    // Stocke les bonnes réponses de la question en cours
-    let goodAnswerMatch = question.text.match(regex);
 
     
     let goodAnswer = [];
     let answer = '';
-    for (let i = 0; i < goodAnswerMatch[0].length; ++i) {
+
+    if(question.type === 'Unknown'){
+      goodAnswer.push('unknown');
+    } else {
+      // Stocke les bonnes réponses de la question en cours
+      let goodAnswerMatch = question.text.match(regex);
+
+      for (let i = 0; i < goodAnswerMatch[0].length; ++i) {
         let char = goodAnswerMatch[0][i];
 
         if(goodAnswerMatch[0][i])
@@ -145,11 +151,12 @@ function askQuestion(questions, index = 0, score = 0) {
             // Ajoute le caractère au mot en cours
             answer += char;
         }
-    }
+      }
     
-    // Ajoute le dernier mot si la chaîne ne se termine pas par un caractère spécial
-    if (answer.length > 0) {
-        goodAnswer.push(answer);
+      // Ajoute le dernier mot si la chaîne ne se termine pas par un caractère spécial
+      if (answer.length > 0) {
+          goodAnswer.push(answer);
+      }
     }
 
     // Pose la question à l'utilisateur
