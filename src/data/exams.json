@@ -138,5 +138,86 @@
         "text": "many people who could do that.\n\n::U7 p77 [So,such,too,enough,very] 1.5::We had {~enough~so~=such~too~very}"
       }
     ]
+  },
+  {
+    "id": "exam_1733502545125",
+    "date": "2024-12-06T16:29:05.126Z",
+    "questions": [
+      {
+        "title": "Question 145",
+        "text": "you because now you're upset.\r\n\r\n::U2 p22 6.5a – Verb patterns -ing or inf::I forgot {~to give~=giving}",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 339",
+        "text": "available on the website.\r\n\r\n::U5 p57 Rev3.7::The Spanish {=eat~eats}",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 129",
+        "text": "by a professor of social psychology at the University of Houston …\r\n\r\n::U10 p106-7 Reading Prepositions RS.7::We cling to the idea, even though we suspect it's doomed {=to}",
+        "type": "Short Answer"
+      },
+      {
+        "title": "Question 171",
+        "text": "::U3 p32 CD.13 Present perfect vs past simple::We _____ going to my grandparents house when we were little.{~=always loved~have always loved}",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 501",
+        "text": "::U9 p94 Listening 4.1::Max says that top sportspeople usually believe their success is due to {\r\n  ~ good fortune.\r\n  = hard work.\r\n  ~ raw talent.\r\n}",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 280",
+        "text": "a lot of advice on the internet about eating a healthy diet.\r\n\r\n::U5 p49 11.6::Most of my family {~=eat~=eats}",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 237",
+        "text": "entire length of {1:MC:~a~an~=the~—}",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 442",
+        "text": "my drama course by the end of next year.\r\n\r\n::U6 p67 Rev4.4::This time tomorrow, I {~will dance~=will be dancing~dance}",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 78",
+        "text": "the flavour of strawberries.\r\n\r\n::EM U5 p37 Reading 3.7::I was so {=engrossed}",
+        "type": "Short Answer"
+      },
+      {
+        "title": "Question 403",
+        "text": "(build) new facilities such as a gym and a concert hall. The river authorities {1:SA:=will have cleaned up}",
+        "type": "Short Answer"
+      },
+      {
+        "title": "Question 276",
+        "text": "raw fish.\r\n\r\n::U5 p49 11.2::Two thousand five hundred calories per day {~=is~are}",
+        "type": "Multiple Choice"
+      },
+      {
+        "title": "Question 271",
+        "text": "blooming.\r\n\r\n::U5 p49 GR2.3::Only a bit of the orange juice I bought for the children {=is}",
+        "type": "Short Answer"
+      },
+      {
+        "title": "Question 123",
+        "text": "::U10 p106-7 Reading Prepositions RS.0::Fill in the blank with a preposition. You can look back at the text if you're not sure.\r\n\r\n::U10 p106-7 Reading Prepositions RS.1::Is there anything wrong {=with}",
+        "type": "Short Answer"
+      },
+      {
+        "title": "Question 411",
+        "text": "(<i>use</i>) surround sound systems with their TVs.\r\n\r\n::U6 p64 6.3 Future perfect & continuous::[html]By 2050, we may {=be choosing}",
+        "type": "Short Answer"
+      },
+      {
+        "title": "Question 152",
+        "text": "::U3 p30 4.6::What was the writer's purpose in writing this text? {\r\n  ~To encourage people to talk about their passions openly.\r\n  ~To convince the reader that sports fans are normal human beings.\r\n  ~To explain why the excitement of winning is worth the disappointment of losing.\r\n  ~=To argue that a passion for sport provides an opportunity to experience highs and lows.\r\n}",
+        "type": "Multiple Choice"
+      }
+    ]
   }
 ]

@@ -69,27 +69,61 @@ function messageDebut() {
     `);
 }
 
-function askQuestion(questions, index = 0, score) {
+function askQuestion(questions, index = 0, score = 0) {
     // Si on a parcouru toutes les questions, on termine
     if (index >= questions.length) {
-        console.log(`Quiz terminé ! Votre score final est : ${score}`);
+        console.log(`Quiz terminé ! Votre score final est : ${score} / ${questions.length}`);
         reader.close();
     }
 
     //REGEX pour trouver les reponses correctes des questions
     const regex = /(?<==)[^ ]+(?= ~)|(?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])|(?<==).*?(?=[.])/;
     
+    let text = '';
     //Question courante
     const question = questions[index];
+    if(question.type === 'Short Answer'){
+        for (let i = 0; i < question.text.length; ++i) {
+            if(question.text[i] === '{') {
+                break;
+            }
+            text += question.text[i];
+        }
+    } else {
+        text = question.text.replaceAll('~', ' ').replaceAll('=', ' ');
+    }
     // Stocke les bonnes réponses de la question en cours
-    let goodAnswer = question.text.match(regex);
-    // Supprime les indications de bonne ou mauvaise réponse
-    let text = question.text.replaceAll('~', ' ').replaceAll('=', ' ');
+    let goodAnswerMatch = question.text.match(regex);
+
+    
+    let goodAnswer = [];
+    let answer = '';
+    for (let i = 0; i < goodAnswerMatch[0].length; ++i) {
+        let char = goodAnswerMatch[0][i];
+
+        if(goodAnswerMatch[0][i])
+    
+        if (char === '=' || char === '~' || char === '{' || char === '}' || char === '|' || char === '\n' || char === '\r') {
+            if (answer.length > 0) {
+                // Ajoute le mot en cours si non vide
+                goodAnswer.push(answer);
+                answer = ''; // Réinitialise le mot
+            }
+        } else {
+            // Ajoute le caractère au mot en cours
+            answer += char;
+        }
+    }
+    
+    // Ajoute le dernier mot si la chaîne ne se termine pas par un caractère spécial
+    if (answer.length > 0) {
+        goodAnswer.push(answer);
+    }
 
     // Pose la question à l'utilisateur
-    reader.question(goodAnswer + '\n' + 'Entrez votre réponse ici : ', (userAnswer) => {
+    reader.question(text + '\n' + 'Entrez votre réponse ici : ', (userAnswer) => {
         // Vérifie la réponse
-        if (goodAnswer.includes(userAnswer)) {
+        if (goodAnswer.indexOf(userAnswer) != -1) {
             ++score;
             console.log("Vous avez trouvé la bonne réponse !");
         } else {
@@ -118,7 +152,7 @@ function registerQuestionCommands(cli) {
         });
 
     //Commande qui permet d'afficher un examen en fonction de l'id entré en paramètre
-    cli.command("read exam", "Affiche toutes les questions dun exam")
+    cli.command("simulate exam", "Affiche toutes les questions dun exam")
 
         //Option qui gère l'id séléctionné par l'utilisateur
         .option("--id <id>", "Id de l'examen choisi", { required: true }) 
@@ -130,7 +164,6 @@ function registerQuestionCommands(cli) {
             //On lit notre fichier qui contient tous les exams
             const exams = readExam();
 
-
             const questionList = [];
 
             /* CODEX DES REGEX
@@ -138,6 +171,7 @@ function registerQuestionCommands(cli) {
             =.*?[.]|=.*?(?=[.~])
             (?<==).*?[.]|(?<==).*?(?=[.~])
             (?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])
+            (?<==)[^ ]+(?= ~)|(?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])|(?<==).*?(?=[.])
             */
 
             //Si il n'existe pas d'examen, alors rien ne se passe. On renvoit juste un string
@@ -146,10 +180,12 @@ function registerQuestionCommands(cli) {
             } else {
 
                 //En revanche si un ou des examens ont été trouvé, alors on parcours la liste de tous les examens dans le fichier
-                exams.every((exams) => {
+                exams.forEach((exams) => {
 
                     //Et si un examen possède le même id que celui entré en paramètre par l'utilisateur
                     if(exams.id === id){
+
+                        logger.info(exams.id);
 
                         //Alors on affiche toutes ses données
                         logger.info(`Id de l'examen : ${exams.id}`);
@@ -159,43 +195,15 @@ function registerQuestionCommands(cli) {
 
                         //On parcours toutes les questions présentent dans l'examen choisi
                         exams.questions.forEach((exams) => {
-
                             questionList.push(exams)
-
-
-                            /*
-                            //Stock la ou les bonnes réponses de la question en cours
-                            let goodAnswer = exams.text.match(regex);
-                            //Supprime l'indication d'une bonne ou mauvaise réponse, pour ne garder que les réponses simples'
-                            text = exams.text.replaceAll('~', ' ');
-                            text = text.replaceAll('=', ' ');
-
-                            //Gère les interactions entre le User et le terminal
-                            reader.question(text + '\n' + 'Entrez votre réponse ici : ', userAnswer => {
-                                
-                                //Si la réponse donnée par le User est contenu dans le string des bonnes réponses
-                                if(goodAnswer.includes(userAnswer)){
-
-                                    //Alors on incrémente son score et on le félicite
-                                    ++score;
-                                    logger.info("Vous avez trouvé la bonne réponse !");
-                                }
-                                else{
-
-                                    //Sinon on le prévient que sa réponse est incorrecte (examen non négatif)
-                                    logger.info("Votre réponse n'est pas correcte.");
-                                }
-                            })*/
-
                         })
+
+                        askQuestion(questionList, 0, 0);
 
                         //Return false permet ici de casser la boucle de parcours des examens. Every est comme un forEach sauf que c'est arrêtable à souhait
                         return false;
                     }
             });
-
-                askQuestion(questionList, 0, 0);
-                //logger.info("Votre score à l'examen " + id + " est de : " + score);
 
             }
 
