@@ -27,7 +27,7 @@ class Question {
  */
 function extractThemeFromFilename(filename) {
     // Extrait la partie entre le dernier '-' et '.gift'
-    const match = filename.match(/-(.*?)\.gift$/);
+    const match = filename.match(/\d-(?!.*\d-)([^.]*)\.gift$/);
     return match ? match[1] : ''; // Retourne le thème ou une chaîne vide si non trouvé
 }
 
