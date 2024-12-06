@@ -147,116 +147,96 @@ function registerQuestionCommands(cli) {
     
         const fs = require("fs");
 const path = require("path");
-cli.command("questions chart", "Génère un fichier HTML avec un graphique des types de questions")
-    .action(({ logger }) => {
-      try {
-        const questions = readQuestions();
+cli
+  .command("questions chart", "Génère un fichier HTML avec un graphique des types de questions")
+  .action(async ({ logger }) => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
 
-        if (questions.length === 0) {
-          logger.warn("Aucune question disponible pour générer un graphique.");
-          return;
+    logger.info("Voulez-vous générer un graphique des types de questions pour un fichier spécifique ? (O/N)");
+
+    const userResponse = await new Promise((resolve) =>
+      rl.question("Réponse : ", resolve)
+    );
+
+    rl.close();
+
+    if (userResponse.toLowerCase() !== 'o') {
+      logger.info("Opération annulée.");
+      return;
+    }
+
+    try {
+      const questions = readQuestions();
+
+      if (questions.length === 0) {
+        logger.warn("Aucune question disponible pour générer un graphique.");
+        return;
+      }
+
+      // Compter les types de questions
+      const typeCounts = {};
+      questions.forEach((q) => {
+        const type = q.type || "Unknown";
+        typeCounts[type] = (typeCounts[type] || 0) + 1;
+      });
+
+      const labels = Object.keys(typeCounts); // Les types de questions
+      const counts = Object.values(typeCounts); // Le nombre de chaque type
+
+      // Spécification Vega-Lite
+      const vegaLiteSpec = {
+        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+        description: "Distribution des types de questions dans la banque",
+        data: {
+          values: labels.map((label, index) => ({
+            type: label,
+            count: counts[index]
+          }))
+        },
+        mark: "bar",
+        encoding: {
+          x: { field: "type", type: "nominal", axis: { title: "Type de Question" } },
+          y: { field: "count", type: "quantitative", axis: { title: "Nombre de Questions" } },
+          color: { field: "type", type: "nominal" }
         }
+      };
 
-        // Compter les types de questions
-        const typeCounts = {};
-        questions.forEach((q) => {
-          const type = q.type || "Unknown";
-          typeCounts[type] = (typeCounts[type] || 0) + 1;
-        });
-
-        const labels = Object.keys(typeCounts); // Les types de questions
-        const counts = Object.values(typeCounts); // Le nombre de chaque type
-
-        // Définir les couleurs pour chaque type
-        const backgroundColors = [
-          'rgba(255, 99, 132, 0.5)',  // Rouge
-          'rgba(54, 162, 235, 0.5)',  // Bleu
-          'rgba(255, 206, 86, 0.5)',  // Jaune
-          'rgba(75, 192, 192, 0.5)',  // Vert
-          'rgba(153, 102, 255, 0.5)', // Violet
-          'rgba(255, 159, 64, 0.5)',  // Orange
-          'rgba(255, 99, 132, 0.3)',  // Rouge clair
-          'rgba(0, 255, 0, 0.5)',     // Vert vif
-          'rgba(0, 0, 255, 0.5)',     // Bleu vif
-        ];
-
-        const borderColors = [
-          'rgba(255, 99, 132, 1)',  // Rouge
-          'rgba(54, 162, 235, 1)',  // Bleu
-          'rgba(255, 206, 86, 1)',  // Jaune
-          'rgba(75, 192, 192, 1)',  // Vert
-          'rgba(153, 102, 255, 1)', // Violet
-          'rgba(255, 159, 64, 1)',  // Orange
-          'rgba(255, 99, 132, 1)',  // Rouge clair
-          'rgba(0, 255, 0, 1)',     // Vert vif
-          'rgba(0, 0, 255, 1)',     // Bleu vif
-        ];
-
-        // Contenu HTML dynamique
-        const htmlContent = `
+      // Générer la page HTML avec Vega-Lite
+      const htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Distribution des Types de Questions</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
     <h1>Distribution des Types de Questions</h1>
-    <canvas id="questionsChart" width="800" height="400"></canvas>
-    <script>
-        const data = {
-            labels: ${JSON.stringify(labels)},
-            datasets: [{
-                label: "Distribution des Types",
-                data: ${JSON.stringify(counts)},
-                backgroundColor: ${JSON.stringify(backgroundColors.slice(0, labels.length))},
-                borderColor: ${JSON.stringify(borderColors.slice(0, labels.length))},
-                borderWidth: 1
-            }]
-        };
-
-        const config = {
-            type: 'bar', // Type par défaut, peut être modifié
-            data: data,
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    }
-                }
-            }
-        };
-
-        const ctx = document.getElementById('questionsChart').getContext('2d');
-        new Chart(ctx, config);
+    <div id="chart"></div>
+    <script type="text/javascript">
+        const spec = ${JSON.stringify(vegaLiteSpec)};
+        vegaEmbed('#chart', spec);
     </script>
 </body>
 </html>
 `;
 
-        // Chemin de sortie
-        const outputPath = path.join(__dirname, "./cli/chart.html");
+      // Sauvegarder la page HTML
+      const outputFilePath = path.join(__dirname, "./cli/chart.html");
+      fs.writeFileSync(outputFilePath, htmlContent);
 
-        // Vérification et écriture dans le fichier
-        try {
-          fs.writeFileSync(outputPath, htmlContent, "utf-8");
-          logger.info(
-            `Graphique généré avec succès dans le fichier : ${outputPath}`,
-          );
-        } catch (fileError) {
-          logger.error(
-            `Erreur lors de l'écriture du fichier HTML : ${fileError.message}`,
-          );
-        }
-      } catch (error) {
-        logger.error(
-          `Erreur lors de la génération du graphique : ${error.message}`,
-        );
-      }
-    });
+      logger.info(`Graphique généré avec succès : ${outputFilePath}`);
+    } catch (error) {
+      logger.error("Une erreur est survenue.");
+      logger.error(error.message);
+    }
+  });
 
 
   cli
