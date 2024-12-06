@@ -114,65 +114,93 @@ function askQuestion(questions, index = 0, score = 0) {
     }
 
     //REGEX pour trouver les reponses correctes des questions
-    const regex = /(?<==)[^ ]+(?= ~)|(?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])|(?<==).*?(?=[.])/;
+    let regex = /(?<==)[^ ]+(?= ~)|(?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])|(?<==).*?(?=[.])|(?<=%)([^%]+)(?=%)/;
     
     let text = '';
     //Question courante
     const question = questions[index];
 
-    //Si la question attend une réponse simple alors on la supprime de l'affichage
-    if(question.type === 'Short Answer'){
-        for (let i = 0; i < question.text.length; ++i) {
-            if(question.text[i] === '{') {
-                break;
-            }
-            text += question.text[i];
-        }
-    } else {
-        text = question.text.replaceAll('~', ' ').replaceAll('=', ' ');
+    if(question.type === 'Multiple Choice' || question.type === 'Short Answer' || question.type === 'Fill' || question.type === 'Numeric'){
+      regex = /(?==)([^~}]+)(?=[~}])|(%[^\r\n]+)(?=[\r\n])|(?<=%)([^%]+)(?=%)/g;
     }
 
+    text = question.text.replaceAll('~', ' ').replaceAll('=', ' ');
     
     let goodAnswer = [];
     let answer = '';
 
-    if(question.type === 'Unknown'){
+    if(question.type === 'Unknown' || question.type === 'Essay'){
       goodAnswer.push('unknown');
     } else {
       // Stocke les bonnes réponses de la question en cours
       let goodAnswerMatch = question.text.match(regex);
 
-      for (let i = 0; i < goodAnswerMatch[0].length; ++i) {
-        let char = goodAnswerMatch[0][i];
+      if(question.type === 'Multiple Choice' || question.type === 'Short Answer'){
 
-        if(goodAnswerMatch[0][i])
-    
-        if (char === '=' || char === '~' || char === '{' || char === '}' || char === '|' || char === '\n' || char === '\r') {
-            if (answer.length > 0) {
-                // Ajoute le mot en cours si non vide
-                goodAnswer.push(answer);
-                answer = ''; // Réinitialise le mot
+        for (let i = 0; i < goodAnswerMatch.length; ++i) {
+          for(let y = 0; y < goodAnswerMatch[i].length; ++y){
+            let char = goodAnswerMatch[i][y];
+      
+            if (char === '=' || char === '~' || char === '{' || char === '}' || char === '|' || char === '\n' || char === '\r' || char === '.') {
+                if (answer.length > 0) {
+                    // Ajoute le mot en cours si non vide
+                    answer += ' '; // Réinitialise le mot
+                }
+            } else {
+                // Ajoute le caractère au mot en cours
+                answer += char;
             }
-        } else {
-            // Ajoute le caractère au mot en cours
-            answer += char;
+          }
+        }
+      
+        // Ajoute le dernier mot si la chaîne ne se termine pas par un caractère spécial
+        if (answer.length > 0) {
+            goodAnswer.push(answer);
+        }
+
+      } else {
+
+        for (let i = 0; i < goodAnswerMatch[0].length; ++i) {
+          let char = goodAnswerMatch[0][i];
+      
+          if (char === '=' || char === '~' || char === '{' || char === '}' || char === '|' || char === '\n' || char === '\r' || char === '.') {
+              if (answer.length > 0) {
+                  // Ajoute le mot en cours si non vide
+                  goodAnswer.push(answer);
+                  answer = ''; // Réinitialise le mot
+              }
+          } else {
+              // Ajoute le caractère au mot en cours
+              answer += char;
+          }
+        }
+      
+        // Ajoute le dernier mot si la chaîne ne se termine pas par un caractère spécial
+        if (answer.length > 0) {
+            goodAnswer.push(answer);
         }
       }
-    
-      // Ajoute le dernier mot si la chaîne ne se termine pas par un caractère spécial
-      if (answer.length > 0) {
-          goodAnswer.push(answer);
-      }
     }
+
+    console.log(answer + '\n\n');
 
     // Pose la question à l'utilisateur
     reader.question(text + '\n' + 'Entrez votre réponse ici : ', (userAnswer) => {
         // Vérifie la réponse
-        if (goodAnswer.indexOf(userAnswer) != -1) {
+        if(question.type === 'Multiple Choice'){
+          if (answer === userAnswer) {
             ++score;
             console.log("Vous avez trouvé la bonne réponse !");
         } else {
             console.log("Votre réponse n'est pas correcte.");
+        }
+        } else {
+          if (goodAnswer.indexOf(userAnswer) != -1) {
+            ++score;
+            console.log("Vous avez trouvé la bonne réponse !");
+        } else {
+            console.log("Votre réponse n'est pas correcte.");
+        }
         }
 
         // Passe à la question suivante
