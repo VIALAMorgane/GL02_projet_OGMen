@@ -63,13 +63,13 @@
     "title": "Question 11",
     "text": "saving swimmers from shark attacks by gathering round them or shepherding them to safety. {1:SA:=If}",
     "theme": "U4-p32_33-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 12",
     "text": "these stories are true, why do dolphins do it and {1:SA:=what}",
     "theme": "U4-p32_33-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 13",
@@ -81,13 +81,13 @@
     "title": "Question 14",
     "text": "have studied them are not entirely sure. For dolphins to act together as a group to save humans implies that {1:SA:=there}",
     "theme": "U4-p32_33-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 15",
     "text": "is some sort of code of ethics among dolphins, but there is little evidence  for that. The {1:SA:=most}",
     "theme": "U4-p32_33-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 16",
@@ -117,25 +117,25 @@
     "title": "Question 20",
     "text": "(VARY) of reasons. Some enjoy the challenge, others the feeling of {1:SA:=excitement}",
     "theme": "U4-p32_33-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 21",
     "text": "(EXCITE) they get from testing themselves. So although their actual {1:SA:=motivation}",
     "theme": "U4-p32_33-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 22",
     "text": "(MOTIVATE) may differ, people who participate in extreme sports probably share an inability to accept all the {1:SA:=limits}",
     "theme": "U4-p32_33-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 23",
     "text": "(LIMIT) that most of us think of as normal. They experience a sense of {1:SA:=dissatisfaction}",
     "theme": "U4-p32_33-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 24",
@@ -147,13 +147,13 @@
     "title": "Question 25",
     "text": "(COMPETE)? Possibly, but it may be more to do with having a dream. Of course {1:SA:=professional}",
     "theme": "U4-p32_33-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 26",
     "text": "(PROFESSION) athletes who train for extreme events like the triathlon or the marathon may hope for {1:SA:=financial}",
     "theme": "U4-p32_33-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 27",
@@ -483,13 +483,13 @@
     "title": "Question 81",
     "text": "(happen)! Our lovey new car {1:SA:=has been stolen}",
     "theme": "U5-p38-Passive",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 82",
     "text": "(steal)!\r\nOne day last week Jack went out to be yhe beach for a swim and as usual he {1:SA:=hid}",
     "theme": "U5-p38-Passive",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 83",
@@ -501,25 +501,25 @@
     "title": "Question 84",
     "text": "(not notice) anything suspicious. It didn't look as if his clothes {1:SA:=had been touched}",
     "theme": "U5-p38-Passive",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 85",
     "text": "(touch). When he started to put them on, however, he realised that the keys {1:SA:=had been taken}",
     "theme": "U5-p38-Passive",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 86",
     "text": "(take) and when he got to the car park, of course, the car was gone too.\r\nThe police say there is a gang of car thieves who {1:SA:=are known}",
     "theme": "U5-p38-Passive",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 87",
     "text": "(know) to be operating in the area. They think Jack {1:SA:=was being watched}",
     "theme": "U5-p38-Passive",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 88",
@@ -531,7 +531,7 @@
     "title": "Question 89",
     "text": "(hide).\r\nIt was almost two weeks ago now and although we hope it {1:SA:=will be found}",
     "theme": "U5-p38-Passive",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 90",
@@ -1227,7 +1227,7 @@
     "title": "Question 205",
     "text": ", is a hygge enthusiast. She has been fascinated by the idea ever {1:SA:=since}",
     "theme": "p33-UoE-Hygge",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 206",
@@ -1245,7 +1245,7 @@
     "title": "Question 208",
     "text": ". Helen says 'hygge' can be defined {1:SA:=as}",
     "theme": "p33-UoE-Hygge",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 209",
@@ -1503,31 +1503,31 @@
     "title": "Question 251",
     "text": "of skiing. I’m too scared. (capable)\r\nHis approach to the problem is emotional and {1:SA:=illogical}",
     "theme": "p47-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 252",
     "text": ". (logic)\r\nThe project was {1:SA:=successful}",
     "theme": "p47-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 253",
     "text": "despite all the investment in it. (success)\r\nMy mother is {1:SA:=impatient}",
     "theme": "p47-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 254",
     "text": "with my younger brother. She never explains things properly. (patience)\r\nThat is an extremely {1:SA:=irresponsible}",
     "theme": "p47-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 255",
     "text": "way to behave. You should be trying to set a good example. (responsibility)\r\nSome celebrities are {1:SA:=distrustful}",
     "theme": "p47-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 256",
@@ -1545,13 +1545,13 @@
     "title": "Question 258",
     "text": "in London until I got married last year.\r\nIt took three days for us to walk there. WERE\r\nWe {1:SA:=were walking for}",
     "theme": "p47-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 259",
     "text": "three days.\r\nI couldn't remember the way there, so I got a taxi. FORGOTTEN\r\nI {1:SA:=had forgotten how to}",
     "theme": "p47-Review",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 260",
@@ -1695,13 +1695,13 @@
     "title": "Question 283",
     "text": "used to it. But coffee contains caffeine, which has some addictive qualities, and this explains {1:SA:=why}",
     "theme": "p50-Use_of_English",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 284",
     "text": "it is so popular. But capsaicin, the ingredient which makes chillies hot, does not seem to have {1:SA:=any}",
     "theme": "p50-Use_of_English",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 285",
@@ -1713,13 +1713,13 @@
     "title": "Question 286",
     "text": "we consumed a large quantity of it, it would kill us. And yet chillies have {1:SA:=been}",
     "theme": "p50-Use_of_English",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 287",
     "text": "used in cooking in almost {1:SA:=every}",
     "theme": "p50-Use_of_English",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 288",
@@ -2385,7 +2385,7 @@
     "title": "Question 398",
     "text": "(travel) by bicycle as the council {1:SA:=will have constructed}",
     "theme": "p64-Future-perfect-&-continuous",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 399",
@@ -2397,31 +2397,31 @@
     "title": "Question 400",
     "text": "(pedestrianise) the city centre and people {1:SA:=will be strolling}",
     "theme": "p64-Future-perfect-&-continuous",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 401",
     "text": "(stroll) round the traffic-free streets. The council {1:SA:=will have renovated}",
     "theme": "p64-Future-perfect-&-continuous",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 402",
     "text": "(renovated) the old buildings such as the Town Hall and {1:SA:=will have built}",
     "theme": "p64-Future-perfect-&-continuous",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 403",
     "text": "(build) new facilities such as a gym and a concert hall. The river authorities {1:SA:=will have cleaned up}",
     "theme": "p64-Future-perfect-&-continuous",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 404",
     "text": "(clean up) the river bank and people {1:SA:=will be canoeing}",
     "theme": "p64-Future-perfect-&-continuous",
-    "type": "Unknown"
+    "type": "Short Answer"
   },
   {
     "title": "Question 405",

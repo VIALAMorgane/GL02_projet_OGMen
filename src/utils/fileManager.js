@@ -180,6 +180,10 @@ function detectQuestionType(questionText) {
     if (questionText.length > 150) {
       return "Essay"; // Retourne "Essay" pour les questions longues
     }
+
+    if (/{1:SA:/.test(questionText)) {
+      return "Short Answer"; // Retourne "Short Answer" pour les questions à réponse courte
+    }
   
     return "Unknown"; // Si aucun type ne correspond, retourne "Unknown"
   }
