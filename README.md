@@ -63,7 +63,7 @@ Voici un résumé des commandes disponibles dans l'application CLI :
 - [x] FS2: Chart of questions - Visualise la distribution des questions dans la banque de données sous forme de graphiques.
 - [x] FS3: Generate an exam - Permet aux utilisateurs de préparer des examens en sélectionnant des questions.
 - [x] FS4: Export an exam - Permet aux utilisateurs d'exporter des examens au format ".GIFT".
-- [ ] FS5: Simulate an exam - Permet aux utilisateurs de simuler un examen pour collecter des données.
+- [x] FS5: Simulate an exam - Permet aux utilisateurs de simuler un examen pour collecter des données.
 - [x] FS6: Manage Contact File - Permet aux enseignants de créer et gérer leur fichier de contact au format V-Card.
 - [x] FS7: Visualize G.I.F.T. exam profile - Génère une distribution graphique des types de questions pour illustrer les examens.
 - [x] FS8: Global Search - Fournit un outil de recherche pour permettre aux utilisateurs de rechercher des informations dans la base de données.
