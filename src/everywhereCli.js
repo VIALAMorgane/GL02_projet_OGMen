@@ -5,6 +5,7 @@ const {
   saveQuestions,
   deleteQuestion,
   saveExam,
+  readExam,
   readExams,
   removeDuplicateQuestions,
   detectQuestionType,
@@ -19,7 +20,13 @@ const {
 
 const fs = require("fs");
 const path = require("path");
-const readline = require("readline");
+const readline = require('readline');
+
+//Pour la simulation d'examen, permet de lire des entrées dans le terminal
+const reader = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
 
 // Importation automatique des questions avec détection des types
 function importAllQuestions() {
@@ -91,11 +98,175 @@ function messageDebut() {
     16. search exam                - Rechercher un examen par ID ou date,
     `);
 }
-// Enregistre les commandes CLI
+
+function askQuestion(questions, index = 0, score = 0) {
+    // Si on a parcouru toutes les questions, on termine
+    if (index >= questions.length) {
+        console.log(`Quiz terminé ! Votre score final est : ${score} / ${questions.length}`);
+        reader.close();
+    }
+
+    //REGEX pour trouver les reponses correctes des questions
+    const regex = /(?<==)[^ ]+(?= ~)|(?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])|(?<==).*?(?=[.])/;
+    
+    let text = '';
+    //Question courante
+    const question = questions[index];
+    //Si la question attend une réponse simple alors on la supprime de l'affichage
+    if(question.type === 'Short Answer'){
+        for (let i = 0; i < question.text.length; ++i) {
+            if(question.text[i] === '{') {
+                break;
+            }
+            text += question.text[i];
+        }
+    } else {
+        text = question.text.replaceAll('~', ' ').replaceAll('=', ' ');
+    }
+    // Stocke les bonnes réponses de la question en cours
+    let goodAnswerMatch = question.text.match(regex);
+
+    
+    let goodAnswer = [];
+    let answer = '';
+    for (let i = 0; i < goodAnswerMatch[0].length; ++i) {
+        let char = goodAnswerMatch[0][i];
+
+        if(goodAnswerMatch[0][i])
+    
+        if (char === '=' || char === '~' || char === '{' || char === '}' || char === '|' || char === '\n' || char === '\r') {
+            if (answer.length > 0) {
+                // Ajoute le mot en cours si non vide
+                goodAnswer.push(answer);
+                answer = ''; // Réinitialise le mot
+            }
+        } else {
+            // Ajoute le caractère au mot en cours
+            answer += char;
+        }
+    }
+    
+    // Ajoute le dernier mot si la chaîne ne se termine pas par un caractère spécial
+    if (answer.length > 0) {
+        goodAnswer.push(answer);
+    }
+
+    // Pose la question à l'utilisateur
+    reader.question(text + '\n' + 'Entrez votre réponse ici : ', (userAnswer) => {
+        // Vérifie la réponse
+        if (goodAnswer.indexOf(userAnswer) != -1) {
+            ++score;
+            console.log("Vous avez trouvé la bonne réponse !");
+        } else {
+            console.log("Votre réponse n'est pas correcte.");
+        }
+
+        // Passe à la question suivante
+        askQuestion(questions, index + 1, score);
+    });
+}
+
+// Enregistrer les commandes CLI
 function registerQuestionCommands(cli) {
-  // COMMANDE QUESTION LIST POUR AFFICHER TOUTES LES QUESTIONS
-  cli
-    .command("questions list", "Affiche toutes les questions de la banque")
+    cli.command("questions list", "Affiche toutes les questions de la banque")
+        .action(({ logger }) => {
+            const questions = readQuestions();
+            if (questions.length === 0) {
+                logger.info("Aucune question trouvée.");
+            } else {
+                logger.info(`Nombre total de questions : ${questions.length}`);
+                questions.forEach((question, index) => {
+                    logger.info(`${question.title}`);
+                    logger.info(`   Texte : ${question.text}`);
+                });
+            }
+        });
+
+    //Commande qui permet d'afficher un examen en fonction de l'id entré en paramètre
+    cli.command("simulate exam", "Affiche toutes les questions dun exam")
+
+        //Option qui gère l'id séléctionné par l'utilisateur
+        .option("--id <id>", "Id de l'examen choisi", { required: true }) 
+
+        //Comportement de la commande
+        .action(({ logger, options }) => {
+            const { id } = options;
+
+            //On lit notre fichier qui contient tous les exams
+            const exams = readExam();
+
+            const questionList = [];
+
+            /* CODEX DES REGEX
+            =.*?~|=.*?}
+            =.*?[.]|=.*?(?=[.~])
+            (?<==).*?[.]|(?<==).*?(?=[.~])
+            (?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])
+            (?<==)[^ ]+(?= ~)|(?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])|(?<==).*?(?=[.])
+            */
+
+            //Si il n'existe pas d'examen, alors rien ne se passe. On renvoit juste un string
+            if (exams.length === 0) {
+                logger.info("Aucun examen n'a encore été créé.");
+            } else {
+
+                //En revanche si un ou des examens ont été trouvé, alors on parcours la liste de tous les examens dans le fichier
+                exams.forEach((exams) => {
+
+                    //Et si un examen possède le même id que celui entré en paramètre par l'utilisateur
+                    if(exams.id === id){
+
+                        logger.info(exams.id);
+
+                        //Alors on affiche toutes ses données
+                        logger.info(`Id de l'examen : ${exams.id}`);
+                        logger.info(`Date de création : ${exams.date}`);
+                        logger.info(`Questions de l'examen :`);
+
+
+                        //On parcours toutes les questions présentent dans l'examen choisi
+                        exams.questions.forEach((exams) => {
+                            questionList.push(exams)
+                        })
+
+                        askQuestion(questionList, 0, 0);
+
+                        //Return false permet ici de casser la boucle de parcours des examens. Every est comme un forEach sauf que c'est arrêtable à souhait
+                        return false;
+                    }
+            });
+
+            }
+
+        });
+
+    cli.command("questions import", "Importe les questions depuis le répertoire ./data")
+        .action(({ logger }) => {
+            try {
+                importAllQuestions();
+                logger.info("Importation des questions terminée.");
+            } catch (err) {
+                logger.error(`Erreur lors de l'importation des questions : ${err.message}`);
+            }
+        });
+
+        cli.command("questions delete <title>", "Supprime une question par titre exact")
+        .action(({ logger, args }) => {
+            const title = args.title;
+            logger.info(`Suppression demandée pour : "${title}"`); // Log pour vérifier l'entrée utilisateur
+    
+            const result = deleteQuestion(title);
+    
+            if (result) {
+                logger.info(`La question "${title}" a été supprimée avec succès.`);
+            } else {
+                logger.warn(`Aucune question avec le titre exact "${title}" n'a été trouvée.`);
+            }
+        });
+    
+        const fs = require("fs");
+const path = require("path");
+cli.command("questions chart", "Génère un fichier HTML avec un graphique des types de questions")
     .action(({ logger }) => {
       const questions = readQuestions();
       if (questions.length === 0) {
@@ -164,8 +335,6 @@ function registerQuestionCommands(cli) {
       }
     });
   // COMMANDE QUESTION CHART POUR GENERER UN GRAPHIQUE DES TYPES DE QUESTIONS
-  const fs = require("fs");
-  const path = require("path");
   cli
     .command(
       "questions chart",

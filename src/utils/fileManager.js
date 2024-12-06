@@ -8,22 +8,40 @@ const { parseVCard } = require("./vCardParser");
 
 // Lit les questions à partir du fichier JSON
 function readQuestions() {
-  if (!fs.existsSync(dataFilePath)) {
-    console.warn(
-      "Fichier questions.json introuvable. Retour d'une liste vide.",
-    );
-    return []; // Retourne un tableau vide si le fichier JSON est inexistant.
-  }
-  const data = fs.readFileSync(dataFilePath, "utf-8");
-  try {
-    return JSON.parse(data); // Parse le contenu JSON et retourne les questions.
-  } catch (error) {
-    console.error("Erreur lors du parsing de questions.json :", error.message);
-    return []; // Retourne un tableau vide en cas d'erreur de parsing.
-  }
+    if (!fs.existsSync(dataFilePath)) {
+        console.warn("Fichier questions.json introuvable. Retour d'une liste vide.");
+        return []; // Retourne un tableau vide si le fichier JSON est inexistant.
+    }
+    const data = fs.readFileSync(dataFilePath, "utf-8");
+
+    try {
+        return JSON.parse(data); // Parse le contenu JSON et retourne les questions.
+    } catch (error) {
+        console.error("Erreur lors du parsing de questions.json :", error.message);
+        return []; // Retourne un tableau vide en cas d'erreur de parsing.
+    }
 }
 
-// Sauvegarde les questions dans le fichier JSON
+function readExam() {
+    if (!fs.existsSync(examsFilePath)) {
+        console.warn("Fichier questions.json introuvable. Retour d'une liste vide.");
+        return []; // Retourne un tableau vide si le fichier JSON est inexistant.
+    }
+    const data = fs.readFileSync(examsFilePath, "utf-8");
+
+    try {
+        return JSON.parse(data); // Parse le contenu JSON et retourne les questions.
+    } catch (error) {
+        console.error("Erreur lors du parsing de exams.json :", error.message);
+        return []; // Retourne un tableau vide en cas d'erreur de parsing.
+    }
+}
+
+
+/**
+ * Sauvegarde la banque de questions dans le fichier JSON, tout en attribuant des titres uniques.
+ * @param {Array} questions - Tableau de questions à sauvegarder.
+ */
 function saveQuestions(questions) {
   const questionsWithTitles = titreQst(questions);
   try {
@@ -317,6 +335,7 @@ module.exports = {
   saveQuestions,
   deleteQuestion,
   saveExam,
+  readExam,
   readExams,
   removeDuplicateQuestions,
   detectQuestionType,
