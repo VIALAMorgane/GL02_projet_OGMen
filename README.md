@@ -24,7 +24,7 @@ Ce projet a été réalisé dans le cadre de l'UE GL02. L'objectif était de ré
 1. Clonez le dépôt :
    ```bash
    git clone https://github.com/aminssutt/GL02_projet_OGMen.git
-   cd GL02_projet_OGMen
+   cd GL02_projet_OGMen/src
 2. Installez les dépendances :
    ```bash
    npm install
@@ -32,7 +32,7 @@ Ce projet a été réalisé dans le cadre de l'UE GL02. L'objectif était de ré
 ## Utilisation
 
 Pour lancer l'application CLI, exécutez la commande suivante :
-
+cd src
 node everywhereCli.js
 
 ## Commandes disponibles
@@ -80,3 +80,5 @@ Voici un résumé des commandes disponibles dans l'application CLI :
 ## Améliorations 
 
 - Le traitement des bonnes et mauvaises réponses pour les questions de types Essay et Matching
+- La gestion de la fin d'un examen
+- Ctrl + C pour lancer une autre commande
