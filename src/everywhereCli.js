@@ -226,60 +226,63 @@ function registerQuestionCommands(cli) {
     //Commande qui permet d'afficher un examen en fonction de l'id entré en paramètre
     cli.command("simulate exam", "Affiche toutes les questions dun exam")
 
-        //Option qui gère l'id séléctionné par l'utilisateur
-        .option("--id <id>", "Id de l'examen choisi", { required: true }) 
+      //Option qui gère l'id séléctionné par l'utilisateur
+      .option("--id <id>", "Id de l'examen choisi", { required: true }) 
 
-        //Comportement de la commande
-        .action(({ logger, options }) => {
-            const { id } = options;
+      //Comportement de la commande
+      .action(({ logger, options }) => {
+        const { id } = options;
+        let found = false;
 
-            //On lit notre fichier qui contient tous les exams
-            const exams = readExam();
+        //On lit notre fichier qui contient tous les exams
+        const exams = readExam();
 
-            const questionList = [];
+        const questionList = [];
 
-            /* CODEX DES REGEX
-            =.*?~|=.*?}
-            =.*?[.]|=.*?(?=[.~])
-            (?<==).*?[.]|(?<==).*?(?=[.~])
-            (?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])
-            (?<==)[^ ]+(?= ~)|(?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])|(?<==).*?(?=[.])
-            */
+        /* CODEX DES REGEX
+        =.*?~|=.*?}
+        =.*?[.]|=.*?(?=[.~])
+        (?<==).*?[.]|(?<==).*?(?=[.~])
+        (?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])
+        (?<==)[^ ]+(?= ~)|(?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])|(?<==).*?(?=[.])
+        */
 
-            //Si il n'existe pas d'examen, alors rien ne se passe. On renvoit juste un string
-            if (exams.length === 0) {
-                logger.info("Aucun examen n'a encore été créé.");
-            } else {
+        //Si il n'existe pas d'examen, alors rien ne se passe. On renvoit juste un string
+        if (exams.length === 0) {
+          logger.info("Aucun examen n'a encore été créé.");
+        } else {
 
-                //En revanche si un ou des examens ont été trouvé, alors on parcours la liste de tous les examens dans le fichier
-                exams.forEach((exams) => {
+          //En revanche si un ou des examens ont été trouvé, alors on parcours la liste de tous les examens dans le fichier
+          exams.forEach((exams) => {
 
-                    //Et si un examen possède le même id que celui entré en paramètre par l'utilisateur
-                    if(exams.id === id){
+            //Et si un examen possède le même id que celui entré en paramètre par l'utilisateur
+            if(exams.id === id){
+              found = true;
+              logger.info(exams.id);
 
-                        logger.info(exams.id);
-
-                        //Alors on affiche toutes ses données
-                        logger.info(`Id de l'examen : ${exams.id}`);
-                        logger.info(`Date de création : ${exams.date}`);
-                        logger.info(`Questions de l'examen :`);
+              //Alors on affiche toutes ses données
+              logger.info(`Id de l'examen : ${exams.id}`);
+              logger.info(`Date de création : ${exams.date}`);
+              logger.info(`Questions de l'examen :`);
 
 
-                        //On parcours toutes les questions présentent dans l'examen choisi
-                        exams.questions.forEach((exams) => {
-                            questionList.push(exams)
-                        })
+              //On parcours toutes les questions présentent dans l'examen choisi
+              exams.questions.forEach((exams) => {
+                  questionList.push(exams)
+              })
 
-                        askQuestion(questionList, 0, 0);
+              askQuestion(questionList, 0, 0);
 
-                        //Return false permet ici de casser la boucle de parcours des examens. Every est comme un forEach sauf que c'est arrêtable à souhait
-                        return false;
-                    }
-            });
-
+              //Return false permet ici de casser la boucle de parcours des examens. Every est comme un forEach sauf que c'est arrêtable à souhait
+              return false;
             }
+          });
 
-        });
+          if (!found){
+            logger.error(`Aucun examen avec l'id "${id}" n'a été trouvé`)
+          }
+        }
+      });
 
   // COMMANDE QUESTION IMPORT POUR IMPORTER LES QUESTIONS
   cli
