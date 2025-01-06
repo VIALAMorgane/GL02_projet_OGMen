@@ -734,9 +734,7 @@ function registerQuestionCommands(cli) {
   // COMMANDE EXAM EXPORT POUR EXPORTER UN EXAMEN
   cli
     .command("exam export", "Exporte un examen spécifique au format GIFT")
-    .option("--id <id>", "ID de l'examen à exporter", { required: true })
-    .action(({ logger, options }) => {
-      const examId = options.id;
+    .action(async ({ logger, options }) => {
 
       try {
         // Lis tous les examens
@@ -748,7 +746,22 @@ function registerQuestionCommands(cli) {
           return;
         }
 
+        console.log("\nExamens disponibles :")
         const exams = JSON.parse(fs.readFileSync(examsFilePath, "utf-8"));
+        exams.forEach((exam) => logger.info(exam.id));
+
+
+        const rl = readline.createInterface({
+          input: process.stdin,
+          output: process.stdout,
+        });
+
+        const examId = await new Promise((resolve) =>
+          rl.question(
+            "\nQuel examen souhaitez-vous exporter?\n>",
+            resolve,
+          ),
+        );
 
         // Recherche l'examen par ID
         const selectedExam = exams.find((exam) => exam.id === examId);
