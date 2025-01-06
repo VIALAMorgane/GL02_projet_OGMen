@@ -111,6 +111,7 @@ function askQuestion(questions, index = 0, score = 0) {
     if (index >= questions.length) {
         console.log(`Quiz terminé ! Votre score final est : ${score} / ${questions.length}`);
         reader.close();
+        return;
     }
 
     //REGEX pour trouver les reponses correctes des questions
@@ -183,6 +184,8 @@ function askQuestion(questions, index = 0, score = 0) {
     }
 
     // Pose la question à l'utilisateur
+    console.log(`\n${question.title}`);
+    console.log(`Type: ${question.type}`);
     reader.question(text + '\n' + 'Entrez votre réponse ici : ', (userAnswer) => {
         // Vérifie la réponse
         if(question.type === 'Multiple Choice'){
@@ -258,7 +261,7 @@ function registerQuestionCommands(cli) {
             //Et si un examen possède le même id que celui entré en paramètre par l'utilisateur
             if(exams.id === id){
               found = true;
-              logger.info(exams.id);
+              console.log("\n");
 
               //Alors on affiche toutes ses données
               logger.info(`Id de l'examen : ${exams.id}`);
