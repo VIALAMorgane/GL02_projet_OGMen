@@ -542,18 +542,23 @@ function registerQuestionCommands(cli) {
       // ajout de l'option de filtre des questions par mot-clé
       required: false,
     })
-    .action(({ logger, options }) => {
+    .action(async ({ logger, options }) => {
+      const nbExam = readExams();
       const count = options.count || 15; // Par défaut, 15 questions
       const keyword = options.keyword ? options.keyword.toLowerCase() : null;
-
-      if (count < 15 || count > 20) {
-        logger.error("Le nombre de questions doit être entre 15 et 20.");
-        return;
-      }
-
+      const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+      });
+      
       try {
-        const questions = readQuestions();
 
+        if (count < 15 || count > 20) {
+          logger.error("Le nombre de questions doit être entre 15 et 20.");
+          return;
+        }
+
+        const questions = readQuestions();
         if (questions.length < count) {
           // Vérifie si le nombre de questions est suffisant
           logger.error(
@@ -574,29 +579,91 @@ function registerQuestionCommands(cli) {
           return;
         }
 
-        // Mélange les questions pour les sélectionner aléatoirement
-        const shuffledQuestions = filteredQuestions.sort(
-          () => 0.5 - Math.random(),
+        const choice = await new Promise((resolve) =>
+          rl.question(
+            "Souhaitez-vous créer un examen avec des questions aléatoires (1) ou choisir des questions (2) ?\n>",
+            resolve,
+          ),
         );
-        // Sélectionne les premières questions pour l'examen
-        const selectedQuestions = shuffledQuestions.slice(0, count);
-        const nbExam = readExams();
-        // creation de l'examen avec l'id, la date et les questions
-        const exam = {
-          id: `exam_${nbExam.length + 1}`,
-          date: new Date().toISOString(),
-          questions: selectedQuestions,
-        };
 
-        // Sauvegarde de l'examen
-        saveExam(exam);
+        if (choice === "1"){
 
-        logger.info(`Examen généré avec succès ! ID de l'examen : ${exam.id}`);
+          // Mélange les questions pour les sélectionner aléatoirement
+          const shuffledQuestions = filteredQuestions.sort(() => 0.5 - Math.random(),);
+
+          // Sélectionne les premières questions pour l'examen
+          const selectedQuestions = shuffledQuestions.slice(0, count);
+
+          const exam = {
+            id: `exam_${nbExam.length + 1}`,
+            date: new Date().toISOString(),
+            questions: selectedQuestions,
+          };
+
+          saveExam(exam);
+          logger.info(`Examen généré avec succès ! ID de l'examen : ${exam.id}`);
+          
+        }else if (choice === "2"){
+          const selected = [];
+          let option = '';
+          
+          logger.info(`Nombre total de questions : ${questions.length}`);
+          questions.forEach((question, index) => {
+              logger.info(`${question.title}`);
+              logger.info(`   Texte : ${question.text}`);
+          });
+
+          console.log("\n")
+
+          while(option.substring(0,8) != "terminer" && (count - selected.length) > 0){
+
+            logger.warn(`Il manque ${count - selected.length} questions.`);
+
+            option = await new Promise((resolve) =>
+              rl.question(
+                "\nPour ajouter une question à l'examen, utilisez la commande \"ajouter\" suivie des numéros de questions, séparés par un espace"
+                + "\nPour terminer l'opération sans sauvegarder, utilisez la commande \"terminer\""
+                + "\n>",
+                resolve,
+              ),
+            );
+
+            if (option.substring(0,7) === "ajouter"){
+              const toAdd = option.substring(8).split(" ");
+              toAdd.forEach((qstNumber) => {
+                if (/^[0-9]+$/.test(qstNumber)){
+                  
+                  const question = searchQuestionById(+qstNumber);
+
+                  if (selected.length < 15 && question !== null){
+                    selected.push(question)
+                  }
+                } 
+              });
+            }
+          }
+
+          if (selected.length === count){
+            const exam = {
+              id: `exam_${nbExam.length + 1}`,
+              date: new Date().toISOString(),
+              questions: selected,
+            };
+
+            saveExam(exam);
+            logger.info(`Examen généré avec succès ! ID de l'examen : ${exam.id}`);
+          }
+        }else{
+          logger.warn("Choix invalide.");
+        }
+
       } catch (error) {
         logger.error(
           `Erreur lors de la génération de l'examen : ${error.message}`,
         );
       }
+
+      rl.close();
     });
 
 // COMMANDE EXAM SEARCH POUR RECHERCHER DES INFOS SUR DES EXAMENS
