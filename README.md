@@ -49,10 +49,9 @@ Voici un résumé des commandes disponibles dans l'application CLI :
 8. `questions deduplicate` - Supprime les doublons dans les titres des questions.
 9. `contact create` - Crée un nouveau contact.
 10. `contact update` - Modifie un contact.
-11. `contact read` - Lit les informations à propos d'un contact.
-12. `contact delete` - Supprime un contact.
-13. `visualize exam` - Permet de visualiser un examen avec un diagramme en barre.
-14. `visualizeExamTheme` - Permet de visualiser un profil d'examen par theme en créant un diagramme en barre.
+11. `contact delete` - Supprime un contact.
+12. `visualize exam` - Permet de visualiser un examen avec un diagramme en barre.
+13. `visualizeExamTheme` - Permet de visualiser un profil d'examen par theme en créant un diagramme en barre.
 14. `search contact` - Rechercher un contact par Nom.
 15. `search question` - Rechercher une question par ID.
 16. `search exam` - Rechercher un examen par ID ou date.
