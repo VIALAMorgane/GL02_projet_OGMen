@@ -286,5 +286,101 @@
         "type": "Fill"
       }
     ]
+  },
+  {
+    "id": "exam_4",
+    "date": "2025-01-09T18:57:24.736Z",
+    "questions": [
+      {
+        "title": "Question 191",
+        "text": "Which person's superpower could be acquired by whoever is prepared to believe in it {\r\n  ~A. Liam Hoekstra\r\n  =B. Wim Hof\r\n  ~C. Dean Karnazes\r\n  ~D. Isao Machii\r\n}",
+        "theme": "Reading-xmen",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 18",
+        "text": "People who eat too {~=much~many} salt can suffer from high blood pressure",
+        "theme": "Gra-Expressions_of_quantity",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 146",
+        "text": "I _____ leave early because I wanted to study the next morning.{~=had to~have had to}",
+        "theme": "GR-Present_perfect_vs_past_simple",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 175",
+        "text": "Shall we still have lunch together, {~=as~=like} we said yesterday?",
+        "theme": "Gra-As_like",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 28",
+        "text": "I've got {~few~a few~little~=a little} free time this week so I can do the work if you like.",
+        "theme": "Gra-Expressions_of_quantity",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 55",
+        "text": "They {=replaced} the old chef with a younger woman who had studied in Barcelona.",
+        "theme": "Reading",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 300",
+        "text": "[html]The onions must {=be fried} <i>(fry)</i> until they are soft.",
+        "theme": "Review",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 301",
+        "text": "[html]That chef {=is said} <i>(say)</i> to be extremely talented.",
+        "theme": "Review",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 91",
+        "text": "[html]I don't go to the gym on Fridays. (<i>usually</i>) {\r\n =I don't usually go to the gym on Fridays.\r\n =I do not usually go to the gym on Fridays.\r\n =I don't usually go to the gym on Fridays\r\n =I do not usually go to the gym on Fridays\r\n =I don’t usually go to the gym on Fridays\r\n =I don’t usually go to the gym on Fridays.}",
+        "theme": "Adverbs",
+        "type": "Essay"
+      },
+      {
+        "title": "Question 308",
+        "text": "[html]<small><p><i>Complete the sentence with one of the following words: <b>abstract • blockbusters • cast • contemporary • gallery • productions</b>.</i></p></small>\r\n<p>I tend to go for original theatre {=productions} by controversial directors.</p>",
+        "theme": "Vocabulary",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 173",
+        "text": "[markdown]Complete the sentences with _as_ or _like_.",
+        "theme": "Gra-As_like",
+        "type": "Unknown"
+      },
+      {
+        "title": "Question 346",
+        "text": "believe (v) {=belief}",
+        "theme": "Reading",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 37",
+        "text": "love frurt, vegetables and so on, I know I’m getting a diet rich in {~high-fat~low-salt~vegetarian~=vitamins~well-balanced}.",
+        "theme": "Voc",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 343",
+        "text": "therapy (n) {=therapeutic=nontherapeutic=non-therapeutic}",
+        "theme": "Reading",
+        "type": "Fill"
+      },
+      {
+        "title": "Question 225",
+        "text": "Only a bit of the orange juice I bought for the children {=is} left.",
+        "theme": "Subject_verb_agreement",
+        "type": "Fill"
+      }
+    ]
   }
 ]
