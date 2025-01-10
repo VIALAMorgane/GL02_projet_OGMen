@@ -32,7 +32,7 @@ function parseGiftFile(filePath, startIndex = 1) {
 
     const questions = matches.map((match, index) => {
         const title = `Question ${startIndex + index}`; // genere le titre dans l'ordre q1 q2 q3
-const text = match[2].trim();
+        const text = match[2].trim();
         
         // Extrait le thème à partir du nom du fichier
         const theme = extractThemeFromFilename(path.basename(filePath));
