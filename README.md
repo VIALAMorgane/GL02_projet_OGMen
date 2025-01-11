@@ -49,6 +49,24 @@ The primary objective of the test plan is to:
 2. Identify discrepancies and suggest improvements for future development.
 3. Ensure a high standard of software quality through systematic testing.
 
+1. `questions list` - Affiche toutes les questions de la banque.
+2. `questions import` - Importe les questions depuis le répertoire `./data`.
+3. `questions delete --title <title>` - Supprime une question par titre exact. Le titre doit être écrit entre parenthèses
+4. `questions add --text <text> --type <type>` - Ajoute une nouvelle question, avec son texte et son type (entre guillemets, parmis 'True/False', 'Multiple Choice', 'Matching Answers', 'Numeric', 'Fill', 'Essay').
+5. `questions chart` - Génère un fichier HTML avec un graphique des types de questions.
+6. `exam generate` - Génère un examen contenant entre 15 et 20 questions.
+7. `exam export --id <id>` - Exporte un examen au format GIFT.
+8. `questions deduplicate` - Supprime les doublons dans les titres des questions.
+9. `contact create` - Crée un nouveau contact.
+10. `contact update` - Modifie un contact.
+11. `contact delete` - Supprime un contact.
+12. `visualize exam` - Permet de visualiser un examen avec un diagramme en barre.
+13. `visualizeExamTheme` - Permet de visualiser un profil d'examen par theme en créant un diagramme en barre.
+14. `search contact` - Rechercher un contact par Nom.
+15. `search question` - Rechercher une question par ID.
+16. `search exam` - Rechercher un examen par ID ou date.
+17. `simulate exam ` - Simule un exament avec les résultats.
+
 ### Technical Environment
 The tests are conducted in a technical environment capable of running Node.js version 18 or higher. This includes any desktop operating systems such as Windows, Linux, or macOS.
 

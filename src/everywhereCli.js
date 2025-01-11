@@ -87,7 +87,7 @@ function messageDebut() {
     1. questions list              - Affiche toutes les questions de la banque
     2. questions import            - Importe les questions depuis le répertoire ./data
     3. questions delete --title <title>    - Supprime une question par titre exact (le titre doit être écrit entre parenthèses)
-    4. questions add --text <text> --type <type> - Ajoute une nouvelle question
+    4. questions add --text <text> --type <type> - Ajoute une nouvelle question, avec son texte (entre guillemets) et son type (entre guillemets, parmis 'True/False', 'Multiple Choice', 'Matching Answers', 'Numeric', 'Fill', 'Essay').
     5. questions chart             - Génère un fichier HTML avec un graphique des types de questions
     6. exam generate               - Génère un examen contenant entre 15 et 20 questions
     7. exam export --id <id>       - Exporte un examen au format GIFT
@@ -111,6 +111,7 @@ function askQuestion(questions, index = 0, score = 0) {
     if (index >= questions.length) {
         console.log(`Quiz terminé ! Votre score final est : ${score} / ${questions.length}`);
         reader.close();
+        return;
     }
 
     //REGEX pour trouver les reponses correctes des questions
@@ -183,6 +184,8 @@ function askQuestion(questions, index = 0, score = 0) {
     }
 
     // Pose la question à l'utilisateur
+    console.log(`\n${question.title}`);
+    console.log(`Type: ${question.type}`);
     reader.question(text + '\n' + 'Entrez votre réponse ici : ', (userAnswer) => {
         // Vérifie la réponse
         if(question.type === 'Multiple Choice'){
@@ -226,60 +229,63 @@ function registerQuestionCommands(cli) {
     //Commande qui permet d'afficher un examen en fonction de l'id entré en paramètre
     cli.command("simulate exam", "Affiche toutes les questions dun exam")
 
-        //Option qui gère l'id séléctionné par l'utilisateur
-        .option("--id <id>", "Id de l'examen choisi", { required: true }) 
+      //Option qui gère l'id séléctionné par l'utilisateur
+      .option("--id <id>", "Id de l'examen choisi", { required: true }) 
 
-        //Comportement de la commande
-        .action(({ logger, options }) => {
-            const { id } = options;
+      //Comportement de la commande
+      .action(({ logger, options }) => {
+        const { id } = options;
+        let found = false;
 
-            //On lit notre fichier qui contient tous les exams
-            const exams = readExam();
+        //On lit notre fichier qui contient tous les exams
+        const exams = readExam();
 
-            const questionList = [];
+        const questionList = [];
 
-            /* CODEX DES REGEX
-            =.*?~|=.*?}
-            =.*?[.]|=.*?(?=[.~])
-            (?<==).*?[.]|(?<==).*?(?=[.~])
-            (?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])
-            (?<==)[^ ]+(?= ~)|(?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])|(?<==).*?(?=[.])
-            */
+        /* CODEX DES REGEX
+        =.*?~|=.*?}
+        =.*?[.]|=.*?(?=[.~])
+        (?<==).*?[.]|(?<==).*?(?=[.~])
+        (?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])
+        (?<==)[^ ]+(?= ~)|(?<==).*?[.]|(?<==).*?(?=[.~])|(?<==).*?(?=[.}])|(?<==).*?(?=[.])
+        */
 
-            //Si il n'existe pas d'examen, alors rien ne se passe. On renvoit juste un string
-            if (exams.length === 0) {
-                logger.info("Aucun examen n'a encore été créé.");
-            } else {
+        //Si il n'existe pas d'examen, alors rien ne se passe. On renvoit juste un string
+        if (exams.length === 0) {
+          logger.info("Aucun examen n'a encore été créé.");
+        } else {
 
-                //En revanche si un ou des examens ont été trouvé, alors on parcours la liste de tous les examens dans le fichier
-                exams.forEach((exams) => {
+          //En revanche si un ou des examens ont été trouvé, alors on parcours la liste de tous les examens dans le fichier
+          exams.forEach((exams) => {
 
-                    //Et si un examen possède le même id que celui entré en paramètre par l'utilisateur
-                    if(exams.id === id){
+            //Et si un examen possède le même id que celui entré en paramètre par l'utilisateur
+            if(exams.id === id){
+              found = true;
+              console.log("\n");
 
-                        logger.info(exams.id);
-
-                        //Alors on affiche toutes ses données
-                        logger.info(`Id de l'examen : ${exams.id}`);
-                        logger.info(`Date de création : ${exams.date}`);
-                        logger.info(`Questions de l'examen :`);
+              //Alors on affiche toutes ses données
+              logger.info(`Id de l'examen : ${exams.id}`);
+              logger.info(`Date de création : ${exams.date}`);
+              logger.info(`Questions de l'examen :`);
 
 
-                        //On parcours toutes les questions présentent dans l'examen choisi
-                        exams.questions.forEach((exams) => {
-                            questionList.push(exams)
-                        })
+              //On parcours toutes les questions présentent dans l'examen choisi
+              exams.questions.forEach((exams) => {
+                  questionList.push(exams)
+              })
 
-                        askQuestion(questionList, 0, 0);
+              askQuestion(questionList, 0, 0);
 
-                        //Return false permet ici de casser la boucle de parcours des examens. Every est comme un forEach sauf que c'est arrêtable à souhait
-                        return false;
-                    }
-            });
-
+              //Return false permet ici de casser la boucle de parcours des examens. Every est comme un forEach sauf que c'est arrêtable à souhait
+              return false;
             }
+          });
 
-        });
+          if (!found){
+            logger.error(`Aucun examen avec l'id "${id}" n'a été trouvé`)
+          }
+        }
+      });
 
   // COMMANDE QUESTION IMPORT POUR IMPORTER LES QUESTIONS
   cli
@@ -447,7 +453,7 @@ function registerQuestionCommands(cli) {
   cli
     .command("questions add", "Ajoute une nouvelle question à la banque")
     .option("--text <text>", "Texte de la question", { required: true })
-    .option("--type <type>", "Type des réponses", { required: true }) // Correction : suppression de l'espace
+    .option("--type <type>", "Type des réponses, entre guillemets, parmis 'True/False', 'Multiple Choice', 'Matching Answers', 'Numeric', 'Fill', 'Essay'", { required: true }) // Correction : suppression de l'espace
     .action(({ logger, options }) => {
       const { text, type } = options; // Extraire `text` et `type` des options
 
@@ -458,9 +464,24 @@ function registerQuestionCommands(cli) {
         const newIndex = questions.length + 1;
         const title = `Question ${newIndex}`;
 
+        //Vérification du Type
+        const typeAuthorized = ["True/False", "Multiple Choice", "Matching Answers", "Numeric", "Fill", "Essay"];
+        if (!typeAuthorized.includes(type)){
+          throw new Error ("Type incorrect : Veuillez indiquer un type parmis les suivant : True/False, Multiple Choice, Matching Answers, Numeric, Fill, Essay")
+        }
+
         // Créer la nouvelle question
         const newQuestion = { title, text, type };
 
+        //Vérifier qu'elle n'existe pas déjà
+        const seenText = new Set();
+        questions.forEach((question) => {
+          seenText.add(question.text);
+        });
+        
+        if (seenText.has(newQuestion.text)) {
+          throw new Error("Cette question existe déjà.")
+        }
         // Ajouter à la liste des questions
         questions.push(newQuestion);
 
@@ -542,18 +563,23 @@ function registerQuestionCommands(cli) {
       // ajout de l'option de filtre des questions par mot-clé
       required: false,
     })
-    .action(({ logger, options }) => {
+    .action(async ({ logger, options }) => {
+      const nbExam = readExams();
       const count = options.count || 15; // Par défaut, 15 questions
       const keyword = options.keyword ? options.keyword.toLowerCase() : null;
-
-      if (count < 15 || count > 20) {
-        logger.error("Le nombre de questions doit être entre 15 et 20.");
-        return;
-      }
-
+      const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+      });
+      
       try {
-        const questions = readQuestions();
 
+        if (count < 15 || count > 20) {
+          logger.error("Le nombre de questions doit être entre 15 et 20.");
+          return;
+        }
+
+        const questions = readQuestions();
         if (questions.length < count) {
           // Vérifie si le nombre de questions est suffisant
           logger.error(
@@ -574,29 +600,91 @@ function registerQuestionCommands(cli) {
           return;
         }
 
-        // Mélange les questions pour les sélectionner aléatoirement
-        const shuffledQuestions = filteredQuestions.sort(
-          () => 0.5 - Math.random(),
+        const choice = await new Promise((resolve) =>
+          rl.question(
+            "Souhaitez-vous créer un examen avec des questions aléatoires (1) ou choisir des questions (2) ?\n>",
+            resolve,
+          ),
         );
-        // Sélectionne les premières questions pour l'examen
-        const selectedQuestions = shuffledQuestions.slice(0, count);
-        const nbExam = readExams();
-        // creation de l'examen avec l'id, la date et les questions
-        const exam = {
-          id: `exam_${nbExam.length + 1}`,
-          date: new Date().toISOString(),
-          questions: selectedQuestions,
-        };
 
-        // Sauvegarde de l'examen
-        saveExam(exam);
+        if (choice === "1"){
 
-        logger.info(`Examen généré avec succès ! ID de l'examen : ${exam.id}`);
+          // Mélange les questions pour les sélectionner aléatoirement
+          const shuffledQuestions = filteredQuestions.sort(() => 0.5 - Math.random(),);
+
+          // Sélectionne les premières questions pour l'examen
+          const selectedQuestions = shuffledQuestions.slice(0, count);
+
+          const exam = {
+            id: `exam_${nbExam.length + 1}`,
+            date: new Date().toISOString(),
+            questions: selectedQuestions,
+          };
+
+          saveExam(exam);
+          logger.info(`Examen généré avec succès ! ID de l'examen : ${exam.id}`);
+          
+        }else if (choice === "2"){
+          const selected = [];
+          let option = '';
+          
+          logger.info(`Nombre total de questions : ${questions.length}`);
+          questions.forEach((question, index) => {
+              logger.info(`${question.title}`);
+              logger.info(`   Texte : ${question.text}`);
+          });
+
+          console.log("\n")
+
+          while(option.substring(0,8) != "terminer" && (count - selected.length) > 0){
+
+            logger.warn(`Il manque ${count - selected.length} questions.`);
+
+            option = await new Promise((resolve) =>
+              rl.question(
+                "\nPour ajouter une question à l'examen, utilisez la commande \"ajouter\" suivie des numéros de questions, séparés par un espace"
+                + "\nPour terminer l'opération sans sauvegarder, utilisez la commande \"terminer\""
+                + "\n>",
+                resolve,
+              ),
+            );
+
+            if (option.substring(0,7) === "ajouter"){
+              const toAdd = option.substring(8).split(" ");
+              toAdd.forEach((qstNumber) => {
+                if (/^[0-9]+$/.test(qstNumber)){
+                  
+                  const question = searchQuestionById(+qstNumber);
+
+                  if (selected.length < 15 && question !== null){
+                    selected.push(question)
+                  }
+                } 
+              });
+            }
+          }
+
+          if (selected.length === count){
+            const exam = {
+              id: `exam_${nbExam.length + 1}`,
+              date: new Date().toISOString(),
+              questions: selected,
+            };
+
+            saveExam(exam);
+            logger.info(`Examen généré avec succès ! ID de l'examen : ${exam.id}`);
+          }
+        }else{
+          logger.warn("Choix invalide.");
+        }
+
       } catch (error) {
         logger.error(
           `Erreur lors de la génération de l'examen : ${error.message}`,
         );
       }
+
+      rl.close();
     });
 
 // COMMANDE EXAM SEARCH POUR RECHERCHER DES INFOS SUR DES EXAMENS
@@ -667,9 +755,7 @@ function registerQuestionCommands(cli) {
   // COMMANDE EXAM EXPORT POUR EXPORTER UN EXAMEN
   cli
     .command("exam export", "Exporte un examen spécifique au format GIFT")
-    .option("--id <id>", "ID de l'examen à exporter", { required: true })
-    .action(({ logger, options }) => {
-      const examId = options.id;
+    .action(async ({ logger, options }) => {
 
       try {
         // Lis tous les examens
@@ -681,7 +767,22 @@ function registerQuestionCommands(cli) {
           return;
         }
 
+        console.log("\nExamens disponibles :")
         const exams = JSON.parse(fs.readFileSync(examsFilePath, "utf-8"));
+        exams.forEach((exam) => logger.info(exam.id));
+
+
+        const rl = readline.createInterface({
+          input: process.stdin,
+          output: process.stdout,
+        });
+
+        const examId = await new Promise((resolve) =>
+          rl.question(
+            "\nQuel examen souhaitez-vous exporter?\n>",
+            resolve,
+          ),
+        );
 
         // Recherche l'examen par ID
         const selectedExam = exams.find((exam) => exam.id === examId);
