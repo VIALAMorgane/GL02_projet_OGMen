@@ -86,8 +86,8 @@ function messageDebut() {
   console.log(`
     1. questions list              - Affiche toutes les questions de la banque
     2. questions import            - Importe les questions depuis le répertoire ./data
-    3. questions delete --title <title>    - Supprime une question par titre exact
-    4. questions add --text <text> --type <type> - Ajoute une nouvelle question
+    3. questions delete --title <title>    - Supprime une question par titre exact 
+    4. questions add --text <text> --type <type> - Ajoute une nouvelle question, avec son texte (entre guillemets) et son type (entre guillemets, parmis 'True/False', 'Multiple Choice', 'Matching Answers', 'Numeric', 'Fill', 'Essay').
     5. questions chart             - Génère un fichier HTML avec un graphique des types de questions
     6. exam generate               - Génère un examen contenant entre 15 et 20 questions
     7. exam export --id <id>       - Exporte un examen au format GIFT
@@ -447,7 +447,7 @@ function registerQuestionCommands(cli) {
   cli
     .command("questions add", "Ajoute une nouvelle question à la banque")
     .option("--text <text>", "Texte de la question", { required: true })
-    .option("--type <type>", "Type des réponses", { required: true }) // Correction : suppression de l'espace
+    .option("--type <type>", "Type des réponses, entre guillemets, parmis 'True/False', 'Multiple Choice', 'Matching Answers', 'Numeric', 'Fill', 'Essay'", { required: true }) // Correction : suppression de l'espace
     .action(({ logger, options }) => {
       const { text, type } = options; // Extraire `text` et `type` des options
 
@@ -457,6 +457,12 @@ function registerQuestionCommands(cli) {
         // Générer automatiquement le titre
         const newIndex = questions.length + 1;
         const title = `Question ${newIndex}`;
+
+        //Vérification du Type
+        const typeAuthorized = ["True/False", "Multiple Choice", "Matching Answers", "Numeric", "Fill", "Essay"];
+        if (!typeAuthorized.includes(type)){
+          throw new Error ("Type incorrect : Veuillez indiquer un type parmis les suivant : True/False, Multiple Choice, Matching Answers, Numeric, Fill, Essay")
+        }
 
         // Créer la nouvelle question
         const newQuestion = { title, text, type };
