@@ -1,43 +1,53 @@
 # GL02_projet_OGMen
 
-## Description du projet
+## Project Description
+This project aims to create a Command Line Interface (CLI) application for efficiently managing a database of questions and exams.
 
-Ce projet a été réalisé dans le cadre de l'UE GL02. L'objectif était de répondre au cahier des charges fourni, en développant une application CLI (Command Line Interface) permettant de gérer une banque de questions et d'examens. L'application permet d'importer des questions depuis des fichiers GIFT, de les manipuler (ajout, suppression, recherche, etc.), et de générer des examens.
+## Features
+- Import questions from GIFT files.
+- Manage questions (add, delete, search, deduplicate).
+- Generate exams containing 15 to 20 questions.
+- Export exams in GIFT format.
+- Visualize questions and exams.
+- Manage contacts (create, modify, delete, search).
+- Generate HTML charts to visualize the distribution of question types.
 
-## Fonctionnalités
-
-- Importation automatique des questions depuis des fichiers GIFT.
-- Gestion des questions : ajout, suppression, recherche, déduplication.
-- Génération d'examens contenant entre 15 et 20 questions.
-- Exportation des examens au format GIFT.
-- Visualisation des questions et des examens.
-- Gestion des contacts : création, modification, suppression, recherche.
-- Génération de graphiques HTML pour visualiser la distribution des types de questions.
-
-## Prérequis
-
-- Node.js 
-- npm 
+## Prerequisites
+- **Node.js** (version 16 or higher)
+- **npm** (version 8 or higher)
 
 ## Installation
-
-1. Clonez le dépôt :
+1. Clone the repository:
    ```bash
    git clone https://github.com/aminssutt/GL02_projet_OGMen.git
    cd GL02_projet_OGMen/src
-2. Installez les dépendances :
+   ```
+2. Install dependencies:
    ```bash
    npm install
+   ```
 
-## Utilisation
-
-Pour lancer l'application CLI, exécutez la commande suivante :
+## Usage
+To launch the CLI application, run:
+```bash
 cd src
 node everywhereCli.js
+```
 
-## Commandes disponibles
+## Available Commands
+- `questions list`: List all questions.
+- `questions import`: Import questions from the `./data` directory.
+- `exam generate`: Generate an exam.
+- For the full documentation, see the [Wiki](https://github.com/VIALAMorgane/GL02_projet_OGMen/wiki).
 
-Voici un résumé des commandes disponibles dans l'application CLI :
+## Test Plan
+The **Test Plan** serves as a structured framework to document and verify the test cases for the software. It outlines the scenarios, objectives, and expected results to ensure that the implementation adheres to the defined Software Requirement Specifications (SRS). By executing these tests, we aim to identify potential issues and improve the overall quality of the software.
+
+### Objectives
+The primary objective of the test plan is to:
+1. Verify that the implementation meets the defined requirements.
+2. Identify discrepancies and suggest improvements for future development.
+3. Ensure a high standard of software quality through systematic testing.
 
 1. `questions list` - Affiche toutes les questions de la banque.
 2. `questions import` - Importe les questions depuis le répertoire `./data`.
@@ -57,27 +67,27 @@ Voici un résumé des commandes disponibles dans l'application CLI :
 16. `search exam` - Rechercher un examen par ID ou date.
 17. `simulate exam ` - Simule un exament avec les résultats.
 
-## Roadmap
+### Technical Environment
+The tests are conducted in a technical environment capable of running Node.js version 18 or higher. This includes any desktop operating systems such as Windows, Linux, or macOS.
 
-- [x] FS1: Manage questions - Permet aux utilisateurs autorisés de gérer les questions avec les opérations CRUD.
-- [x] FS2: Chart of questions - Visualise la distribution des questions dans la banque de données sous forme de graphiques.
-- [x] FS3: Generate an exam - Permet aux utilisateurs de préparer des examens en sélectionnant des questions.
-- [x] FS4: Export an exam - Permet aux utilisateurs d'exporter des examens au format ".GIFT".
-- [x] FS5: Simulate an exam - Permet aux utilisateurs de simuler un examen pour collecter des données.
-- [x] FS6: Manage Contact File - Permet aux enseignants de créer et gérer leur fichier de contact au format V-Card.
-- [x] FS7: Visualize G.I.F.T. exam profile - Génère une distribution graphique des types de questions pour illustrer les examens.
-- [x] FS8: Global Search - Fournit un outil de recherche pour permettre aux utilisateurs de rechercher des informations dans la base de données.
+### How to Access the Test Plan
+The full test plan, including detailed scenarios, test cases, and results, is available as a shared document. You can access it via the following link:
+[Complete Test Plan Document](https://1drv.ms/w/c/a76d655a7365bbf8/EdweaEHzgMZEo9kE3GjzxmYBrerO7NDwxP3NgwS3015MPQ?e=wsyO4D)
 
+## License
+This project is licensed under the MIT License. 
 
-## Contributeurs
+The MIT License allows:
+- Free use, modification, and distribution of the software.
+- Integration into proprietary projects while preserving credit to the original authors.
 
+For more details, refer to the [LICENSE](./LICENSE) file in the repository.
+
+## Authors
 - **Lakhdar Berache** - [GitHub](https://github.com/aminssutt)
 - **Maxime Monterin** - [GitHub](https://github.com/maximeMonterin)
 - **Mathieu Halliez** - [GitHub](https://github.com/mathieuHalliez)
 - **Robinson Rocher** - [GitHub](https://github.com/robinsonrcr)
-
-## Améliorations 
-
-- Le traitement des bonnes et mauvaises réponses pour les questions de types Essay et Matching
-- La gestion de la fin d'un examen
-- Ctrl + C pour lancer une autre commande
+- **VIALAMorgane** - [GitHub](https://github.com/VIALAMorgane)
+- **Gabriel S. Guerra** - [GitHub](https://github.com/gabriel-guerra)
+- **LI Zhenpeng** - [GitHub](https://github.com/LZPxka)
