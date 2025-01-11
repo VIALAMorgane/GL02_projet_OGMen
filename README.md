@@ -72,4 +72,4 @@ For more details, refer to the [LICENSE](./LICENSE) file in the repository.
 - **Robinson Rocher** - [GitHub](https://github.com/robinsonrcr)
 - **VIALAMorgane** - [GitHub](https://github.com/VIALAMorgane)
 - **Gabriel S. Guerra** - [GitHub](https://github.com/gabriel-guerra)
-- **LZPxka** - [GitHub](https://github.com/LZPxka)
+- **LI Zhenpeng** - [GitHub](https://github.com/LZPxka)
