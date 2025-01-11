@@ -71,6 +71,5 @@ For more details, refer to the [LICENSE](./LICENSE) file in the repository.
 - **Mathieu Halliez** - [GitHub](https://github.com/mathieuHalliez)
 - **Robinson Rocher** - [GitHub](https://github.com/robinsonrcr)
 - **VIALAMorgane** - [GitHub](https://github.com/VIALAMorgane)
-- **LZPxka** - [GitHub](https://github.com/LZPxka)
 - **Gabriel S. Guerra** - [GitHub](https://github.com/gabriel-guerra)
-
+- **LZPxka** - [GitHub](https://github.com/LZPxka)
