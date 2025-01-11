@@ -473,6 +473,15 @@ function registerQuestionCommands(cli) {
         // Créer la nouvelle question
         const newQuestion = { title, text, type };
 
+        //Vérifier qu'elle n'existe pas déjà
+        const seenText = new Set();
+        questions.forEach((question) => {
+          seenText.add(question.text);
+        });
+        
+        if (seenText.has(newQuestion.text)) {
+          throw new Error("Cette question existe déjà.")
+        }
         // Ajouter à la liste des questions
         questions.push(newQuestion);
 

@@ -2866,5 +2866,10 @@
     "text": "[html]\r\n<b>A:</b> I was doing something else so I didn't hear what she said. (<i>pay attention</i>) <br>\r\n<b>B:</b> If ____ what she said.{}",
     "theme": "Third_cond-4",
     "type": "Unknown"
+  },
+  {
+    "title": "Question 479",
+    "text": "Test duplication",
+    "type": "Essay"
   }
 ]
