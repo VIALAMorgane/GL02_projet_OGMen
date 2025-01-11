@@ -86,7 +86,7 @@ function messageDebut() {
   console.log(`
     1. questions list              - Affiche toutes les questions de la banque
     2. questions import            - Importe les questions depuis le répertoire ./data
-    3. questions delete --title <title>    - Supprime une question par titre exact 
+    3. questions delete --title <title>    - Supprime une question par titre exact (le titre doit être écrit entre parenthèses)
     4. questions add --text <text> --type <type> - Ajoute une nouvelle question, avec son texte (entre guillemets) et son type (entre guillemets, parmis 'True/False', 'Multiple Choice', 'Matching Answers', 'Numeric', 'Fill', 'Essay').
     5. questions chart             - Génère un fichier HTML avec un graphique des types de questions
     6. exam generate               - Génère un examen contenant entre 15 et 20 questions
@@ -304,7 +304,7 @@ function registerQuestionCommands(cli) {
       "questions delete",
       "Supprime une question de la banque par titre exact",
     )
-    .option("--title <title>", "Titre de la question à supprimer", {
+    .option("--title <title>", "Titre de la question à supprimer entre parenthèses", {
       required: true,
     })
     .action(({ logger, options }) => {
